@@ -63,6 +63,16 @@
       color: #e67e22;
       font-weight: bold;
     }
+    .new-badge {
+      display: inline-block;
+      background-color: #e74c3c;
+      color: white;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 11px;
+      margin-left: 5px;
+      font-weight: bold;
+    }
     .loading {
       text-align: center;
       padding: 20px;
@@ -120,6 +130,26 @@
                 title.appendChild(titleLink);
               } else {
                 title.textContent = book.title;
+              }
+              
+              // 출간일로부터 1주일이 지나지 않은 경우 'new' 배지 추가
+              if (book.release_date) {
+                // 날짜 문자열에서 마지막 점(.)을 제거하고 파싱
+                const dateStr = book.release_date.endsWith('.') ? 
+                  book.release_date.slice(0, -1) : book.release_date;
+                const [year, month, day] = dateStr.split('.').map(num => parseInt(num, 10));
+                const releaseDate = new Date(year, month - 1, day); // 월은 0부터 시작하므로 1을 빼줍니다
+                const now = new Date();
+                const diffTime = now - releaseDate;
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                
+                // 출간일이 오늘로부터 7일 전부터 미래의 모든 도서에 'NEW' 배지 표시
+                if (diffDays <= 7) {
+                  const newBadge = document.createElement('span');
+                  newBadge.className = 'new-badge';
+                  newBadge.textContent = 'NEW';
+                  title.appendChild(newBadge);
+                }
               }
               
               const meta = document.createElement('div');
