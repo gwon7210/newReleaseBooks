@@ -1,0 +1,554 @@
+{
+  "한빛미디어": [
+    {
+      "title": "네이버 스마트스토어 운영하기",
+      "author": "서미진 저",
+      "price": "18,900원",
+      "image_url": ""
+    },
+    {
+      "title": "혼자 만들면서 공부하는 딥러닝\n                \n                    \n                        [ 저자 직강 유튜브 강의 + 오픈채팅 제공 ]",
+      "author": "박해선 역",
+      "price": "25,200원",
+      "image_url": ""
+    },
+    {
+      "title": "소문난 명강의 김길성의 네트워크 딥다이브",
+      "author": "김길성 역",
+      "price": "43,200원",
+      "image_url": ""
+    },
+    {
+      "title": "요즘 교사를 위한 AI 수업 활용 가이드 with 2022 개정 교육과정",
+      "author": "박진환공지훈서원진 저",
+      "price": "18,000원",
+      "image_url": "https://image.yes24.com/goods/145426898/L"
+    },
+    {
+      "title": "LLM 엔지니어링",
+      "author": "폴 이우수틴막심 라본 저조우철 역",
+      "price": "34,200원",
+      "image_url": "https://image.yes24.com/goods/145962625/L"
+    }
+  ],
+  "골든래빗": [
+    {
+      "title": "엄마 아빠에게 선물하는 스마트폰 활용 + 챗GPT 무한 꿀팁 36",
+      "author": "온선(김은정) 저",
+      "price": "21,600원",
+      "image_url": ""
+    },
+    {
+      "title": "이게 되네? 챗GPT 미친 크롤링 24제",
+      "author": "박현규 저",
+      "price": "23,400원",
+      "image_url": ""
+    },
+    {
+      "title": "이게 되네? 챗GPT 미친 크롤링 24제 + 이게 되네? 챗GPT 미친 활용법 71제 세트\n                \n                    \n                        [ 2권 ]",
+      "author": "오힘찬박현규 저",
+      "price": "45,000원",
+      "image_url": ""
+    },
+    {
+      "title": "요즘 우아한 AI 개발",
+      "author": "우아한형제들 저",
+      "price": "21,600원",
+      "image_url": ""
+    },
+    {
+      "title": "선생님을 위한 8282 업무 자동화 with AI+파이썬+노코드",
+      "author": "강우혁김송희서승희송석리 저 외 3명",
+      "price": "25,200원",
+      "image_url": "https://image.yes24.com/goods/143533211/L"
+    }
+  ],
+  "인사이트": [
+    {
+      "title": "DuckDB 인 액션",
+      "author": "마크 니드햄마이클 헝거마이클 시몬스 저김의윤 역",
+      "price": "25,200원",
+      "image_url": ""
+    },
+    {
+      "title": "30가지 패턴으로 배우는 분산 시스템 설계와 구현 기법",
+      "author": "운메시 조시 저이도경김영준정재부 역",
+      "price": "31,500원",
+      "image_url": ""
+    },
+    {
+      "title": "우아한 C 언어 코딩 패턴",
+      "author": "크리스토퍼 프레셰른 저정기훈 역",
+      "price": "28,800원",
+      "image_url": ""
+    },
+    {
+      "title": "코틀린 아카데미 : 고급편",
+      "author": "마르친 모스카와 저신성열 역",
+      "price": "27,000원",
+      "image_url": "https://image.yes24.com/goods/141732613/L"
+    },
+    {
+      "title": "코틀린 아카데미 3권 세트\n                \n                    \n                        [ 3권 ]",
+      "author": "마르친 모스카와 저신성열 역",
+      "price": "73,800원",
+      "image_url": "https://image.yes24.com/goods/142251304/L"
+    }
+  ],
+  "리코멘드": [
+    {
+      "title": "챗GPT·퍼플렉시티·클로드·코파일럿·제미나이 다 잘함",
+      "author": "이호정 저",
+      "price": "21,600원",
+      "image_url": ""
+    },
+    {
+      "title": "GPTs 제작·노출·고도화·수익화 진짜 잘함",
+      "author": "이태경 저",
+      "price": "16,920원",
+      "image_url": ""
+    },
+    {
+      "title": "방구석 부트캠프 자바",
+      "author": "김경록 저",
+      "price": "28,800원",
+      "image_url": ""
+    },
+    {
+      "title": "프롬프트 엔지니어의 업무일지",
+      "author": "강수진 저",
+      "price": "25,200원",
+      "image_url": "https://image.yes24.com/goods/130153561/L"
+    },
+    {
+      "title": "최고의 프롬프트 엔지니어링 강의",
+      "author": "김진중 저",
+      "price": "21,600원",
+      "image_url": "https://image.yes24.com/goods/126690830/L"
+    }
+  ],
+  "길벗": [
+    {
+      "title": "2026 시나공 빅데이터분석기사 실기",
+      "author": "김태헌 저",
+      "price": "28,800원",
+      "image_url": ""
+    },
+    {
+      "title": "제미나이 인공지능 프로그래밍",
+      "author": "후루카와 히데카즈 저하승민 역",
+      "price": "31,500원",
+      "image_url": ""
+    },
+    {
+      "title": "코딩 자율학습 컴퓨터 구조와 운영체제",
+      "author": "기술노트 알렉 저",
+      "price": "23,400원",
+      "image_url": ""
+    },
+    {
+      "title": "모두의 딥러닝\n                \n                    \n                        [ 개정 4판 ]",
+      "author": "조태호 저",
+      "price": "26,100원",
+      "image_url": "https://image.yes24.com/goods/145612410/L"
+    },
+    {
+      "title": "랭체인으로 RAG 개발하기: VectorRAG & GraphRAG",
+      "author": "서지영 저",
+      "price": "26,100원",
+      "image_url": "https://image.yes24.com/goods/145605137/L"
+    }
+  ],
+  "길벗캠퍼스": [
+    {
+      "title": "리액트의 정석 with 타입스크립트",
+      "author": "이창현 저",
+      "price": "34,000원",
+      "image_url": ""
+    },
+    {
+      "title": "프리미어 프로+소라 with AI",
+      "author": "장윤제오창근 저",
+      "price": "29,000원",
+      "image_url": ""
+    },
+    {
+      "title": "운영체제",
+      "author": "김덕수 저",
+      "price": "28,000원",
+      "image_url": ""
+    },
+    {
+      "title": "포토샵 with AI",
+      "author": "이문형 저",
+      "price": "28,000원",
+      "image_url": "https://image.yes24.com/goods/140939077/L"
+    },
+    {
+      "title": "스프링 부트 완전정복",
+      "author": "송미영 저",
+      "price": "35,000원",
+      "image_url": "https://image.yes24.com/goods/140199372/L"
+    }
+  ],
+  "책만": [
+    {
+      "title": "모던 소프트웨어 엔지니어링",
+      "author": "데이비드 팔리 저박재호 역",
+      "price": "25,200원",
+      "image_url": ""
+    },
+    {
+      "title": "카프카 커넥트",
+      "author": "미카엘 메종케이트 스탠리 저고승범이상헌 역 외 1명",
+      "price": "29,700원",
+      "image_url": ""
+    },
+    {
+      "title": "사용자를 속여라! 다크패턴",
+      "author": "나카노 유키 저장건희 역",
+      "price": "19,800원",
+      "image_url": ""
+    },
+    {
+      "title": "고객이 스스로 찾아오는 브랜드 검색 마케팅",
+      "author": "타베 마사키 저리스닝마인드 팀 역",
+      "price": "18,000원",
+      "image_url": "https://image.yes24.com/goods/140478790/L"
+    },
+    {
+      "title": "컬러와이즈 ColorWise",
+      "author": "케이트 스트라치니 저권혜정 역",
+      "price": "16,200원",
+      "image_url": "https://image.yes24.com/goods/140202434/L"
+    }
+  ],
+  "프리렉": [
+    {
+      "title": "RAG 마스터 : 랭체인으로 완성하는 LLM 서비스",
+      "author": "브라이스 유조경아박수진김재웅 저",
+      "price": "28,800원",
+      "image_url": ""
+    },
+    {
+      "title": "Select SQL 쿼리 작성법 From 기초편; 이럴 땐, 이런 쿼리!",
+      "author": "서경숙장석은김현중엄태명 저",
+      "price": "23,400원",
+      "image_url": ""
+    },
+    {
+      "title": "대표 전략으로 입문하는 미국 주식 퀀트 투자",
+      "author": "이용환 저",
+      "price": "27,000원",
+      "image_url": ""
+    },
+    {
+      "title": "AI 리터러시 : 인공지능 필수 지식부터 완벽 활용까지",
+      "author": "김용성 저",
+      "price": "22,500원",
+      "image_url": "https://image.yes24.com/goods/139705941/L"
+    },
+    {
+      "title": "AI 골드러시, 돈을 버는 자는 누구인가",
+      "author": "시마즈 쇼 저안동현 역",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/135703661/L"
+    }
+  ],
+  "이지스퍼블리싱": [
+    {
+      "title": "Do it! 오토캐드 2026",
+      "author": "박한울 저",
+      "price": "26,550원",
+      "image_url": ""
+    },
+    {
+      "title": "Do it! LLM을 활용한 AI 에이전트 개발 입문",
+      "author": "이성용 저",
+      "price": "31,500원",
+      "image_url": ""
+    },
+    {
+      "title": "된다! 하루 5분 아이패드 기록 생활",
+      "author": "희나 저",
+      "price": "16,200원",
+      "image_url": ""
+    },
+    {
+      "title": "된다! 업무에 바로 쓰는 구글 활용법",
+      "author": "이광희 저",
+      "price": "18,900원",
+      "image_url": "https://image.yes24.com/goods/144253147/L"
+    },
+    {
+      "title": "된다! 조회수 터지는 유튜브 쇼츠 만들기",
+      "author": "최지영 저",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/143907967/L"
+    }
+  ],
+  "제이펍": [
+    {
+      "title": "마스터링 몽고DB 7.0\n                \n                    \n                        [ 제4판 ]",
+      "author": "마르코 알렉센드리치아레크 보루츠키레안드루 도밍게스말라크 아부 함마드 저 외 4명",
+      "price": "32,400원",
+      "image_url": ""
+    },
+    {
+      "title": "생성형 AI의 구조",
+      "author": "오카노하라 다이스케 저정원창 역",
+      "price": "16,200원",
+      "image_url": ""
+    },
+    {
+      "title": "실무에 바로 적용하는 웹 접근성 가이드북",
+      "author": "김남경곽규현 저",
+      "price": "37,800원",
+      "image_url": ""
+    },
+    {
+      "title": "실리콘밸리에서 통하는 파이썬 인터뷰 가이드",
+      "author": "런젠펑취안수쉐 저신준기 역",
+      "price": "24,300원",
+      "image_url": "https://image.yes24.com/goods/145227885/L"
+    },
+    {
+      "title": "7가지 프로젝트로 배우는 LLM AI 에이전트 개발",
+      "author": "황자 저김진호 역",
+      "price": "32,400원",
+      "image_url": "https://image.yes24.com/goods/144457106/L"
+    }
+  ],
+  "위키북스": [
+    {
+      "title": "시스템 설계 면접 완벽 가이드",
+      "author": "지용 탄 저나정호 역",
+      "price": "31,500원",
+      "image_url": ""
+    },
+    {
+      "title": "LLMOps를 활용한 LLM 엔지니어링",
+      "author": "박슬기 저",
+      "price": "25,200원",
+      "image_url": ""
+    },
+    {
+      "title": "머신러닝 엔지니어링 with 파이썬",
+      "author": "앤드루 피터 맥마흔 저최용 역",
+      "price": "28,800원",
+      "image_url": ""
+    },
+    {
+      "title": "그림과 작동 원리로 쉽게 이해하는 네트워크의 기초",
+      "author": "데브아틱스 저",
+      "price": "22,500원",
+      "image_url": ""
+    },
+    {
+      "title": "진짜 챗GPT 활용법\n                \n                    \n                        [ 개정2판 ]",
+      "author": "김준성브라이스 유안상준 저",
+      "price": "18,000원",
+      "image_url": "https://image.yes24.com/goods/145047404/L"
+    }
+  ],
+  "시프트": [
+    {
+      "title": "디자인 감각 제대로 키우는 법",
+      "author": "가마타 다카시 저김현미 역",
+      "price": "17,100원",
+      "image_url": ""
+    },
+    {
+      "title": "마법 같은 영상 제작을 위한 스마트폰 촬영 및 편집 with 캡컷",
+      "author": "김지희 저",
+      "price": "20,700원",
+      "image_url": ""
+    },
+    {
+      "title": "인공지능이 다 해주는 브루 Vrew 영상 편집",
+      "author": "지현이 저브루 개발팀 감수",
+      "price": "18,000원",
+      "image_url": ""
+    },
+    {
+      "title": "20가지 템플릿으로 배우는 노션 Notion\n                \n                    \n                        [ N잡을 위한 템플릿 수익화 방법 PDF 제공 ]",
+      "author": "전시진 저",
+      "price": "18,000원",
+      "image_url": "https://image.yes24.com/goods/133337416/L"
+    },
+    {
+      "title": "시프트",
+      "author": "저자 정보 없음",
+      "price": "가격 정보 없음",
+      "image_url": "https://image.yes24.com/goods/118595487/L"
+    }
+  ],
+  "루비페이퍼": [
+    {
+      "title": "이토록 쉬운 IT 인프라 기초",
+      "author": "장두환 저",
+      "price": "19,800원",
+      "image_url": ""
+    },
+    {
+      "title": "이토록 쉬운 10가지 프로젝트로 끝내는 트랜스포머 활용 가이드 with 파이토치",
+      "author": "프렘 팀시나 저임선집 역",
+      "price": "25,200원",
+      "image_url": ""
+    },
+    {
+      "title": "이토록 쉬운 채쌤의 난생처음 SQL",
+      "author": "채규태 저",
+      "price": "24,300원",
+      "image_url": ""
+    },
+    {
+      "title": "이토록 쉬운 3ds Max 베이직 클래스\n                \n                    \n                        [ 개정판 ]",
+      "author": "이동후 저",
+      "price": "39,600원",
+      "image_url": ""
+    },
+    {
+      "title": "이토록 쉬운 RAG 시스템 구축을 위한 랭체인 실전 가이드",
+      "author": "윤성재 저",
+      "price": "23,400원",
+      "image_url": "https://image.yes24.com/goods/136548871/L"
+    }
+  ],
+  "에이콘출판사": [
+    {
+      "title": "전략적 모놀리스와 마이크로서비스",
+      "author": "반 버논토마스 야스쿨라 저강성일이승민 역 외 1명",
+      "price": "31,500원",
+      "image_url": ""
+    },
+    {
+      "title": "Kotlin in Action 2/e\n                \n                    \n                        [ 코루틴과 플로우 포함 코틀린 2 대응 ]",
+      "author": "세바스티안 아이그너로만 엘리자로프스베트라나 이사코바드미트리 제메로프 저 외 1명",
+      "price": "43,200원",
+      "image_url": ""
+    },
+    {
+      "title": "언리얼 엔진 5로 개발하는 멀티플레이어 게임",
+      "author": "마르코 세치 저이지성송정은 역",
+      "price": "36,000원",
+      "image_url": ""
+    },
+    {
+      "title": "코틀린으로 배우는 안드로이드 앱 개발 실전 노하우 2/e",
+      "author": "알렉스 포레스터에란 부즈나알렉산드루 덤브라반조마르 티그칼 저 외 2명",
+      "price": "40,500원",
+      "image_url": ""
+    },
+    {
+      "title": "코드형 인프라의 패턴과 실무",
+      "author": "로즈마리 왕 저이국성김찬규 역",
+      "price": "36,000원",
+      "image_url": "https://image.yes24.com/goods/142162263/L"
+    }
+  ],
+  "에이콘온": [
+    {
+      "title": "클라우드 솔루션을 위한 생성형 AI",
+      "author": "폴 싱아누라그 시리시 카루파르티 저김상필박태호 역",
+      "price": "28,800원",
+      "image_url": ""
+    },
+    {
+      "title": "실리콘밸리 길들이기",
+      "author": "개리 마커스김동환 저최영호 역",
+      "price": "20,900원",
+      "image_url": ""
+    },
+    {
+      "title": "핀옵스 전략",
+      "author": "알폰소 산 미겔 산체스대니 오반도 가르시아 저이병욱 역",
+      "price": "38,000원",
+      "image_url": ""
+    },
+    {
+      "title": "AI 시대의 노 워크 혁명",
+      "author": "필립 드리말카 저이병욱 역",
+      "price": "23,750원",
+      "image_url": ""
+    }
+  ],
+  "정보문화사": [
+    {
+      "title": "그림 한 장으로 보는 최신 IT 트렌드(최신개정판)",
+      "author": "Saito Masanori 저 / 김모세 역",
+      "price": "20,700원",
+      "image_url": ""
+    },
+    {
+      "title": "브이레이 포 스케치업 feat 카오스 밴티지",
+      "author": "한정훈 저",
+      "price": "37,800원",
+      "image_url": ""
+    },
+    {
+      "title": "랭체인 입문",
+      "author": "오승환 저",
+      "price": "22,500원",
+      "image_url": ""
+    },
+    {
+      "title": "오늘부터 피그마 Figma",
+      "author": "김시완정현민 저",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/141336644/L"
+    },
+    {
+      "title": "독학 파이썬",
+      "author": "야마다 요시히로 저윤모린 역",
+      "price": "28,800원",
+      "image_url": "https://image.yes24.com/goods/140182521/L"
+    }
+  ],
+  "스마트북스": [
+    {
+      "title": "커서 AI 트렌드&활용백과",
+      "author": "서승완 저",
+      "price": "22,500원",
+      "image_url": ""
+    },
+    {
+      "title": "AI 2025 + 커서 AI 트렌드&활용백과 세트\n                \n                    \n                        [ 2권 ]",
+      "author": "서승완김덕진 저",
+      "price": "45,000원",
+      "image_url": ""
+    }
+  ],
+  "비제이퍼블릭": [
+    {
+      "title": "전략적 사용자 행동 분석",
+      "author": "오세규 저",
+      "price": "26,550원",
+      "image_url": ""
+    },
+    {
+      "title": "실리콘밸리가 원하는 사람",
+      "author": "이원종 저",
+      "price": "24,300원",
+      "image_url": ""
+    },
+    {
+      "title": "자연어 처리를 위한 허깅페이스 트랜스포머 하드 트레이닝",
+      "author": "박성환남승우 저",
+      "price": "24,750원",
+      "image_url": ""
+    },
+    {
+      "title": "프로덕트 개발의 모든 것",
+      "author": "김수재 저",
+      "price": "14,850원",
+      "image_url": "https://image.yes24.com/goods/140073344/L"
+    },
+    {
+      "title": "파이썬으로 탐구하는 지구과학 데이터 분석 & 시각화",
+      "author": "심원재손현준 저",
+      "price": "28,800원",
+      "image_url": "https://image.yes24.com/goods/139898019/L"
+    }
+  ]
+}
