@@ -59,6 +59,10 @@
       font-size: 12px;
       line-height: 1.4;
     }
+    .release-date {
+      color: #e67e22;
+      font-weight: bold;
+    }
     .loading {
       text-align: center;
       padding: 20px;
@@ -120,7 +124,12 @@
               
               const meta = document.createElement('div');
               meta.className = 'book-meta';
-              meta.textContent = `${book.author} | ${book.price}`;
+              
+              // 출간일 정보 추가
+              const releaseInfo = book.release_date ? 
+                `<span class="release-date">${book.release_date}</span> | ` : '';
+              
+              meta.innerHTML = `${releaseInfo}${book.author} | ${book.price}`;
               
               details.appendChild(title);
               details.appendChild(meta);

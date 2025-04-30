@@ -25,6 +25,34 @@ def setup_driver():
     
     return driver
 
+def get_book_release_date(driver, goods_no):
+    if not goods_no:
+        return "출간일 정보 없음"
+        
+    url = f"https://m.yes24.com/goods/detail/{goods_no}"
+    try:
+        driver.get(url)
+        # 페이지가 로드될 때까지 대기
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, "authPub"))
+        )
+        
+        # 페이지 소스 가져오기
+        page_source = driver.page_source
+        soup = BeautifulSoup(page_source, 'html.parser')
+        
+        # 출간일 정보 찾기 (authPub 클래스 내의 date 클래스를 가진 span 태그)
+        date_elem = soup.select_one('.authPub .date')
+        if date_elem:
+            date_text = date_elem.get_text(strip=True)
+            if date_text:
+                return date_text
+        
+        return "출간일 정보 없음"
+    except Exception as e:
+        print(f"Error fetching release date for book {goods_no}: {e}")
+        return "출간일 정보 없음"
+
 def get_publisher_books(driver, publisher_name, publisher_id):
     encoded_name = urllib.parse.quote(publisher_name)
     url = f"https://m.yes24.com/search?query={encoded_name}&domain=BOOK&viewMode=&dispNo2=001001003&mkEntrNo={publisher_id}&order=RECENT"
@@ -87,13 +115,17 @@ def get_publisher_books(driver, publisher_name, publisher_id):
                         except:
                             pass
                     
+                    # 출간일 정보 가져오기
+                    release_date = get_book_release_date(driver, goods_no)
+                    
                     books.append({
                         'title': title,
                         'author': author,
                         'price': price,
                         'image_url': image_url,
                         'goods_no': goods_no,
-                        'detail_url': detail_url
+                        'detail_url': detail_url,
+                        'release_date': release_date
                     })
             except Exception as e:
                 print(f"Error parsing book item for {publisher_name}: {e}")
