@@ -67,9 +67,11 @@ def get_publisher_books(driver, publisher_name, publisher_id):
                 image_url = ""
                 if img_elem:
                     # src 또는 data-original 속성에서 URL 가져오기
-                    image_url = img_elem.get('src') or img_elem.get('data-original', '')
+                    image_url = img_elem.get('data-original') or img_elem.get('src', '')
                     if image_url and not image_url.startswith('http'):
                         image_url = 'https:' + image_url
+                    if not image_url or 'Noimg_L.jpg' in image_url:
+                        image_url = 'https://image.yes24.com/momo/Noimg_L.jpg'
                 
                 if title:  # 제목이 있는 경우에만 추가
                     books.append({
