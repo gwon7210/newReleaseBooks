@@ -37,7 +37,7 @@ def get_publisher_books(driver, publisher_name, publisher_id):
         )
         
         # 잠시 대기하여 동적 콘텐츠가 로드되도록 함
-        time.sleep(1)
+        # time.sleep(1)
         
         # 페이지 소스 가져오기
         page_source = driver.page_source
@@ -74,11 +74,26 @@ def get_publisher_books(driver, publisher_name, publisher_id):
                         image_url = 'https://image.yes24.com/momo/Noimg_L.jpg'
                 
                 if title:  # 제목이 있는 경우에만 추가
+                    # 상품 번호 추출
+                    goods_no = item.get('data-goods-no') if isinstance(item, dict) else item.attrs.get('data-goods-no', '')
+                    detail_url = f"https://www.yes24.com/product/goods/{goods_no}" if goods_no else ""
+                    
+                    # 이미지 URL에서 상품 번호 추출 (백업 방법)
+                    if not goods_no and image_url:
+                        # 이미지 URL 형식: https://image.yes24.com/goods/146041188/L
+                        try:
+                            goods_no = image_url.split('/goods/')[1].split('/')[0]
+                            detail_url = f"https://www.yes24.com/product/goods/{goods_no}"
+                        except:
+                            pass
+                    
                     books.append({
                         'title': title,
                         'author': author,
                         'price': price,
-                        'image_url': image_url
+                        'image_url': image_url,
+                        'goods_no': goods_no,
+                        'detail_url': detail_url
                     })
             except Exception as e:
                 print(f"Error parsing book item for {publisher_name}: {e}")
@@ -94,22 +109,22 @@ def main():
     publishers = [
         {"name": "골든래빗", "id": "287363"},
         {"name": "한빛미디어", "id": "1469"},
-        {"name": "인사이트", "id": "289113"},
-        {"name": "리코멘드", "id": "314006"},
-        {"name": "길벗", "id": "231"},
-        {"name": "길벗캠퍼스", "id": "303742"},
-        {"name": "책만", "id": "297319"},
-        {"name": "프리렉", "id": "10755"},
-        {"name": "이지스퍼블리싱", "id": "117983"},
-        {"name": "제이펍", "id": "107878"},
-        {"name": "위키북스", "id": "120040"},
-        {"name": "시프트", "id": "327076"},
-        {"name": "루비페이퍼", "id": "183510"},
-        {"name": "에이콘출판사", "id": "7813"},
-        {"name": "에이콘온", "id": "332424"},
-        {"name": "정보문화사", "id": "1"},
-        {"name": "스마트북스", "id": "132231"},
-        {"name": "비제이퍼블릭", "id": "108933"}
+        # {"name": "인사이트", "id": "289113"},
+        # {"name": "리코멘드", "id": "314006"},
+        # {"name": "길벗", "id": "231"},
+        # {"name": "길벗캠퍼스", "id": "303742"},
+        # {"name": "책만", "id": "297319"},
+        # {"name": "프리렉", "id": "10755"},
+        # {"name": "이지스퍼블리싱", "id": "117983"},
+        # {"name": "제이펍", "id": "107878"},
+        # {"name": "위키북스", "id": "120040"},
+        # {"name": "시프트", "id": "327076"},
+        # {"name": "루비페이퍼", "id": "183510"},
+        # {"name": "에이콘출판사", "id": "7813"},
+        # {"name": "에이콘온", "id": "332424"},
+        # {"name": "정보문화사", "id": "1"},
+        # {"name": "스마트북스", "id": "132231"},
+        # {"name": "비제이퍼블릭", "id": "108933"}
     ]
     
     driver = setup_driver()
@@ -125,7 +140,7 @@ def main():
             print(f"Fetching data for {publisher['name']}...")
             books = get_publisher_books(driver, publisher["name"], publisher["id"])
             all_data[publisher["name"]] = books
-            time.sleep(2)  # 요청 간 2초 대기
+            time.sleep(0.1)  # 요청 간 2초 대기
         
         # JSON 파일로 저장
         with open('books_data.json', 'w', encoding='utf-8') as f:

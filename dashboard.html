@@ -46,6 +46,14 @@
       margin-bottom: 3px;
       color: #333;
     }
+    .book-title a {
+      color: #333;
+      text-decoration: none;
+    }
+    .book-title a:hover {
+      color: #0066cc;
+      text-decoration: underline;
+    }
     .book-meta {
       color: #666;
       font-size: 12px;
@@ -99,7 +107,16 @@
               
               const title = document.createElement('div');
               title.className = 'book-title';
-              title.textContent = book.title;
+              
+              if (book.detail_url) {
+                const titleLink = document.createElement('a');
+                titleLink.href = book.detail_url;
+                titleLink.target = '_blank';
+                titleLink.textContent = book.title;
+                title.appendChild(titleLink);
+              } else {
+                title.textContent = book.title;
+              }
               
               const meta = document.createElement('div');
               meta.className = 'book-meta';
