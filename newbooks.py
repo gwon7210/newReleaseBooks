@@ -8,24 +8,18 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.core.os_manager import ChromeType
 from bs4 import BeautifulSoup
 
 def setup_driver():
     chrome_options = Options()
-    chrome_options.add_argument('--headless=new')  # 새로운 헤드리스 모드
+    chrome_options.add_argument('--headless=new')
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--disable-dev-shm-usage')
-    chrome_options.add_argument('--disable-gpu')
-    chrome_options.add_argument('--window-size=1920,1080')
-    chrome_options.add_argument('--user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1')
     
     try:
-        # ChromeDriverManager 대신 직접 Chrome 드라이버 사용
         driver = webdriver.Chrome(options=chrome_options)
     except Exception as e:
         print(f"Chrome 드라이버 초기화 실패: {e}")
-        # 대체 방법으로 ChromeDriverManager 사용
         service = Service(ChromeDriverManager().install())
         driver = webdriver.Chrome(service=service, options=chrome_options)
     
@@ -43,7 +37,7 @@ def get_publisher_books(driver, publisher_name, publisher_id):
         )
         
         # 잠시 대기하여 동적 콘텐츠가 로드되도록 함
-        time.sleep(5)
+        time.sleep(1)
         
         # 페이지 소스 가져오기
         page_source = driver.page_source
@@ -69,10 +63,13 @@ def get_publisher_books(driver, publisher_name, publisher_id):
                 price = price_elem.text.strip() if price_elem else "가격 정보 없음"
                 
                 # 이미지 URL 선택자 수정
-                img_elem = item.select_one('img.lazy')
-                image_url = img_elem['data-original'] if img_elem and 'data-original' in img_elem.attrs else ""
-                if image_url and not image_url.startswith('http'):
-                    image_url = 'https:' + image_url
+                img_elem = item.select_one('img')
+                image_url = ""
+                if img_elem:
+                    # src 또는 data-original 속성에서 URL 가져오기
+                    image_url = img_elem.get('src') or img_elem.get('data-original', '')
+                    if image_url and not image_url.startswith('http'):
+                        image_url = 'https:' + image_url
                 
                 if title:  # 제목이 있는 경우에만 추가
                     books.append({
@@ -93,8 +90,8 @@ def get_publisher_books(driver, publisher_name, publisher_id):
 
 def main():
     publishers = [
-        {"name": "한빛미디어", "id": "1469"},
         {"name": "골든래빗", "id": "287363"},
+        {"name": "한빛미디어", "id": "1469"},
         {"name": "인사이트", "id": "289113"},
         {"name": "리코멘드", "id": "314006"},
         {"name": "길벗", "id": "231"},
@@ -115,6 +112,12 @@ def main():
     
     driver = setup_driver()
     try:
+                # WebDriver 웜업
+        print("Warming up WebDriver...")
+        driver.get("https://m.yes24.com")
+        time.sleep(5)  # 웜업을 위한 대기 시간
+
+        
         all_data = {}
         for publisher in publishers:
             print(f"Fetching data for {publisher['name']}...")
