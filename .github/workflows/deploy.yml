@@ -5,6 +5,8 @@ on:
     branches:
       - main
   workflow_dispatch:
+  schedule:
+    - cron: '0 7 * * *'  # 매일 아침 7시 (UTC)
 
 permissions:
   contents: read
@@ -42,6 +44,10 @@ jobs:
           export DISPLAY=:99
           sudo Xvfb :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
           python newbooks.py
+
+      - name: Save deployment time
+        run: |
+          echo "{\"last_deploy\": \"$(date '+%Y년 %m월 %d일 %H:%M')\"}" > deploy_info.json
         
       - name: Setup Pages
         uses: actions/configure-pages@v4

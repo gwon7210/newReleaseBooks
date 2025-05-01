@@ -85,6 +85,18 @@
       font-style: normal;
       font-weight: bold;
     }
+    .footer {
+      margin-top: 30px;
+      text-align: center;
+      color: #666;
+      font-size: 0.9em;
+    }
+    .deploy-date {
+      margin-bottom: 5px;
+    }
+    .creator {
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
@@ -92,12 +104,26 @@
   <div class="dashboard" id="dashboard">
     <div class="loading">데이터를 불러오는 중...</div>
   </div>
+  <div class="footer">
+    <p class="deploy-date">마지막 업데이트: <span id="deploy-date"></span></p>
+    <p class="creator">Created by J.W.Park</p>
+  </div>
 
   <script>
     async function loadBooks() {
       try {
         const response = await fetch('books_data.json');
         const data = await response.json();
+        
+        // 마지막 배포 시간 가져오기
+        try {
+          const deployInfoResponse = await fetch('deploy_info.json');
+          const deployInfo = await deployInfoResponse.json();
+          document.getElementById('deploy-date').textContent = deployInfo.last_deploy;
+        } catch (error) {
+          console.error('Error loading deploy info:', error);
+          document.getElementById('deploy-date').textContent = '정보 없음';
+        }
         
         const dashboard = document.getElementById('dashboard');
         dashboard.innerHTML = '';
