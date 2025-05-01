@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>출판사 신간 대시보드</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f9f9f9;
+    }
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .publisher {
+      background-color: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .publisher h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #333;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 5px;
+    }
+    .book {
+      display: flex;
+      margin-bottom: 10px;
+      gap: 10px;
+    }
+    .book img {
+      width: 50px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .book-details {
+      font-size: 13px;
+    }
+    .book-title {
+      font-weight: bold;
+      margin-bottom: 3px;
+      color: #333;
+    }
+    .book-title a {
+      color: #333;
+      text-decoration: none;
+    }
+    .book-title a:hover {
+      color: #0066cc;
+      text-decoration: underline;
+    }
+    .book-meta {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 8px;
+    }
+    .release-date {
+      color: #e67e22;
+      font-weight: bold;
+    }
+    .new-badge {
+      background-color: #e74c3c;
+      color: white;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 0.8em;
+      margin-left: 8px;
+    }
+    .loading {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+    }
+    .sell-num {
+      display: inline-block;
+      margin-left: 10px;
+      color: #e74c3c;
+    }
+    .sell-num em {
+      font-style: normal;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>출판사 신간 도서 대시보드</h1>
+  <div class="dashboard" id="dashboard">
+    <div class="loading">데이터를 불러오는 중...</div>
+  </div>
+
+  <script>
+    async function loadBooks() {
+      try {
+        const response = await fetch('books_data.json');
+        const data = await response.json();
+        
+        const dashboard = document.getElementById('dashboard');
+        dashboard.innerHTML = '';
+        
+        for (const [publisher, books] of Object.entries(data)) {
+          const publisherDiv = document.createElement('div');
+          publisherDiv.className = 'publisher';
+          
+          const publisherTitle = document.createElement('h3');
+          publisherTitle.textContent = publisher;
+          publisherDiv.appendChild(publisherTitle);
+          
+          if (books.length === 0) {
+            const noBooks = document.createElement('p');
+            noBooks.textContent = '데이터를 불러올 수 없습니다.';
+            publisherDiv.appendChild(noBooks);
+          } else {
+            books.forEach(book => {
+              const bookDiv = document.createElement('div');
+              bookDiv.className = 'book';
+              
+              const img = document.createElement('img');
+              img.src = book.image_url;
+              img.alt = book.title;
+              
+              const details = document.createElement('div');
+              details.className = 'book-details';
+              
+              const title = document.createElement('div');
+              title.className = 'book-title';
+              
+              if (book.detail_url) {
+                const titleLink = document.createElement('a');
+                titleLink.href = book.detail_url;
+                titleLink.target = '_blank';
+                titleLink.textContent = book.title;
+                title.appendChild(titleLink);
+              } else {
+                title.textContent = book.title;
+              }
+              
+              // 출간일로부터 1주일이 지나지 않은 경우 'new' 배지 추가
+              if (book.release_date) {
+                // 날짜 문자열에서 마지막 점(.)을 제거하고 파싱
+                const dateStr = book.release_date.endsWith('.') ? 
+                  book.release_date.slice(0, -1) : book.release_date;
+                const [year, month, day] = dateStr.split('.').map(num => parseInt(num, 10));
+                const releaseDate = new Date(year, month - 1, day); // 월은 0부터 시작하므로 1을 빼줍니다
+                const now = new Date();
+                const diffTime = now - releaseDate;
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                
+                // 출간일이 오늘로부터 7일 전부터 미래의 모든 도서에 'NEW' 배지 표시
+                if (diffDays <= 7) {
+                  const newBadge = document.createElement('span');
+                  newBadge.className = 'new-badge';
+                  newBadge.textContent = 'NEW';
+                  title.appendChild(newBadge);
+                }
+              }
+              
+              const meta = document.createElement('div');
+              meta.className = 'book-meta';
+              
+              // 출간일 정보 추가
+              const releaseInfo = book.release_date ? 
+                `<span class="release-date">${book.release_date}</span> | ` : '';
+              
+              meta.innerHTML = `${releaseInfo}${book.author} | ${book.price}`;
+              
+              // 판매지수 표시 추가
+              if (book.sell_num && book.sell_num !== "0") {
+                const sellNum = document.createElement('div');
+                sellNum.className = 'sell-num';
+                sellNum.innerHTML = `판매지수 <em>${book.sell_num}</em>`;
+                meta.appendChild(sellNum);
+              }
+              
+              details.appendChild(title);
+              details.appendChild(meta);
+              
+              bookDiv.appendChild(img);
+              bookDiv.appendChild(details);
+              publisherDiv.appendChild(bookDiv);
+            });
+          }
+          
+          dashboard.appendChild(publisherDiv);
+        }
+      } catch (error) {
+        console.error('Error loading books:', error);
+        document.getElementById('dashboard').innerHTML = '<div class="loading">데이터를 불러오는 중 오류가 발생했습니다.</div>';
+      }
+    }
+    
+    // 페이지 로드 시 데이터 불러오기
+    loadBooks();
+  </script>
+</body>
+</html>
