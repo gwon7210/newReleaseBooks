@@ -47,7 +47,7 @@ jobs:
 
       - name: Save deployment time
         run: |
-          echo "{\"last_deploy\": \"$(date '+%Y년 %m월 %d일 %H:%M')\"}" > deploy_info.json
+          echo "{\"last_deploy\": \"$(TZ='Asia/Seoul' date '+%Y년 %m월 %d일 %H:%M')\"}" > deploy_info.json
         
       - name: Setup Pages
         uses: actions/configure-pages@v4

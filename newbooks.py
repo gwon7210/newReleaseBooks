@@ -33,13 +33,13 @@ def setup_driver():
     try:
         service = Service()
         driver = webdriver.Chrome(service=service, options=chrome_options)
-        driver.set_page_load_timeout(30)  # 페이지 로드 타임아웃 설정
+        driver.set_page_load_timeout(60)  # 페이지 로드 타임아웃을 60초로 증가
         return driver
     except Exception as e:
         print(f"Chrome 드라이버 초기화 실패: {e}")
         service = Service(ChromeDriverManager().install())
         driver = webdriver.Chrome(service=service, options=chrome_options)
-        driver.set_page_load_timeout(30)  # 페이지 로드 타임아웃 설정
+        driver.set_page_load_timeout(60)  # 페이지 로드 타임아웃을 60초로 증가
         return driver
 
 def get_book_release_date(driver, goods_no):
@@ -54,11 +54,11 @@ def get_book_release_date(driver, goods_no):
         try:
             driver.get(url)
             # 페이지가 로드될 때까지 대기 시간 증가
-            wait = WebDriverWait(driver, 10)
+            wait = WebDriverWait(driver, 30)  # WebDriverWait 시간을 30초로 증가
             wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
             
             # 추가 대기 시간
-            time.sleep(1)
+            time.sleep(2)  # 대기 시간을 2초로 증가
             
             # 페이지 소스 가져오기
             page_source = driver.page_source
@@ -84,7 +84,7 @@ def get_book_release_date(driver, goods_no):
             retry_count += 1
             print(f"Error fetching release date for book {goods_no} (Attempt {retry_count}/{max_retries}): {e}")
             if retry_count < max_retries:
-                time.sleep(2)  # 재시도 전 대기
+                time.sleep(5)  # 재시도 전 대기 시간을 5초로 증가
             else:
                 print(f"Failed to fetch release date for book {goods_no} after {max_retries} attempts")
                 return "출간일 정보 없음", "0"
@@ -95,13 +95,13 @@ def get_publisher_books(driver, publisher_name, publisher_id):
     
     try:
         driver.get(url)
-        # 페이지가 로드될 때까지 대기
-        WebDriverWait(driver, 10).until(
+        # 페이지가 로드될 때까지 대기 시간 증가
+        WebDriverWait(driver, 30).until(  # WebDriverWait 시간을 30초로 증가
             EC.presence_of_element_located((By.CSS_SELECTOR, ".itemUnit"))
         )
         
         # 잠시 대기하여 동적 콘텐츠가 로드되도록 함
-        # time.sleep(1)
+        time.sleep(2)  # 대기 시간을 2초로 증가
         
         # 페이지 소스 가져오기
         page_source = driver.page_source
