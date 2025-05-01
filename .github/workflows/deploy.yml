@@ -6,7 +6,8 @@ on:
       - main
   workflow_dispatch:
   schedule:
-    - cron: '0 7 * * *'  # 매일 아침 7시 (UTC)
+    - cron: '30 21 * * *'  # 매일 아침 6시 30 (KST)
+    - cron: '0 3 * * *'  # 매일 오전 12시 (KST)
 
 permissions:
   contents: read
