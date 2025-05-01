@@ -55,28 +55,35 @@
       text-decoration: underline;
     }
     .book-meta {
+      font-size: 0.9em;
       color: #666;
-      font-size: 12px;
-      line-height: 1.4;
+      margin-top: 8px;
     }
     .release-date {
       color: #e67e22;
       font-weight: bold;
     }
     .new-badge {
-      display: inline-block;
       background-color: #e74c3c;
       color: white;
       padding: 2px 6px;
       border-radius: 3px;
-      font-size: 11px;
-      margin-left: 5px;
-      font-weight: bold;
+      font-size: 0.8em;
+      margin-left: 8px;
     }
     .loading {
       text-align: center;
       padding: 20px;
       color: #666;
+    }
+    .sell-num {
+      display: inline-block;
+      margin-left: 10px;
+      color: #e74c3c;
+    }
+    .sell-num em {
+      font-style: normal;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -161,6 +168,14 @@
               
               meta.innerHTML = `${releaseInfo}${book.author} | ${book.price}`;
               
+              // 판매지수 표시 추가
+              if (book.sell_num && book.sell_num !== "0") {
+                const sellNum = document.createElement('div');
+                sellNum.className = 'sell-num';
+                sellNum.innerHTML = `판매지수 <em>${book.sell_num}</em>`;
+                meta.appendChild(sellNum);
+              }
+              
               details.appendChild(title);
               details.appendChild(meta);
               
@@ -177,7 +192,7 @@
         document.getElementById('dashboard').innerHTML = '<div class="loading">데이터를 불러오는 중 오류가 발생했습니다.</div>';
       }
     }
-
+    
     // 페이지 로드 시 데이터 불러오기
     loadBooks();
   </script>
