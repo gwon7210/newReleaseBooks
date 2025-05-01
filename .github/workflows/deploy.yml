@@ -31,13 +31,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           
-      - name: Install Chrome
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y chromium-browser
-          
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v1
+        
+      - name: Setup ChromeDriver
+        uses: nanasess/setup-chromedriver@v2
+        
       - name: Run scraper
-        run: python newbooks.py
+        run: |
+          export DISPLAY=:99
+          sudo Xvfb :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
+          python newbooks.py
         
       - name: Setup Pages
         uses: actions/configure-pages@v4
