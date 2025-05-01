@@ -10,6 +10,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
+import re
 
 def setup_driver():
     chrome_options = Options()
@@ -69,7 +70,13 @@ def get_book_release_date(driver, goods_no):
             
             # 판매지수 찾기 (여러 선택자 시도)
             sell_num_elem = soup.select_one('.gdBasicSet.gdRating .sellNum .num') or soup.select_one('.gd_sellNum')
-            sell_num = sell_num_elem.text.strip() if sell_num_elem else "0"
+            sell_num = "0"
+            if sell_num_elem:
+                # 판매지수에서 숫자만 추출
+                sell_num_text = sell_num_elem.text.strip()
+                numbers = re.findall(r'\d+', sell_num_text)
+                if numbers:
+                    sell_num = ''.join(numbers)  # 쉼표 제거하고 숫자만 합치기
             
             return date_text, sell_num
             
@@ -103,7 +110,7 @@ def get_publisher_books(driver, publisher_name, publisher_id):
         books = []
         book_items = soup.select('.itemUnit')
         
-        for item in book_items[:5]:  # 최대 5개 도서만 가져오기
+        for item in book_items[:7]:  # 최대 5개 도서만 가져오기
             try:
                 # 제목 선택자 수정
                 title_elem = item.select_one('.info_name')

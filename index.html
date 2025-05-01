@@ -140,19 +140,21 @@
               }
               
               if (book.release_date) {
-                const dateStr = book.release_date.endsWith('.') ? 
-                  book.release_date.slice(0, -1) : book.release_date;
-                const [year, month, day] = dateStr.split('.').map(num => parseInt(num, 10));
-                const releaseDate = new Date(year, month - 1, day);
-                const now = new Date();
-                const diffTime = now - releaseDate;
-                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-                
-                if (diffDays <= 7) {
-                  const newBadge = document.createElement('span');
-                  newBadge.className = 'new-badge';
-                  newBadge.textContent = 'NEW';
-                  title.appendChild(newBadge);
+                const dateStr = book.release_date;
+                const matches = dateStr.match(/(\d{4})년\s*(\d{1,2})월\s*(\d{1,2})일/);
+                if (matches) {
+                  const [_, year, month, day] = matches;
+                  const releaseDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+                  const now = new Date();
+                  const diffTime = now - releaseDate;
+                  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                  
+                  if (diffDays <= 5 || diffTime < 0) {  // 5일 이내 또는 미래 출간 예정
+                    const newBadge = document.createElement('span');
+                    newBadge.className = 'new-badge';
+                    newBadge.textContent = 'NEW';
+                    title.appendChild(newBadge);
+                  }
                 }
               }
               
