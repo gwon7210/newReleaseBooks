@@ -110,7 +110,7 @@ def get_publisher_books(driver, publisher_name, publisher_id):
         books = []
         book_items = soup.select('.itemUnit')
         
-        for item in book_items[:7]:  # 최대 5개 도서만 가져오기
+        for item in book_items[:10]:  # 최대 5개 도서만 가져오기
             try:
                 # 제목 선택자 수정
                 title_elem = item.select_one('.info_name')
