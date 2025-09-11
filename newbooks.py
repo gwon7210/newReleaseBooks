@@ -18,29 +18,50 @@ def setup_driver():
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.add_argument('--disable-gpu')
-    chrome_options.add_argument('--window-size=1920,1080')
+    chrome_options.add_argument('--window-size=1280,1024')
     chrome_options.add_argument('--disable-extensions')
     chrome_options.add_argument('--proxy-server="direct://"')
     chrome_options.add_argument('--proxy-bypass-list=*')
-    chrome_options.add_argument('--start-maximized')
     chrome_options.add_argument('--disable-blink-features=AutomationControlled')
     chrome_options.add_argument('--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36')
     
+    # GitHub Actions 환경에서 안정성을 위한 추가 옵션들
     if 'GITHUB_ACTIONS' in os.environ:
-        chrome_options.binary_location = '/usr/bin/chromium-browser'
+        chrome_options.add_argument('--single-process')
+        chrome_options.add_argument('--disable-background-timer-throttling')
+        chrome_options.add_argument('--disable-renderer-backgrounding')
+        chrome_options.add_argument('--disable-backgrounding-occluded-windows')
+        chrome_options.add_argument('--disable-features=TranslateUI')
+        chrome_options.add_argument('--disable-crash-reporter')
+        chrome_options.add_argument('--disable-breakpad')
+        chrome_options.add_argument('--disable-background-networking')
+        chrome_options.add_argument('--disable-sync')
+        chrome_options.add_argument('--disable-default-apps')
+        chrome_options.add_argument('--memory-pressure-off')
+        chrome_options.add_argument('--max_old_space_size=4096')
+        chrome_options.add_argument('--force-device-scale-factor=1')
+        chrome_options.add_argument('--aggressive-cache-discard')
+        # Chrome 바이너리 경로 설정
+        chrome_options.binary_location = '/usr/bin/google-chrome'
         print("Running in GitHub Actions environment")
     
     try:
         service = Service()
         driver = webdriver.Chrome(service=service, options=chrome_options)
-        driver.set_page_load_timeout(60)  # 페이지 로드 타임아웃을 60초로 증가
+        driver.set_page_load_timeout(30)  # 페이지 로드 타임아웃을 30초로 조정
+        driver.implicitly_wait(10)  # 암시적 대기 시간 설정
         return driver
     except Exception as e:
         print(f"Chrome 드라이버 초기화 실패: {e}")
-        service = Service(ChromeDriverManager().install())
-        driver = webdriver.Chrome(service=service, options=chrome_options)
-        driver.set_page_load_timeout(60)  # 페이지 로드 타임아웃을 60초로 증가
-        return driver
+        try:
+            service = Service(ChromeDriverManager().install())
+            driver = webdriver.Chrome(service=service, options=chrome_options)
+            driver.set_page_load_timeout(30)  # 페이지 로드 타임아웃을 30초로 조정
+            driver.implicitly_wait(10)  # 암시적 대기 시간 설정
+            return driver
+        except Exception as e2:
+            print(f"ChromeDriverManager로도 초기화 실패: {e2}")
+            raise e2
 
 def get_book_release_date(driver, goods_no):
     if not goods_no:
@@ -52,16 +73,24 @@ def get_book_release_date(driver, goods_no):
     
     while retry_count < max_retries:
         try:
+            # 탭 크래시 방지를 위한 새 탭 생성 및 이동
+            if len(driver.window_handles) > 1:
+                driver.close()
+                driver.switch_to.window(driver.window_handles[0])
+            
             driver.get(url)
-            # 페이지가 로드될 때까지 대기 시간 증가
-            wait = WebDriverWait(driver, 30)  # WebDriverWait 시간을 30초로 증가
+            # 페이지가 로드될 때까지 대기
+            wait = WebDriverWait(driver, 20)  # 대기 시간을 20초로 조정
             wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
             
             # 추가 대기 시간
-            time.sleep(2)  # 대기 시간을 2초로 증가
+            time.sleep(1)  # 대기 시간을 1초로 줄임
             
             # 페이지 소스 가져오기
             page_source = driver.page_source
+            if not page_source or len(page_source) < 100:
+                raise Exception("페이지 소스가 비어있거나 너무 짧습니다")
+                
             soup = BeautifulSoup(page_source, 'html.parser')
             
             # 출간일 정보 찾기 (여러 선택자 시도)
@@ -83,8 +112,17 @@ def get_book_release_date(driver, goods_no):
         except Exception as e:
             retry_count += 1
             print(f"Error fetching release date for book {goods_no} (Attempt {retry_count}/{max_retries}): {e}")
+            
+            # 탭 크래시나 심각한 오류 시 새 탭 생성
+            try:
+                if "tab crashed" in str(e).lower() or "session" in str(e).lower():
+                    driver.execute_script("window.open('','_blank');")
+                    driver.switch_to.window(driver.window_handles[-1])
+            except:
+                pass
+                
             if retry_count < max_retries:
-                time.sleep(5)  # 재시도 전 대기 시간을 5초로 증가
+                time.sleep(3)  # 재시도 전 대기 시간을 3초로 줄임
             else:
                 print(f"Failed to fetch release date for book {goods_no} after {max_retries} attempts")
                 return "출간일 정보 없음", "0"
@@ -223,15 +261,37 @@ def main():
             driver = setup_driver()
             print("Warming up WebDriver...")
             driver.get("https://m.yes24.com")
-            time.sleep(3)  # 웜업을 위한 대기 시간
+            time.sleep(2)  # 웜업을 위한 대기 시간
             
             all_data = {}
+            processed_count = 0
+            
             for publisher in publishers:
-                print(f"Fetching data for {publisher['name']}...")
-                books = get_publisher_books(driver, publisher["name"], publisher["id"])
-                if books:  # 데이터를 성공적으로 가져온 경우에만 추가
-                    all_data[publisher["name"]] = books
-                time.sleep(2)  # 요청 간 대기 시간 증가
+                try:
+                    print(f"Fetching data for {publisher['name']} ({processed_count + 1}/{len(publishers)})...")
+                    books = get_publisher_books(driver, publisher["name"], publisher["id"])
+                    if books:  # 데이터를 성공적으로 가져온 경우에만 추가
+                        all_data[publisher["name"]] = books
+                        print(f"Successfully fetched {len(books)} books for {publisher['name']}")
+                    else:
+                        print(f"No books found for {publisher['name']}")
+                    
+                    processed_count += 1
+                    
+                    # 메모리 정리를 위해 주기적으로 가비지 컬렉션 실행
+                    if processed_count % 5 == 0:
+                        import gc
+                        gc.collect()
+                        
+                    # GitHub Actions 환경에서는 더 짧은 대기 시간
+                    if 'GITHUB_ACTIONS' in os.environ:
+                        time.sleep(1)
+                    else:
+                        time.sleep(2)
+                        
+                except Exception as e:
+                    print(f"Error processing publisher {publisher['name']}: {e}")
+                    continue
             
             # JSON 파일로 저장
             with open('books_data.json', 'w', encoding='utf-8') as f:

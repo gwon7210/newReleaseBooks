@@ -1,146 +1,3332 @@
 {
   "골든래빗": [
     {
-      "title": "엄마 아빠에게 선물하는 스마트폰 활용 + 챗GPT 무한 꿀팁 36",
-      "author": "온선(김은정) 저",
-      "price": "21,600원",
-      "image_url": "https://image.yes24.com/goods/145993511/L",
-      "goods_no": "145993511",
-      "detail_url": "https://www.yes24.com/product/goods/145993511",
-      "release_date": "2025년 06월 02일",
-      "sell_num": "120"
-    },
-    {
-      "title": "이게 되네? 챗GPT 미친 크롤링 24제",
+      "title": "요즘 바이브 코딩 커서 AI 30가지 프로그램 만들기",
       "author": "박현규 저",
-      "price": "23,400원",
-      "image_url": "https://image.yes24.com/goods/144868498/L",
-      "goods_no": "144868498",
-      "detail_url": "https://www.yes24.com/product/goods/144868498",
-      "release_date": "2025년 04월 20일",
-      "sell_num": "3042"
-    },
-    {
-      "title": "이게 되네? 챗GPT 미친 크롤링 24제 + 이게 되네? 챗GPT 미친 활용법 71제 세트\n                \n                    \n                        [ 2권 ]",
-      "author": "오힘찬박현규 저",
-      "price": "45,000원",
-      "image_url": "https://image.yes24.com/goods/145391072/L",
-      "goods_no": "145391072",
-      "detail_url": "https://www.yes24.com/product/goods/145391072",
-      "release_date": "2025년 04월 20일",
-      "sell_num": "0"
-    },
-    {
-      "title": "요즘 우아한 AI 개발",
-      "author": "우아한형제들 저",
       "price": "21,600원",
-      "image_url": "https://image.yes24.com/goods/143753715/L",
-      "goods_no": "143753715",
-      "detail_url": "https://www.yes24.com/product/goods/143753715",
-      "release_date": "2025년 04월 01일",
-      "sell_num": "11670"
+      "image_url": "https://image.yes24.com/goods/153029475/L",
+      "goods_no": "153029475",
+      "detail_url": "https://www.yes24.com/product/goods/153029475",
+      "release_date": "2025년 09월 16일",
+      "sell_num": "1716"
     },
     {
-      "title": "선생님을 위한 8282 업무 자동화 with AI+파이썬+노코드",
-      "author": "강우혁김송희서승희송석리 저 외 3명",
-      "price": "25,200원",
-      "image_url": "https://image.yes24.com/goods/143533211/L",
-      "goods_no": "143533211",
-      "detail_url": "https://www.yes24.com/product/goods/143533211",
-      "release_date": "2025년 04월 01일",
-      "sell_num": "4671"
+      "title": "요즘 바이브 코딩 클로드 코드 완벽 가이드",
+      "author": "최지호 저",
+      "price": "21,600원",
+      "image_url": "https://image.yes24.com/goods/151850127/L",
+      "goods_no": "151850127",
+      "detail_url": "https://www.yes24.com/product/goods/151850127",
+      "release_date": "2025년 09월 01일",
+      "sell_num": "44319"
     },
     {
-      "title": "요즘 우아한 AI 개발 + 요즘 우아한 개발 세트\n                \n                    \n                        [ 2권 ]",
-      "author": "우아한형제들 저",
-      "price": "43,200원",
-      "image_url": "https://image.yes24.com/goods/143789685/L",
-      "goods_no": "143789685",
-      "detail_url": "https://www.yes24.com/product/goods/143789685",
-      "release_date": "2025년 04월 01일",
+      "title": "요즘 AI 에이전트 개발, LLM RAG ADK MCP LangChain A2A LangGraph",
+      "author": "박승규 저",
+      "price": "28,800원",
+      "image_url": "https://image.yes24.com/goods/150701473/L",
+      "goods_no": "150701473",
+      "detail_url": "https://www.yes24.com/product/goods/150701473",
+      "release_date": "2025년 08월 20일",
+      "sell_num": "11835"
+    },
+    {
+      "title": "다시 깊게 익히는 인사이드 리액트",
+      "author": "윤재원 저",
+      "price": "37,800원",
+      "image_url": "https://image.yes24.com/goods/151041836/L",
+      "goods_no": "151041836",
+      "detail_url": "https://www.yes24.com/product/goods/151041836",
+      "release_date": "2025년 08월 20일",
+      "sell_num": "2760"
+    },
+    {
+      "title": "콘텐츠 디자인은 피그마 with AI",
+      "author": "김선영 저",
+      "price": "23,400원",
+      "image_url": "https://image.yes24.com/goods/150110126/L",
+      "goods_no": "150110126",
+      "detail_url": "https://www.yes24.com/product/goods/150110126",
+      "release_date": "2025년 08월 15일",
+      "sell_num": "5394"
+    },
+    {
+      "title": "[클래스24]\n\n                \n                [독서모임] 일상을 바꾸는 AI 『이게 되네?』 저자 3인 북토크\n                \n                    \n                        [\n8월 6일(수) 오후 7시                        ]",
+      "author": "이나현, 오힘찬, 박현규",
+      "price": "5,000원",
+      "image_url": "https://image.yes24.com/goods/149744523/L",
+      "goods_no": "149744523",
+      "detail_url": "https://www.yes24.com/product/goods/149744523",
+      "release_date": "출간일 정보 없음",
+      "sell_num": "192"
+    },
+    {
+      "title": "이게 되네? 클로드 MCP 미친 활용법 27제",
+      "author": "박현규 저",
+      "price": "21,600원",
+      "image_url": "https://image.yes24.com/goods/147957269/L",
+      "goods_no": "147957269",
+      "detail_url": "https://www.yes24.com/product/goods/147957269",
+      "release_date": "2025년 07월 18일",
+      "sell_num": "11613"
+    },
+    {
+      "title": "이게 되네? 제미나이 노트북LM 미친 활용법 51제",
+      "author": "오힘찬 저",
+      "price": "21,600원",
+      "image_url": "https://image.yes24.com/goods/148333977/L",
+      "goods_no": "148333977",
+      "detail_url": "https://www.yes24.com/product/goods/148333977",
+      "release_date": "2025년 07월 15일",
+      "sell_num": "30861"
+    },
+    {
+      "title": "이게 되네? 클로드 MCP 미친 활용법 27제 + 이게 되네? 제미나이 노트북LM 미친 활용법 51제 + 이게 되네? 챗GPT 미친 활용법 71제 세트\n                \n                    \n                        [\n3권                        ]",
+      "author": "오힘찬박현규 저",
+      "price": "64,800원",
+      "image_url": "https://image.yes24.com/goods/148569090/L",
+      "goods_no": "148569090",
+      "detail_url": "https://www.yes24.com/product/goods/148569090",
+      "release_date": "2025년 07월 15일",
       "sell_num": "0"
     },
     {
-      "title": "챗GPT와 함께 배우는 인공지능 엔트리 마스터하기",
-      "author": "김종훈,김현경,김동건 공저",
-      "price": "19,800원",
-      "image_url": "https://image.yes24.com/goods/143251916/L",
-      "goods_no": "143251916",
-      "detail_url": "https://www.yes24.com/product/goods/143251916",
-      "release_date": "2025년 03월 25일",
-      "sell_num": "2397"
+      "title": "2025 AI 트렌드 100",
+      "author": "Ai100연구소 저",
+      "price": "21,600원",
+      "image_url": "https://image.yes24.com/goods/147079038/L",
+      "goods_no": "147079038",
+      "detail_url": "https://www.yes24.com/product/goods/147079038",
+      "release_date": "2025년 06월 15일",
+      "sell_num": "8499"
     }
   ],
   "한빛미디어": [
     {
-      "title": "네이버 스마트스토어 운영하기",
-      "author": "서미진 저",
-      "price": "18,900원",
-      "image_url": "https://image.yes24.com/goods/146041188/L",
-      "goods_no": "146041188",
-      "detail_url": "https://www.yes24.com/product/goods/146041188",
-      "release_date": "2025년 05월 13일",
-      "sell_num": "300"
+      "title": "헤드 퍼스트 소프트웨어 아키텍처",
+      "author": "라주 간디마크 리처드닐 포드 저최영수 역 외 1명",
+      "price": "33,300원",
+      "image_url": "https://image.yes24.com/goods/153613588/L",
+      "goods_no": "153613588",
+      "detail_url": "https://www.yes24.com/product/goods/153613588",
+      "release_date": "2025년 09월 19일",
+      "sell_num": "120"
     },
     {
-      "title": "혼자 만들면서 공부하는 딥러닝\n                \n                    \n                        [ 저자 직강 유튜브 강의 + 오픈채팅 제공 ]",
-      "author": "박해선 역",
+      "title": "밑바닥부터 시작하는 웹 브라우저",
+      "author": "파벨 판체카크리스 해럴슨 저이형욱최병운 역",
+      "price": "40,500원",
+      "image_url": "https://image.yes24.com/goods/153499985/L",
+      "goods_no": "153499985",
+      "detail_url": "https://www.yes24.com/product/goods/153499985",
+      "release_date": "2025년 09월 15일",
+      "sell_num": "1200"
+    },
+    {
+      "title": "실무로 통하는 웹 API",
+      "author": "조 아타디 저김태곤 역",
+      "price": "24,300원",
+      "image_url": "https://image.yes24.com/goods/152086430/L",
+      "goods_no": "152086430",
+      "detail_url": "https://www.yes24.com/product/goods/152086430",
+      "release_date": "2025년 09월 01일",
+      "sell_num": "882"
+    },
+    {
+      "title": "스프링 6 레시피\n                \n                    \n                        [\n5판                        ]",
+      "author": "마틴 데이넘다니엘 루비오조시 롱서세진 저 외 4명",
+      "price": "56,700원",
+      "image_url": "https://image.yes24.com/goods/151884453/L",
+      "goods_no": "151884453",
+      "detail_url": "https://www.yes24.com/product/goods/151884453",
+      "release_date": "2025년 09월 01일",
+      "sell_num": "330"
+    },
+    {
+      "title": "정지훈의 양자 컴퓨터 강의",
+      "author": "정지훈 저",
+      "price": "21,600원",
+      "image_url": "https://image.yes24.com/goods/151789405/L",
+      "goods_no": "151789405",
+      "detail_url": "https://www.yes24.com/product/goods/151789405",
+      "release_date": "2025년 08월 29일",
+      "sell_num": "3312"
+    },
+    {
+      "title": "이것이 Spring AI다",
+      "author": "신용권 저",
+      "price": "29,700원",
+      "image_url": "https://image.yes24.com/goods/151976296/L",
+      "goods_no": "151976296",
+      "detail_url": "https://www.yes24.com/product/goods/151976296",
+      "release_date": "2025년 08월 24일",
+      "sell_num": "3846"
+    },
+    {
+      "title": "요즘 교사를 위한 AI 디지털 수업 설계 가이드 with 2022 개정 교육과정",
+      "author": "김진관김상섭이대형이상선 저 외 1명",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/151350143/L",
+      "goods_no": "151350143",
+      "detail_url": "https://www.yes24.com/product/goods/151350143",
+      "release_date": "2025년 08월 20일",
+      "sell_num": "6588"
+    },
+    {
+      "title": "회사에서 바로 통하는 실무 엑셀 파워포인트 워드&한글\n                \n                    \n                        [\n전면 개정판                        ]",
+      "author": "전미진이화진신면철 저",
+      "price": "24,300원",
+      "image_url": "https://image.yes24.com/goods/151066074/L",
+      "goods_no": "151066074",
+      "detail_url": "https://www.yes24.com/product/goods/151066074",
+      "release_date": "2025년 08월 19일",
+      "sell_num": "5127"
+    },
+    {
+      "title": "회사에서 바로 통하는 오토캐드 AutoCAD 2026",
+      "author": "심미현 저",
+      "price": "26,100원",
+      "image_url": "https://image.yes24.com/goods/151041605/L",
+      "goods_no": "151041605",
+      "detail_url": "https://www.yes24.com/product/goods/151041605",
+      "release_date": "2025년 08월 18일",
+      "sell_num": "1626"
+    },
+    {
+      "title": "구스마일의 월 1,000만 원 버는 유튜브 첫걸음 가이드북",
+      "author": "구스마일 저",
+      "price": "17,100원",
+      "image_url": "https://image.yes24.com/goods/150251372/L",
+      "goods_no": "150251372",
+      "detail_url": "https://www.yes24.com/product/goods/150251372",
+      "release_date": "2025년 08월 04일",
+      "sell_num": "2712"
+    }
+  ],
+  "인사이트": [
+    {
+      "title": "데이터 리터러시를 높이는 데이터 시각화",
+      "author": "네이선 야우 저한상택 역",
+      "price": "29,700원",
+      "image_url": "https://image.yes24.com/goods/152302455/L",
+      "goods_no": "152302455",
+      "detail_url": "https://www.yes24.com/product/goods/152302455",
+      "release_date": "2025년 09월 03일",
+      "sell_num": "2937"
+    },
+    {
+      "title": "파이썬다운 코드를 개발하는 63가지 실용 기법",
+      "author": "용 추이 저이주호 역",
+      "price": "34,200원",
+      "image_url": "https://image.yes24.com/goods/151253343/L",
+      "goods_no": "151253343",
+      "detail_url": "https://www.yes24.com/product/goods/151253343",
+      "release_date": "2025년 08월 20일",
+      "sell_num": "456"
+    },
+    {
+      "title": "한 입 크기로 잘라 먹는 Next.js",
+      "author": "이정환 저",
+      "price": "31,500원",
+      "image_url": "https://image.yes24.com/goods/150240157/L",
+      "goods_no": "150240157",
+      "detail_url": "https://www.yes24.com/product/goods/150240157",
+      "release_date": "2025년 08월 04일",
+      "sell_num": "726"
+    },
+    {
+      "title": "#100일챌린지",
+      "author": "오츠카 아미 저류두진 역",
+      "price": "16,200원",
+      "image_url": "https://image.yes24.com/goods/148895796/L",
+      "goods_no": "148895796",
+      "detail_url": "https://www.yes24.com/product/goods/148895796",
+      "release_date": "2025년 07월 21일",
+      "sell_num": "1548"
+    },
+    {
+      "title": "진짜 쉬운 자료 구조와 알고리즘 파이썬 편",
+      "author": "제이 웬그로우 저심재철 역",
+      "price": "29,700원",
+      "image_url": "https://image.yes24.com/goods/148876430/L",
+      "goods_no": "148876430",
+      "detail_url": "https://www.yes24.com/product/goods/148876430",
+      "release_date": "2025년 07월 21일",
+      "sell_num": "210"
+    },
+    {
+      "title": "코틀린 아카데미: 이펙티브 코틀린",
+      "author": "마르친 모스카와 저강진혁김보경 역신성열 감수",
+      "price": "29,700원",
+      "image_url": "https://image.yes24.com/goods/147079622/L",
+      "goods_no": "147079622",
+      "detail_url": "https://www.yes24.com/product/goods/147079622",
+      "release_date": "2025년 06월 09일",
+      "sell_num": "876"
+    },
+    {
+      "title": "DuckDB 인 액션",
+      "author": "마크 니드햄마이클 헝거마이클 시몬스 저김의윤 역",
       "price": "25,200원",
-      "image_url": "https://image.yes24.com/goods/146006911/L",
-      "goods_no": "146006911",
-      "detail_url": "https://www.yes24.com/product/goods/146006911",
-      "release_date": "2025년 05월 12일",
+      "image_url": "https://image.yes24.com/goods/145630370/L",
+      "goods_no": "145630370",
+      "detail_url": "https://www.yes24.com/product/goods/145630370",
+      "release_date": "2025년 05월 07일",
+      "sell_num": "780"
+    },
+    {
+      "title": "30가지 패턴으로 배우는 분산 시스템 설계와 구현 기법",
+      "author": "운메시 조시 저이도경김영준정재부 역",
+      "price": "31,500원",
+      "image_url": "https://image.yes24.com/goods/144487860/L",
+      "goods_no": "144487860",
+      "detail_url": "https://www.yes24.com/product/goods/144487860",
+      "release_date": "2025년 04월 15일",
+      "sell_num": "1458"
+    },
+    {
+      "title": "우아한 C 언어 코딩 패턴",
+      "author": "크리스토퍼 프레셰른 저정기훈 역",
+      "price": "28,800원",
+      "image_url": "https://image.yes24.com/goods/144026018/L",
+      "goods_no": "144026018",
+      "detail_url": "https://www.yes24.com/product/goods/144026018",
+      "release_date": "2025년 04월 02일",
+      "sell_num": "726"
+    },
+    {
+      "title": "코틀린 아카데미 : 고급편",
+      "author": "마르친 모스카와 저신성열 역",
+      "price": "27,000원",
+      "image_url": "https://image.yes24.com/goods/141732613/L",
+      "goods_no": "141732613",
+      "detail_url": "https://www.yes24.com/product/goods/141732613",
+      "release_date": "2025년 01월 24일",
+      "sell_num": "972"
+    }
+  ],
+  "리코멘드": [
+    {
+      "title": "10분 만에 따라 하는 Claude MCP 업무 자동화 혁신 가이드",
+      "author": "이호준 저",
+      "price": "16,920원",
+      "image_url": "https://image.yes24.com/goods/148173979/L",
+      "goods_no": "148173979",
+      "detail_url": "https://www.yes24.com/product/goods/148173979",
+      "release_date": "2025년 07월 10일",
+      "sell_num": "2094"
+    },
+    {
+      "title": "테디노트의 랭체인을 활용한 RAG 비법노트 [심화편]",
+      "author": "이경록 저",
+      "price": "25,200원",
+      "image_url": "https://image.yes24.com/goods/147569409/L",
+      "goods_no": "147569409",
+      "detail_url": "https://www.yes24.com/product/goods/147569409",
+      "release_date": "2025년 06월 20일",
+      "sell_num": "3378"
+    },
+    {
+      "title": "테디노트의 랭체인을 활용한 RAG 비법노트 : 기본편",
+      "author": "이경록 저",
+      "price": "30,600원",
+      "image_url": "https://image.yes24.com/goods/146874665/L",
+      "goods_no": "146874665",
+      "detail_url": "https://www.yes24.com/product/goods/146874665",
+      "release_date": "2025년 05월 30일",
+      "sell_num": "7056"
+    },
+    {
+      "title": "레베기의 유튜브 콘텐츠 POWER 법칙",
+      "author": "레베기 저",
+      "price": "16,920원",
+      "image_url": "https://image.yes24.com/goods/146285291/L",
+      "goods_no": "146285291",
+      "detail_url": "https://www.yes24.com/product/goods/146285291",
+      "release_date": "2025년 05월 20일",
+      "sell_num": "738"
+    },
+    {
+      "title": "챗GPT·퍼플렉시티·클로드·코파일럿·제미나이 다 잘함",
+      "author": "이호정 저",
+      "price": "21,600원",
+      "image_url": "https://image.yes24.com/goods/140829086/L",
+      "goods_no": "140829086",
+      "detail_url": "https://www.yes24.com/product/goods/140829086",
+      "release_date": "2025년 01월 15일",
+      "sell_num": "12525"
+    },
+    {
+      "title": "GPTs 제작·노출·고도화·수익화 진짜 잘함",
+      "author": "이태경 저",
+      "price": "16,920원",
+      "image_url": "https://image.yes24.com/goods/139870504/L",
+      "goods_no": "139870504",
+      "detail_url": "https://www.yes24.com/product/goods/139870504",
+      "release_date": "2024년 12월 10일",
+      "sell_num": "8112"
+    },
+    {
+      "title": "방구석 부트캠프 자바",
+      "author": "김경록 저",
+      "price": "28,800원",
+      "image_url": "https://image.yes24.com/goods/134640852/L",
+      "goods_no": "134640852",
+      "detail_url": "https://www.yes24.com/product/goods/134640852",
+      "release_date": "2024년 10월 21일",
+      "sell_num": "528"
+    },
+    {
+      "title": "프롬프트 엔지니어의 업무일지",
+      "author": "강수진 저",
+      "price": "25,200원",
+      "image_url": "https://image.yes24.com/goods/130153561/L",
+      "goods_no": "130153561",
+      "detail_url": "https://www.yes24.com/product/goods/130153561",
+      "release_date": "2024년 08월 20일",
+      "sell_num": "7182"
+    },
+    {
+      "title": "최고의 프롬프트 엔지니어링 강의",
+      "author": "김진중 저",
+      "price": "21,600원",
+      "image_url": "https://image.yes24.com/goods/126690830/L",
+      "goods_no": "126690830",
+      "detail_url": "https://www.yes24.com/product/goods/126690830",
+      "release_date": "2024년 06월 10일",
+      "sell_num": "7575"
+    },
+    {
+      "title": "제가 만든 GPT는 당신이 만든 GPT와 전혀 다릅니다",
+      "author": "유호석 저",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/126690034/L",
+      "goods_no": "126690034",
+      "detail_url": "https://www.yes24.com/product/goods/126690034",
+      "release_date": "2024년 06월 10일",
+      "sell_num": "3642"
+    }
+  ],
+  "길벗": [
+    {
+      "title": "2026시나공 컴퓨터활용능력 1급 실기 총정리\n                \n                    \n                        [\n부록: 무료동영상 강의+온라인 채점서비스                        ]",
+      "author": "길벗알앤디 저",
+      "price": "23,400원",
+      "image_url": "https://image.yes24.com/goods/151972277/L",
+      "goods_no": "151972277",
+      "detail_url": "https://www.yes24.com/product/goods/151972277",
+      "release_date": "2025년 09월 29일",
+      "sell_num": "2352"
+    },
+    {
+      "title": "2026시나공 컴퓨터활용능력 2급 실기 총정리\n                \n                    \n                        [\n부록: 무료동영상 강의+온라인 채점서비스                        ]",
+      "author": "길벗알앤디 저",
+      "price": "16,200원",
+      "image_url": "https://image.yes24.com/goods/151972873/L",
+      "goods_no": "151972873",
+      "detail_url": "https://www.yes24.com/product/goods/151972873",
+      "release_date": "2025년 09월 29일",
+      "sell_num": "1710"
+    },
+    {
+      "title": "직장인을 위한 AI 실무 엑셀&파워포인트&워드",
+      "author": "박미정,박은진 저",
+      "price": "23,400원",
+      "image_url": "https://image.yes24.com/goods/153663553/L",
+      "goods_no": "153663553",
+      "detail_url": "https://www.yes24.com/product/goods/153663553",
+      "release_date": "2025년 09월 29일",
+      "sell_num": "0"
+    },
+    {
+      "title": "AI 광고 제작",
+      "author": "문수민민지영전은재최종수 저 외 1명",
+      "price": "24,300원",
+      "image_url": "https://image.yes24.com/goods/151980353/L",
+      "goods_no": "151980353",
+      "detail_url": "https://www.yes24.com/product/goods/151980353",
+      "release_date": "2025년 09월 22일",
+      "sell_num": "2598"
+    },
+    {
+      "title": "한 걸음 앞선 개발자가 지금 꼭 알아야 할 클로드 코드",
+      "author": "조훈정찬훈 저",
+      "price": "23,400원",
+      "image_url": "https://image.yes24.com/goods/152379887/L",
+      "goods_no": "152379887",
+      "detail_url": "https://www.yes24.com/product/goods/152379887",
+      "release_date": "2025년 09월 12일",
+      "sell_num": "9714"
+    },
+    {
+      "title": "VPython으로 시작하는 융합 시뮬레이션 수업",
+      "author": "송석리박솔애 저",
+      "price": "22,500원",
+      "image_url": "https://image.yes24.com/goods/152815857/L",
+      "goods_no": "152815857",
+      "detail_url": "https://www.yes24.com/product/goods/152815857",
+      "release_date": "2025년 09월 01일",
+      "sell_num": "4002"
+    },
+    {
+      "title": "코딩 자율학습 리액트 프런트엔드 개발 입문",
+      "author": "김기수 저",
+      "price": "37,800원",
+      "image_url": "https://image.yes24.com/goods/151667493/L",
+      "goods_no": "151667493",
+      "detail_url": "https://www.yes24.com/product/goods/151667493",
+      "release_date": "2025년 09월 01일",
+      "sell_num": "1170"
+    },
+    {
+      "title": "LLM 프롬프트 활용 교과서",
+      "author": "쿠지라 히코즈쿠에 저김성훈 역",
+      "price": "29,700원",
+      "image_url": "https://image.yes24.com/goods/152470295/L",
+      "goods_no": "152470295",
+      "detail_url": "https://www.yes24.com/product/goods/152470295",
+      "release_date": "2025년 08월 31일",
+      "sell_num": "1944"
+    },
+    {
+      "title": "현장에서 통하는 도메인 주도 설계 실전 가이드",
+      "author": "마스다 토오루타나카 히사테루오쿠자와 토시키나카무라 아츠시 저 외 3명",
+      "price": "21,600원",
+      "image_url": "https://image.yes24.com/goods/151855534/L",
+      "goods_no": "151855534",
+      "detail_url": "https://www.yes24.com/product/goods/151855534",
+      "release_date": "2025년 08월 22일",
+      "sell_num": "894"
+    },
+    {
+      "title": "출근하는 디자이너, 프리랜서 디자이너",
+      "author": "공작슈퍼 저",
+      "price": "16,920원",
+      "image_url": "https://image.yes24.com/goods/151263244/L",
+      "goods_no": "151263244",
+      "detail_url": "https://www.yes24.com/product/goods/151263244",
+      "release_date": "2025년 08월 20일",
+      "sell_num": "1866"
+    }
+  ],
+  "길벗캠퍼스": [
+    {
+      "title": "딥러닝의 정석 with 파이토치",
+      "author": "김현정유상현 저",
+      "price": "34,000원",
+      "image_url": "https://image.yes24.com/goods/153620057/L",
+      "goods_no": "153620057",
+      "detail_url": "https://www.yes24.com/product/goods/153620057",
+      "release_date": "2025년 09월 30일",
+      "sell_num": "0"
+    },
+    {
+      "title": "피그마 with AI",
+      "author": "신승희 저",
+      "price": "27,000원",
+      "image_url": "https://image.yes24.com/goods/150698238/L",
+      "goods_no": "150698238",
+      "detail_url": "https://www.yes24.com/product/goods/150698238",
+      "release_date": "2025년 08월 29일",
+      "sell_num": "1533"
+    },
+    {
+      "title": "인공지능을 위한 확률과 통계 with 파이썬",
+      "author": "이연우 저",
+      "price": "38,000원",
+      "image_url": "https://image.yes24.com/goods/150118066/L",
+      "goods_no": "150118066",
+      "detail_url": "https://www.yes24.com/product/goods/150118066",
+      "release_date": "2025년 07월 31일",
+      "sell_num": "588"
+    },
+    {
+      "title": "HTML+CSS 실전 입문서",
+      "author": "김영일 저",
+      "price": "25,000원",
+      "image_url": "https://image.yes24.com/goods/148178374/L",
+      "goods_no": "148178374",
+      "detail_url": "https://www.yes24.com/product/goods/148178374",
+      "release_date": "2025년 07월 15일",
+      "sell_num": "168"
+    },
+    {
+      "title": "게임 UI 디자인 교과서",
+      "author": "이은정김범석 저",
+      "price": "33,000원",
+      "image_url": "https://image.yes24.com/goods/147561128/L",
+      "goods_no": "147561128",
+      "detail_url": "https://www.yes24.com/product/goods/147561128",
+      "release_date": "2025년 06월 20일",
+      "sell_num": "414"
+    },
+    {
+      "title": "웹툰 제작 가이드 with AI",
+      "author": "김가이 저",
+      "price": "30,000원",
+      "image_url": "https://image.yes24.com/goods/146504995/L",
+      "goods_no": "146504995",
+      "detail_url": "https://www.yes24.com/product/goods/146504995",
+      "release_date": "2025년 05월 30일",
+      "sell_num": "756"
+    },
+    {
+      "title": "유니티 게임 제작 입문",
+      "author": "오연재정승언문수경이민혜 저",
+      "price": "34,000원",
+      "image_url": "https://image.yes24.com/goods/146504997/L",
+      "goods_no": "146504997",
+      "detail_url": "https://www.yes24.com/product/goods/146504997",
+      "release_date": "2025년 05월 30일",
+      "sell_num": "564"
+    },
+    {
+      "title": "리액트의 정석 with 타입스크립트",
+      "author": "이창현 저",
+      "price": "34,000원",
+      "image_url": "https://image.yes24.com/goods/143823236/L",
+      "goods_no": "143823236",
+      "detail_url": "https://www.yes24.com/product/goods/143823236",
+      "release_date": "2025년 03월 31일",
+      "sell_num": "672"
+    },
+    {
+      "title": "프리미어 프로+소라 with AI",
+      "author": "장윤제오창근 저",
+      "price": "29,000원",
+      "image_url": "https://image.yes24.com/goods/143807544/L",
+      "goods_no": "143807544",
+      "detail_url": "https://www.yes24.com/product/goods/143807544",
+      "release_date": "2025년 03월 31일",
+      "sell_num": "534"
+    },
+    {
+      "title": "운영체제",
+      "author": "김덕수 저",
+      "price": "28,000원",
+      "image_url": "https://image.yes24.com/goods/141325050/L",
+      "goods_no": "141325050",
+      "detail_url": "https://www.yes24.com/product/goods/141325050",
+      "release_date": "2025년 01월 15일",
+      "sell_num": "276"
+    }
+  ],
+  "책만": [
+    {
+      "title": "기업과 고객을 파괴하는 해킹과 사이버 보안의 모든 것",
+      "author": "유진 스파포드리 메트칼프조사이어 다이크스트라 저김경곤 역 외 2명",
+      "price": "29,700원",
+      "image_url": "https://image.yes24.com/goods/150027797/L",
+      "goods_no": "150027797",
+      "detail_url": "https://www.yes24.com/product/goods/150027797",
+      "release_date": "2025년 08월 06일",
+      "sell_num": "1650"
+    },
+    {
+      "title": "인텐트 마케팅 혁명",
+      "author": "박세용한초롱정길선권형우 저",
+      "price": "22,500원",
+      "image_url": "https://image.yes24.com/goods/146262310/L",
+      "goods_no": "146262310",
+      "detail_url": "https://www.yes24.com/product/goods/146262310",
+      "release_date": "2025년 05월 13일",
+      "sell_num": "1677"
+    },
+    {
+      "title": "인텐트 마케팅 혁명 + 고객이 스스로 찾아오는 브랜드 검색 마케팅 세트\n                \n                    \n                        [\n2권                        ]",
+      "author": "타베 마사키박세용한초롱정길선 저 외 2명",
+      "price": "40,500원",
+      "image_url": "https://image.yes24.com/goods/146874935/L",
+      "goods_no": "146874935",
+      "detail_url": "https://www.yes24.com/product/goods/146874935",
+      "release_date": "2025년 05월 13일",
+      "sell_num": "0"
+    },
+    {
+      "title": "모던 소프트웨어 엔지니어링",
+      "author": "데이비드 팔리 저박재호 역",
+      "price": "25,200원",
+      "image_url": "https://image.yes24.com/goods/144491660/L",
+      "goods_no": "144491660",
+      "detail_url": "https://www.yes24.com/product/goods/144491660",
+      "release_date": "2025년 04월 09일",
+      "sell_num": "2934"
+    },
+    {
+      "title": "카프카 커넥트",
+      "author": "미카엘 메종케이트 스탠리 저고승범이상헌 역 외 1명",
+      "price": "29,700원",
+      "image_url": "https://image.yes24.com/goods/142877531/L",
+      "goods_no": "142877531",
+      "detail_url": "https://www.yes24.com/product/goods/142877531",
+      "release_date": "2025년 02월 28일",
+      "sell_num": "870"
+    },
+    {
+      "title": "사용자를 속여라! 다크패턴",
+      "author": "나카노 유키 저장건희 역",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/142611305/L",
+      "goods_no": "142611305",
+      "detail_url": "https://www.yes24.com/product/goods/142611305",
+      "release_date": "2025년 02월 20일",
+      "sell_num": "816"
+    },
+    {
+      "title": "고객이 스스로 찾아오는 브랜드 검색 마케팅",
+      "author": "타베 마사키 저리스닝마인드 팀 역",
+      "price": "18,000원",
+      "image_url": "https://image.yes24.com/goods/140478790/L",
+      "goods_no": "140478790",
+      "detail_url": "https://www.yes24.com/product/goods/140478790",
+      "release_date": "2025년 01월 08일",
+      "sell_num": "2922"
+    },
+    {
+      "title": "컬러와이즈 ColorWise",
+      "author": "케이트 스트라치니 저권혜정 역",
+      "price": "16,200원",
+      "image_url": "https://image.yes24.com/goods/140202434/L",
+      "goods_no": "140202434",
+      "detail_url": "https://www.yes24.com/product/goods/140202434",
+      "release_date": "2024년 12월 26일",
+      "sell_num": "618"
+    },
+    {
+      "title": "모두를 위한 소프트웨어 보안 설계와 구현",
+      "author": "로렌 콘펠더 저김영기박기성 역",
+      "price": "28,800원",
+      "image_url": "https://image.yes24.com/goods/139869756/L",
+      "goods_no": "139869756",
+      "detail_url": "https://www.yes24.com/product/goods/139869756",
+      "release_date": "2024년 12월 11일",
+      "sell_num": "936"
+    },
+    {
+      "title": "딱 한 줄로! 파이썬 제대로 코딩하기",
+      "author": "크리스찬 마이어 저장현희 역",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/134029042/L",
+      "goods_no": "134029042",
+      "detail_url": "https://www.yes24.com/product/goods/134029042",
+      "release_date": "2024년 10월 11일",
+      "sell_num": "966"
+    }
+  ],
+  "프리렉": [
+    {
+      "title": "기본 이론에서 실무 예제까지, HANA 기반 Easy ABAP 3.0\n                \n                    \n                        [\n전2권                        ]",
+      "author": "김성준박재형임재원한익환 저 외 1명",
+      "price": "54,000원",
+      "image_url": "https://image.yes24.com/goods/153497959/L",
+      "goods_no": "153497959",
+      "detail_url": "https://www.yes24.com/product/goods/153497959",
+      "release_date": "2025년 09월 22일",
+      "sell_num": "3390"
+    },
+    {
+      "title": "개발자답게 코드로 익히는 강화학습",
+      "author": "멀티코어조준희강장묵이상한 저 외 1명",
+      "price": "28,800원",
+      "image_url": "https://image.yes24.com/goods/151347658/L",
+      "goods_no": "151347658",
+      "detail_url": "https://www.yes24.com/product/goods/151347658",
+      "release_date": "2025년 08월 25일",
+      "sell_num": "312"
+    },
+    {
+      "title": "암호, 비밀을 지키는 과학",
+      "author": "파노스 루리다스 저안동현 역",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/148376804/L",
+      "goods_no": "148376804",
+      "detail_url": "https://www.yes24.com/product/goods/148376804",
+      "release_date": "2025년 07월 10일",
+      "sell_num": "510"
+    },
+    {
+      "title": "비즈니스에 바로 통하는 캔바×디자인",
+      "author": "박설연 저",
+      "price": "21,600원",
+      "image_url": "https://image.yes24.com/goods/146935832/L",
+      "goods_no": "146935832",
+      "detail_url": "https://www.yes24.com/product/goods/146935832",
+      "release_date": "2025년 06월 04일",
+      "sell_num": "1134"
+    },
+    {
+      "title": "RAG 마스터 : 랭체인으로 완성하는 LLM 서비스",
+      "author": "브라이스 유조경아박수진김재웅 저",
+      "price": "28,800원",
+      "image_url": "https://image.yes24.com/goods/144689418/L",
+      "goods_no": "144689418",
+      "detail_url": "https://www.yes24.com/product/goods/144689418",
+      "release_date": "2025년 04월 28일",
+      "sell_num": "2688"
+    },
+    {
+      "title": "Select SQL 쿼리 작성법 From 기초편; 이럴 땐, 이런 쿼리!",
+      "author": "서경숙장석은김현중엄태명 저",
+      "price": "23,400원",
+      "image_url": "https://image.yes24.com/goods/145292039/L",
+      "goods_no": "145292039",
+      "detail_url": "https://www.yes24.com/product/goods/145292039",
+      "release_date": "2025년 04월 25일",
+      "sell_num": "804"
+    },
+    {
+      "title": "대표 전략으로 입문하는 미국 주식 퀀트 투자",
+      "author": "이용환 저",
+      "price": "27,000원",
+      "image_url": "https://image.yes24.com/goods/141731540/L",
+      "goods_no": "141731540",
+      "detail_url": "https://www.yes24.com/product/goods/141731540",
+      "release_date": "2025년 02월 03일",
+      "sell_num": "1986"
+    },
+    {
+      "title": "AI 리터러시 : 인공지능 필수 지식부터 완벽 활용까지",
+      "author": "김용성 저",
+      "price": "22,500원",
+      "image_url": "https://image.yes24.com/goods/139705941/L",
+      "goods_no": "139705941",
+      "detail_url": "https://www.yes24.com/product/goods/139705941",
+      "release_date": "2024년 12월 02일",
+      "sell_num": "33198"
+    },
+    {
+      "title": "AI 골드러시, 돈을 버는 자는 누구인가",
+      "author": "시마즈 쇼 저안동현 역",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/135703661/L",
+      "goods_no": "135703661",
+      "detail_url": "https://www.yes24.com/product/goods/135703661",
+      "release_date": "2024년 10월 30일",
+      "sell_num": "504"
+    },
+    {
+      "title": "AX 시대, 기업의 승부수는 사업·서비스·조직의 AI 전환에 있다",
+      "author": "카지타니 켄토 저안동현 역",
+      "price": "18,000원",
+      "image_url": "https://image.yes24.com/goods/129391340/L",
+      "goods_no": "129391340",
+      "detail_url": "https://www.yes24.com/product/goods/129391340",
+      "release_date": "2024년 08월 12일",
+      "sell_num": "660"
+    }
+  ],
+  "이지스퍼블리싱": [
+    {
+      "title": "된다! 미리캔버스&캔바 디자인 수업",
+      "author": "배가을 저",
+      "price": "21,600원",
+      "image_url": "https://image.yes24.com/goods/152553545/L",
+      "goods_no": "152553545",
+      "detail_url": "https://www.yes24.com/product/goods/152553545",
+      "release_date": "2025년 09월 15일",
+      "sell_num": "2730"
+    },
+    {
+      "title": "Do it! 알고리즘 코딩 테스트 파이썬 편\n                \n                    \n                        [\n개정판                        ]",
+      "author": "김종관 저",
+      "price": "31,500원",
+      "image_url": "https://image.yes24.com/goods/151761784/L",
+      "goods_no": "151761784",
+      "detail_url": "https://www.yes24.com/product/goods/151761784",
+      "release_date": "2025년 09월 02일",
+      "sell_num": "1575"
+    },
+    {
+      "title": "오늘을 남기는 기록, 스마트폰 사진 촬영&보정",
+      "author": "민썸 저",
+      "price": "18,900원",
+      "image_url": "https://image.yes24.com/goods/150308211/L",
+      "goods_no": "150308211",
+      "detail_url": "https://www.yes24.com/product/goods/150308211",
+      "release_date": "2025년 08월 29일",
+      "sell_num": "8490"
+    },
+    {
+      "title": "된다! 하루 만에 만드는 AI 사진 & 이미지",
+      "author": "김원석 저",
+      "price": "16,020원",
+      "image_url": "https://image.yes24.com/goods/151780100/L",
+      "goods_no": "151780100",
+      "detail_url": "https://www.yes24.com/product/goods/151780100",
+      "release_date": "2025년 08월 26일",
+      "sell_num": "5136"
+    },
+    {
+      "title": "Do it! 알고리즘 코딩 테스트 C++ 편\n                \n                    \n                        [\n개정판                        ]",
+      "author": "김종관 저",
+      "price": "35,100원",
+      "image_url": "https://image.yes24.com/goods/150240159/L",
+      "goods_no": "150240159",
+      "detail_url": "https://www.yes24.com/product/goods/150240159",
+      "release_date": "2025년 08월 15일",
+      "sell_num": "1074"
+    },
+    {
+      "title": "당신은 AI를 어디까지 믿을 수 있나요? (큰글자책)",
+      "author": "박찬선 저",
+      "price": "26,000원",
+      "image_url": "https://image.yes24.com/goods/150547931/L",
+      "goods_no": "150547931",
+      "detail_url": "https://www.yes24.com/product/goods/150547931",
+      "release_date": "2025년 08월 08일",
+      "sell_num": "24"
+    },
+    {
+      "title": "Do it! 플러터 앱 개발&출시하기\n                \n                    \n                        [\n개정판                        ]",
+      "author": "조준수 저",
+      "price": "32,400원",
+      "image_url": "https://image.yes24.com/goods/147871988/L",
+      "goods_no": "147871988",
+      "detail_url": "https://www.yes24.com/product/goods/147871988",
+      "release_date": "2025년 07월 08일",
+      "sell_num": "1962"
+    },
+    {
+      "title": "Do it! 알고리즘 코딩 테스트 자바 편\n                \n                    \n                        [\n개정판                        ]",
+      "author": "김종관 저",
+      "price": "32,400원",
+      "image_url": "https://image.yes24.com/goods/148122935/L",
+      "goods_no": "148122935",
+      "detail_url": "https://www.yes24.com/product/goods/148122935",
+      "release_date": "2025년 06월 30일",
+      "sell_num": "1572"
+    },
+    {
+      "title": "Do it! 알고리즘 코딩 테스트 자바 편 + Do it! 자료구조와 함께 배우는 알고리즘 입문 자바 편 세트\n                \n                    \n                        [\n2권                        ]",
+      "author": "시바타 보요김종관 저강민 역",
+      "price": "52,200원",
+      "image_url": "https://image.yes24.com/goods/148176432/L",
+      "goods_no": "148176432",
+      "detail_url": "https://www.yes24.com/product/goods/148176432",
+      "release_date": "2025년 06월 30일",
+      "sell_num": "0"
+    },
+    {
+      "title": "당신은 AI를 어디까지 믿을 수 있나요?",
+      "author": "박찬선 저",
+      "price": "15,120원",
+      "image_url": "https://image.yes24.com/goods/147098142/L",
+      "goods_no": "147098142",
+      "detail_url": "https://www.yes24.com/product/goods/147098142",
+      "release_date": "2025년 06월 24일",
+      "sell_num": "330"
+    }
+  ],
+  "제이펍": [
+    {
+      "title": "생각을 맡기는 사람들: 호모 브레인리스",
+      "author": "안광섭 저",
+      "price": "18,000원",
+      "image_url": "https://image.yes24.com/goods/153156828/L",
+      "goods_no": "153156828",
+      "detail_url": "https://www.yes24.com/product/goods/153156828",
+      "release_date": "2025년 09월 18일",
+      "sell_num": "750"
+    },
+    {
+      "title": "LLM 프로덕션 엔지니어링",
+      "author": "루이-프랑수아 부샤르루이 피터스 저김태헌 역",
+      "price": "32,400원",
+      "image_url": "https://image.yes24.com/goods/152649470/L",
+      "goods_no": "152649470",
+      "detail_url": "https://www.yes24.com/product/goods/152649470",
+      "release_date": "2025년 09월 11일",
+      "sell_num": "450"
+    },
+    {
+      "title": "알아서 잘하는 에이전틱 AI 시스템 구축하기\n                \n                    \n                        [\n반양장                        ]",
+      "author": "안자나바 비스와스릭 탈루크다르 저김모세 역",
+      "price": "25,200원",
+      "image_url": "https://image.yes24.com/goods/151381888/L",
+      "goods_no": "151381888",
+      "detail_url": "https://www.yes24.com/product/goods/151381888",
+      "release_date": "2025년 09월 04일",
+      "sell_num": "3288"
+    },
+    {
+      "title": "러스트 클린 코드",
+      "author": "브렌든 매슈스윤인도 저",
+      "price": "25,200원",
+      "image_url": "https://image.yes24.com/goods/153063596/L",
+      "goods_no": "153063596",
+      "detail_url": "https://www.yes24.com/product/goods/153063596",
+      "release_date": "2025년 09월 04일",
+      "sell_num": "840"
+    },
+    {
+      "title": "딥러닝 제대로 이해하기",
+      "author": "사이먼 J. D. 프린스 저고연이 역",
+      "price": "34,200원",
+      "image_url": "https://image.yes24.com/goods/150795058/L",
+      "goods_no": "150795058",
+      "detail_url": "https://www.yes24.com/product/goods/150795058",
+      "release_date": "2025년 08월 28일",
+      "sell_num": "3111"
+    },
+    {
+      "title": "챗GPT와 엑셀로 만드는 주식 & 암호화폐 자동매매 시스템",
+      "author": "설근민 저",
+      "price": "22,500원",
+      "image_url": "https://image.yes24.com/goods/151170115/L",
+      "goods_no": "151170115",
+      "detail_url": "https://www.yes24.com/product/goods/151170115",
+      "release_date": "2025년 08월 28일",
+      "sell_num": "2160"
+    },
+    {
+      "title": "LUVIT♥ 커서로 시작하는 바이브 코딩",
+      "author": "김진호 저",
+      "price": "22,500원",
+      "image_url": "https://image.yes24.com/goods/149749694/L",
+      "goods_no": "149749694",
+      "detail_url": "https://www.yes24.com/product/goods/149749694",
+      "release_date": "2025년 08월 13일",
+      "sell_num": "2220"
+    },
+    {
+      "title": "디자인 트렌드 아카이브 포토샵 & 일러스트레이터",
+      "author": "김혜주 저",
+      "price": "21,600원",
+      "image_url": "https://image.yes24.com/goods/149190058/L",
+      "goods_no": "149190058",
+      "detail_url": "https://www.yes24.com/product/goods/149190058",
+      "release_date": "2025년 07월 24일",
+      "sell_num": "2274"
+    },
+    {
+      "title": "네이처 오브 코드 (자바스크립트판)",
+      "author": "대니얼 시프먼 저윤인성 역",
+      "price": "31,500원",
+      "image_url": "https://image.yes24.com/goods/148477424/L",
+      "goods_no": "148477424",
+      "detail_url": "https://www.yes24.com/product/goods/148477424",
+      "release_date": "2025년 07월 22일",
+      "sell_num": "948"
+    },
+    {
+      "title": "심각한 테라폼 중독입니다",
+      "author": "홍수민정윤의 저",
+      "price": "25,200원",
+      "image_url": "https://image.yes24.com/goods/147974853/L",
+      "goods_no": "147974853",
+      "detail_url": "https://www.yes24.com/product/goods/147974853",
+      "release_date": "2025년 07월 14일",
+      "sell_num": "1584"
+    }
+  ],
+  "위키북스": [
+    {
+      "title": "그림으로 쉽게 배우는 HTML+CSS+자바스크립트",
+      "author": "임지영 저",
+      "price": "24,300원",
+      "image_url": "https://image.yes24.com/goods/152847458/L",
+      "goods_no": "152847458",
+      "detail_url": "https://www.yes24.com/product/goods/152847458",
+      "release_date": "2025년 09월 10일",
       "sell_num": "180"
     },
     {
-      "title": "소문난 명강의 김길성의 네트워크 딥다이브",
-      "author": "김길성 역",
-      "price": "43,200원",
-      "image_url": "https://image.yes24.com/goods/146006313/L",
-      "goods_no": "146006313",
-      "detail_url": "https://www.yes24.com/product/goods/146006313",
-      "release_date": "2025년 05월 07일",
-      "sell_num": "270"
+      "title": "데이터ㆍAI 시스템 아키텍트를 위한 실무 가이드",
+      "author": "윤대희 저",
+      "price": "37,800원",
+      "image_url": "https://image.yes24.com/goods/151347071/L",
+      "goods_no": "151347071",
+      "detail_url": "https://www.yes24.com/product/goods/151347071",
+      "release_date": "2025년 08월 27일",
+      "sell_num": "168"
     },
     {
-      "title": "요즘 교사를 위한 AI 수업 활용 가이드 with 2022 개정 교육과정",
-      "author": "박진환공지훈서원진 저",
+      "title": "실전! 프로젝트로 배우는 딥러닝 컴퓨터비전\n                \n                    \n                        [\n개정판                        ]",
+      "author": "김혜진왕진영 저",
+      "price": "31,500원",
+      "image_url": "https://image.yes24.com/goods/150619242/L",
+      "goods_no": "150619242",
+      "detail_url": "https://www.yes24.com/product/goods/150619242",
+      "release_date": "2025년 08월 19일",
+      "sell_num": "324"
+    },
+    {
+      "title": "생성형 AI 인 액션",
+      "author": "아미트 바리 저이준 역",
+      "price": "31,500원",
+      "image_url": "https://image.yes24.com/goods/150536946/L",
+      "goods_no": "150536946",
+      "detail_url": "https://www.yes24.com/product/goods/150536946",
+      "release_date": "2025년 08월 14일",
+      "sell_num": "1044"
+    },
+    {
+      "title": "도커로 구축한 랩에서 혼자 실습하며 배우는 네트워크 프로토콜 입문",
+      "author": "미야타 히로시 저이민성 역",
+      "price": "28,800원",
+      "image_url": "https://image.yes24.com/goods/150118529/L",
+      "goods_no": "150118529",
+      "detail_url": "https://www.yes24.com/product/goods/150118529",
+      "release_date": "2025년 08월 04일",
+      "sell_num": "792"
+    },
+    {
+      "title": "LLM과 RAG로 구현하는 AI 애플리케이션",
+      "author": "에디 유대니얼 김김현지 저",
+      "price": "27,000원",
+      "image_url": "https://image.yes24.com/goods/148861651/L",
+      "goods_no": "148861651",
+      "detail_url": "https://www.yes24.com/product/goods/148861651",
+      "release_date": "2025년 07월 18일",
+      "sell_num": "1206"
+    },
+    {
+      "title": "AI 에이전트 인 액션",
+      "author": "마이클 래넘 저307번역랩류광 역",
+      "price": "27,000원",
+      "image_url": "https://image.yes24.com/goods/148412805/L",
+      "goods_no": "148412805",
+      "detail_url": "https://www.yes24.com/product/goods/148412805",
+      "release_date": "2025년 07월 10일",
+      "sell_num": "1737"
+    },
+    {
+      "title": "시작하세요! 도커/쿠버네티스\n                \n                    \n                        [\n개정2판                        ]",
+      "author": "용찬호 저",
+      "price": "32,400원",
+      "image_url": "https://image.yes24.com/goods/148124010/L",
+      "goods_no": "148124010",
+      "detail_url": "https://www.yes24.com/product/goods/148124010",
+      "release_date": "2025년 07월 03일",
+      "sell_num": "1443"
+    },
+    {
+      "title": "랭체인과 랭그래프로 구현하는 RAG·AI 에이전트 실전 입문",
+      "author": "니시미 마사히로요시다 신고오시마 유키 저최용 역",
+      "price": "31,500원",
+      "image_url": "https://image.yes24.com/goods/147123137/L",
+      "goods_no": "147123137",
+      "detail_url": "https://www.yes24.com/product/goods/147123137",
+      "release_date": "2025년 06월 20일",
+      "sell_num": "1455"
+    },
+    {
+      "title": "LLM 인 프로덕션",
+      "author": "크리스토퍼 브루소매슈 샤프 저307번역랩류광 역",
+      "price": "31,500원",
+      "image_url": "https://image.yes24.com/goods/147115595/L",
+      "goods_no": "147115595",
+      "detail_url": "https://www.yes24.com/product/goods/147115595",
+      "release_date": "2025년 06월 18일",
+      "sell_num": "1266"
+    }
+  ],
+  "시프트": [
+    {
+      "title": "누구나 쉽게 AI 작사 & 작곡 with 생성형 인공지능, 챗GPT, 수노, 유디오",
+      "author": "현병욱(오땡큐)신수진 저",
       "price": "18,000원",
-      "image_url": "https://image.yes24.com/goods/145426898/L",
-      "goods_no": "145426898",
-      "detail_url": "https://www.yes24.com/product/goods/145426898",
-      "release_date": "2025년 05월 05일",
-      "sell_num": "7275"
+      "image_url": "https://image.yes24.com/goods/152644865/L",
+      "goods_no": "152644865",
+      "detail_url": "https://www.yes24.com/product/goods/152644865",
+      "release_date": "2025년 09월 30일",
+      "sell_num": "4044"
     },
     {
-      "title": "LLM 엔지니어링",
-      "author": "폴 이우수틴막심 라본 저조우철 역",
-      "price": "34,200원",
-      "image_url": "https://image.yes24.com/goods/145962625/L",
-      "goods_no": "145962625",
-      "detail_url": "https://www.yes24.com/product/goods/145962625",
-      "release_date": "2025년 05월 02일",
+      "title": "사수 없는 디자이너의 나 홀로 성장하기",
+      "author": "가마타 다카시 저구수영 역김광혁 감수",
+      "price": "18,900원",
+      "image_url": "https://image.yes24.com/goods/148829257/L",
+      "goods_no": "148829257",
+      "detail_url": "https://www.yes24.com/product/goods/148829257",
+      "release_date": "2025년 08월 15일",
+      "sell_num": "930"
+    },
+    {
+      "title": "요즘 디자인을 위한 포토샵 & 일러스트레이터",
+      "author": "서영열 저",
+      "price": "23,400원",
+      "image_url": "https://image.yes24.com/goods/147041938/L",
+      "goods_no": "147041938",
+      "detail_url": "https://www.yes24.com/product/goods/147041938",
+      "release_date": "2025년 06월 15일",
+      "sell_num": "3174"
+    },
+    {
+      "title": "디자인 감각 제대로 키우는 법",
+      "author": "가마타 다카시 저김현미 역",
+      "price": "17,100원",
+      "image_url": "https://image.yes24.com/goods/145572152/L",
+      "goods_no": "145572152",
+      "detail_url": "https://www.yes24.com/product/goods/145572152",
+      "release_date": "2025년 05월 12일",
+      "sell_num": "2196"
+    },
+    {
+      "title": "마법 같은 영상 제작을 위한 스마트폰 촬영 및 편집 with 캡컷",
+      "author": "김지희 저",
+      "price": "20,700원",
+      "image_url": "https://image.yes24.com/goods/142201171/L",
+      "goods_no": "142201171",
+      "detail_url": "https://www.yes24.com/product/goods/142201171",
+      "release_date": "2025년 03월 03일",
+      "sell_num": "18009"
+    },
+    {
+      "title": "인공지능이 다 해주는 브루 Vrew 영상 편집",
+      "author": "지현이 저브루 개발팀 감수",
+      "price": "18,000원",
+      "image_url": "https://image.yes24.com/goods/133823740/L",
+      "goods_no": "133823740",
+      "detail_url": "https://www.yes24.com/product/goods/133823740",
+      "release_date": "2024년 10월 10일",
+      "sell_num": "12858"
+    },
+    {
+      "title": "20가지 템플릿으로 배우는 노션 Notion\n                \n                    \n                        [\nN잡을 위한 템플릿 수익화 방법 PDF 제공                        ]",
+      "author": "전시진 저",
+      "price": "18,000원",
+      "image_url": "https://image.yes24.com/goods/133337416/L",
+      "goods_no": "133337416",
+      "detail_url": "https://www.yes24.com/product/goods/133337416",
+      "release_date": "2024년 10월 01일",
+      "sell_num": "17988"
+    },
+    {
+      "title": "시프트",
+      "author": "저자 정보 없음",
+      "price": "가격 정보 없음",
+      "image_url": "https://image.yes24.com/goods/118595487/L",
+      "goods_no": "118595487",
+      "detail_url": "https://www.yes24.com/product/goods/118595487",
+      "release_date": "2023년 04월 26일",
       "sell_num": "240"
     },
     {
-      "title": "조코딩의 AI 비트코인 자동 매매 시스템 만들기",
-      "author": "조동근 저",
-      "price": "26,100원",
-      "image_url": "https://image.yes24.com/goods/145632328/L",
-      "goods_no": "145632328",
-      "detail_url": "https://www.yes24.com/product/goods/145632328",
-      "release_date": "2025년 04월 28일",
-      "sell_num": "6966"
+      "title": "[만화]\n                                    시프트 코믹스",
+      "author": "저자 정보 없음",
+      "price": "가격 정보 없음",
+      "image_url": "https://image.yes24.com/goods/151783882/L",
+      "goods_no": "151783882",
+      "detail_url": "https://www.yes24.com/product/goods/151783882",
+      "release_date": "2025년 08월 21일",
+      "sell_num": "306"
     },
     {
-      "title": "주니어 백엔드 개발자가 반드시 알아야 할 실무 지식",
-      "author": "최범균 저",
+      "title": "시프트 노벨",
+      "author": "저자 정보 없음",
+      "price": "가격 정보 없음",
+      "image_url": "https://image.yes24.com/goods/148122532/L",
+      "goods_no": "148122532",
+      "detail_url": "https://www.yes24.com/product/goods/148122532",
+      "release_date": "2025년 06월 30일",
+      "sell_num": "294"
+    }
+  ],
+  "루비페이퍼": [
+    {
+      "title": "커서 AI로 나만의 수익형 앱 서비스 만들기",
+      "author": "빈센트 저",
       "price": "25,200원",
-      "image_url": "https://image.yes24.com/goods/145761422/L",
-      "goods_no": "145761422",
-      "detail_url": "https://www.yes24.com/product/goods/145761422",
+      "image_url": "https://image.yes24.com/goods/147127904/L",
+      "goods_no": "147127904",
+      "detail_url": "https://www.yes24.com/product/goods/147127904",
+      "release_date": "2025년 06월 10일",
+      "sell_num": "3000"
+    },
+    {
+      "title": "이토록 쉬운 IT 인프라 기초",
+      "author": "장두환 저",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/144043886/L",
+      "goods_no": "144043886",
+      "detail_url": "https://www.yes24.com/product/goods/144043886",
+      "release_date": "2025년 04월 01일",
+      "sell_num": "1692"
+    },
+    {
+      "title": "이토록 쉬운 10가지 프로젝트로 끝내는 트랜스포머 활용 가이드 with 파이토치",
+      "author": "프렘 팀시나 저임선집 역",
+      "price": "25,200원",
+      "image_url": "https://image.yes24.com/goods/142636957/L",
+      "goods_no": "142636957",
+      "detail_url": "https://www.yes24.com/product/goods/142636957",
+      "release_date": "2025년 02월 07일",
+      "sell_num": "1290"
+    },
+    {
+      "title": "이토록 쉬운 채쌤의 난생처음 SQL",
+      "author": "채규태 저",
+      "price": "24,300원",
+      "image_url": "https://image.yes24.com/goods/142162784/L",
+      "goods_no": "142162784",
+      "detail_url": "https://www.yes24.com/product/goods/142162784",
+      "release_date": "2025년 01월 27일",
+      "sell_num": "24"
+    },
+    {
+      "title": "이토록 쉬운 3ds Max 베이직 클래스\n                \n                    \n                        [\n개정판                        ]",
+      "author": "이동후 저",
+      "price": "39,600원",
+      "image_url": "https://image.yes24.com/goods/137028549/L",
+      "goods_no": "137028549",
+      "detail_url": "https://www.yes24.com/product/goods/137028549",
+      "release_date": "2024년 11월 01일",
+      "sell_num": "924"
+    },
+    {
+      "title": "이토록 쉬운 RAG 시스템 구축을 위한 랭체인 실전 가이드",
+      "author": "윤성재 저",
+      "price": "23,400원",
+      "image_url": "https://image.yes24.com/goods/136548871/L",
+      "goods_no": "136548871",
+      "detail_url": "https://www.yes24.com/product/goods/136548871",
+      "release_date": "2024년 10월 30일",
+      "sell_num": "8148"
+    },
+    {
+      "title": "이토록 쉬운 챗GPT로 마케팅 데이터 분석하기",
+      "author": "박경아 저",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/135725317/L",
+      "goods_no": "135725317",
+      "detail_url": "https://www.yes24.com/product/goods/135725317",
+      "release_date": "2024년 10월 15일",
+      "sell_num": "780"
+    },
+    {
+      "title": "이토록 쉬운 37개 함수로 끝내는 실무 엑셀 with 챗GPT",
+      "author": "박수경 저",
+      "price": "16,200원",
+      "image_url": "https://image.yes24.com/goods/132892495/L",
+      "goods_no": "132892495",
+      "detail_url": "https://www.yes24.com/product/goods/132892495",
+      "release_date": "2024년 09월 01일",
+      "sell_num": "1638"
+    },
+    {
+      "title": "MLOps 구축 가이드북",
+      "author": "김남기 저",
+      "price": "32,400원",
+      "image_url": "https://image.yes24.com/goods/129776595/L",
+      "goods_no": "129776595",
+      "detail_url": "https://www.yes24.com/product/goods/129776595",
+      "release_date": "2024년 07월 22일",
+      "sell_num": "1080"
+    },
+    {
+      "title": "25가지 문제로 배우는 LLM 입문 with 파이썬",
+      "author": "요시키 간다 저임선집 역",
+      "price": "25,200원",
+      "image_url": "https://image.yes24.com/goods/129111891/L",
+      "goods_no": "129111891",
+      "detail_url": "https://www.yes24.com/product/goods/129111891",
+      "release_date": "2024년 07월 18일",
+      "sell_num": "1926"
+    }
+  ],
+  "에이콘출판사": [
+    {
+      "title": "서버리스 보안",
+      "author": "미겔 A. 카예스 저한정원 역",
+      "price": "32,400원",
+      "image_url": "https://image.yes24.com/goods/152376610/L",
+      "goods_no": "152376610",
+      "detail_url": "https://www.yes24.com/product/goods/152376610",
+      "release_date": "2025년 08월 28일",
+      "sell_num": "288"
+    },
+    {
+      "title": "AWS 보안",
+      "author": "딜런 쉴즈 저김진환 역",
+      "price": "34,200원",
+      "image_url": "https://image.yes24.com/goods/149755187/L",
+      "goods_no": "149755187",
+      "detail_url": "https://www.yes24.com/product/goods/149755187",
+      "release_date": "2025년 07월 31일",
+      "sell_num": "480"
+    },
+    {
+      "title": "데이터 기반 리텐션 전략",
+      "author": "칼 골드 저장훈 역",
+      "price": "37,800원",
+      "image_url": "https://image.yes24.com/goods/148699363/L",
+      "goods_no": "148699363",
+      "detail_url": "https://www.yes24.com/product/goods/148699363",
+      "release_date": "2025년 07월 21일",
+      "sell_num": "558"
+    },
+    {
+      "title": "언리얼 엔진 5로 제작하는 버추얼 영화",
+      "author": "후신 칸 저이진오 역",
+      "price": "37,800원",
+      "image_url": "https://image.yes24.com/goods/146871544/L",
+      "goods_no": "146871544",
+      "detail_url": "https://www.yes24.com/product/goods/146871544",
+      "release_date": "2025년 05월 29일",
+      "sell_num": "426"
+    },
+    {
+      "title": "데이터로 측정하는 UX 리서치 3/e",
+      "author": "윌리엄 (빌) 앨버트토마스 S. 툴리스 저송유미 역",
+      "price": "34,200원",
+      "image_url": "https://image.yes24.com/goods/146871584/L",
+      "goods_no": "146871584",
+      "detail_url": "https://www.yes24.com/product/goods/146871584",
+      "release_date": "2025년 05월 29일",
+      "sell_num": "240"
+    },
+    {
+      "title": "SwiftUI와 컴바인을 활용한 비동기 프로그래밍",
+      "author": "피터 프리제 저Eddie Kwon 역",
+      "price": "27,000원",
+      "image_url": "https://image.yes24.com/goods/146871886/L",
+      "goods_no": "146871886",
+      "detail_url": "https://www.yes24.com/product/goods/146871886",
+      "release_date": "2025년 05월 29일",
+      "sell_num": "300"
+    },
+    {
+      "title": "전략적 모놀리스와 마이크로서비스",
+      "author": "반 버논토마스 야스쿨라 저강성일이승민 역 외 1명",
+      "price": "31,500원",
+      "image_url": "https://image.yes24.com/goods/144267386/L",
+      "goods_no": "144267386",
+      "detail_url": "https://www.yes24.com/product/goods/144267386",
+      "release_date": "2025년 04월 09일",
+      "sell_num": "504"
+    },
+    {
+      "title": "Kotlin in Action 2/e\n                \n                    \n                        [\n코루틴과 플로우 포함 코틀린 2 대응                        ]",
+      "author": "세바스티안 아이그너로만 엘리자로프스베트라나 이사코바드미트리 제메로프 저 외 1명",
+      "price": "43,200원",
+      "image_url": "https://image.yes24.com/goods/142690359/L",
+      "goods_no": "142690359",
+      "detail_url": "https://www.yes24.com/product/goods/142690359",
+      "release_date": "2025년 02월 27일",
+      "sell_num": "3330"
+    },
+    {
+      "title": "언리얼 엔진 5로 개발하는 멀티플레이어 게임",
+      "author": "마르코 세치 저이지성송정은 역",
+      "price": "36,000원",
+      "image_url": "https://image.yes24.com/goods/142788726/L",
+      "goods_no": "142788726",
+      "detail_url": "https://www.yes24.com/product/goods/142788726",
+      "release_date": "2025년 02월 27일",
+      "sell_num": "1203"
+    },
+    {
+      "title": "코틀린으로 배우는 안드로이드 앱 개발 실전 노하우 2/e",
+      "author": "알렉스 포레스터에란 부즈나알렉산드루 덤브라반조마르 티그칼 저 외 2명",
+      "price": "40,500원",
+      "image_url": "https://image.yes24.com/goods/142557036/L",
+      "goods_no": "142557036",
+      "detail_url": "https://www.yes24.com/product/goods/142557036",
+      "release_date": "2025년 02월 20일",
+      "sell_num": "648"
+    }
+  ],
+  "에이콘온": [
+    {
+      "title": "파이토치로 완성하는 실전 강화학습",
+      "author": "윤성진 저",
+      "price": "41,400원",
+      "image_url": "https://image.yes24.com/goods/151359723/L",
+      "goods_no": "151359723",
+      "detail_url": "https://www.yes24.com/product/goods/151359723",
+      "release_date": "2025년 08월 28일",
+      "sell_num": "84"
+    },
+    {
+      "title": "두 얼굴의 신기술: AI 딜레마",
+      "author": "케일럽 브릭스렉스 브릭스 저김상현 역",
+      "price": "20,900원",
+      "image_url": "https://image.yes24.com/goods/146741944/L",
+      "goods_no": "146741944",
+      "detail_url": "https://www.yes24.com/product/goods/146741944",
+      "release_date": "2025년 05월 29일",
+      "sell_num": "156"
+    },
+    {
+      "title": "클라우드 솔루션을 위한 생성형 AI",
+      "author": "폴 싱아누라그 시리시 카루파르티 저김상필박태호 역",
+      "price": "30,400원",
+      "image_url": "https://image.yes24.com/goods/145656189/L",
+      "goods_no": "145656189",
+      "detail_url": "https://www.yes24.com/product/goods/145656189",
+      "release_date": "2025년 04월 30일",
+      "sell_num": "126"
+    },
+    {
+      "title": "실리콘밸리 길들이기",
+      "author": "개리 마커스김동환 저최영호 역",
+      "price": "20,900원",
+      "image_url": "https://image.yes24.com/goods/144690703/L",
+      "goods_no": "144690703",
+      "detail_url": "https://www.yes24.com/product/goods/144690703",
+      "release_date": "2025년 04월 23일",
+      "sell_num": "84"
+    },
+    {
+      "title": "핀옵스 전략",
+      "author": "알폰소 산 미겔 산체스대니 오반도 가르시아 저이병욱 역",
+      "price": "38,000원",
+      "image_url": "https://image.yes24.com/goods/143759917/L",
+      "goods_no": "143759917",
+      "detail_url": "https://www.yes24.com/product/goods/143759917",
+      "release_date": "2025년 03월 28일",
+      "sell_num": "186"
+    },
+    {
+      "title": "AI 시대의 노 워크 혁명",
+      "author": "필립 드리말카 저이병욱 역",
+      "price": "23,750원",
+      "image_url": "https://image.yes24.com/goods/141815530/L",
+      "goods_no": "141815530",
+      "detail_url": "https://www.yes24.com/product/goods/141815530",
+      "release_date": "2025년 02월 17일",
+      "sell_num": "168"
+    }
+  ],
+  "정보문화사": [
+    {
+      "title": "초보자도 쉽게 배우는 엑셀 2024 길라잡이",
+      "author": "김영주 저",
+      "price": "20,700원",
+      "image_url": "https://image.yes24.com/goods/152363144/L",
+      "goods_no": "152363144",
+      "detail_url": "https://www.yes24.com/product/goods/152363144",
+      "release_date": "2025년 09월 10일",
+      "sell_num": "594"
+    },
+    {
+      "title": "크리에이터를 위한 ChatGPT 활용 대전",
+      "author": "쿠니모토 치사토 저챗GPT 연구회 역",
+      "price": "18,000원",
+      "image_url": "https://image.yes24.com/goods/147965771/L",
+      "goods_no": "147965771",
+      "detail_url": "https://www.yes24.com/product/goods/147965771",
+      "release_date": "2025년 06월 25일",
+      "sell_num": "660"
+    },
+    {
+      "title": "비즈니스를 위한 ChatGPT 활용 대전",
+      "author": "쿠니모토 치사토 저챗GPT 연구회 역",
+      "price": "18,000원",
+      "image_url": "https://image.yes24.com/goods/147965725/L",
+      "goods_no": "147965725",
+      "detail_url": "https://www.yes24.com/product/goods/147965725",
+      "release_date": "2025년 06월 25일",
+      "sell_num": "726"
+    },
+    {
+      "title": "챗GPT 120% 투자 질문 기술",
+      "author": "ChatGPT 비즈니스 연구회 저김모세 역",
+      "price": "13,500원",
+      "image_url": "https://image.yes24.com/goods/147101135/L",
+      "goods_no": "147101135",
+      "detail_url": "https://www.yes24.com/product/goods/147101135",
+      "release_date": "2025년 06월 10일",
+      "sell_num": "780"
+    },
+    {
+      "title": "그림 한 장으로 보는 최신 IT 트렌드(최신개정판)",
+      "author": "Saito Masanori 저 / 김모세 역",
+      "price": "20,700원",
+      "image_url": "https://image.yes24.com/goods/145631654/L",
+      "goods_no": "145631654",
+      "detail_url": "https://www.yes24.com/product/goods/145631654",
+      "release_date": "2025년 04월 30일",
+      "sell_num": "498"
+    },
+    {
+      "title": "브이레이 포 스케치업 feat 카오스 밴티지",
+      "author": "한정훈 저",
+      "price": "37,800원",
+      "image_url": "https://image.yes24.com/goods/143880031/L",
+      "goods_no": "143880031",
+      "detail_url": "https://www.yes24.com/product/goods/143880031",
+      "release_date": "2025년 03월 25일",
+      "sell_num": "810"
+    },
+    {
+      "title": "랭체인 입문",
+      "author": "오승환 저",
+      "price": "22,500원",
+      "image_url": "https://image.yes24.com/goods/143253970/L",
+      "goods_no": "143253970",
+      "detail_url": "https://www.yes24.com/product/goods/143253970",
+      "release_date": "2025년 03월 10일",
+      "sell_num": "624"
+    },
+    {
+      "title": "오늘부터 피그마 Figma",
+      "author": "김시완정현민 저",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/141336644/L",
+      "goods_no": "141336644",
+      "detail_url": "https://www.yes24.com/product/goods/141336644",
+      "release_date": "2025년 01월 15일",
+      "sell_num": "1926"
+    },
+    {
+      "title": "독학 파이썬",
+      "author": "야마다 요시히로 저윤모린 역",
+      "price": "28,800원",
+      "image_url": "https://image.yes24.com/goods/140182521/L",
+      "goods_no": "140182521",
+      "detail_url": "https://www.yes24.com/product/goods/140182521",
+      "release_date": "2024년 12월 20일",
+      "sell_num": "444"
+    },
+    {
+      "title": "초보자를 위한 파이썬 200제\n                \n                    \n                        [\n2판                        ]",
+      "author": "장삼용 저",
+      "price": "22,500원",
+      "image_url": "https://image.yes24.com/goods/139645383/L",
+      "goods_no": "139645383",
+      "detail_url": "https://www.yes24.com/product/goods/139645383",
+      "release_date": "2024년 11월 25일",
+      "sell_num": "1581"
+    }
+  ],
+  "스마트북스": [
+    {
+      "title": "AI 에이전트 트렌드&활용백과 + 커서 AI 트렌드&활용백과 세트\n                \n                    \n                        [\n2권                        ]",
+      "author": "서승완김덕진김아람 저",
+      "price": "45,000원",
+      "image_url": "https://image.yes24.com/goods/148491130/L",
+      "goods_no": "148491130",
+      "detail_url": "https://www.yes24.com/product/goods/148491130",
+      "release_date": "2025년 07월 10일",
+      "sell_num": "0"
+    },
+    {
+      "title": "AI 2025 + 커서 AI 트렌드&활용백과 세트\n                \n                    \n                        [\n2권                        ]",
+      "author": "서승완김덕진 저",
+      "price": "45,000원",
+      "image_url": "https://image.yes24.com/goods/145648086/L",
+      "goods_no": "145648086",
+      "detail_url": "https://www.yes24.com/product/goods/145648086",
+      "release_date": "2025년 03월 28일",
+      "sell_num": "0"
+    }
+  ],
+  "비제이퍼블릭": [
+    {
+      "title": "30가지 심리학 이야기로 풀어보는 UX 디자인",
+      "author": "윤하린 저",
+      "price": "21,600원",
+      "image_url": "https://image.yes24.com/goods/152498115/L",
+      "goods_no": "152498115",
+      "detail_url": "https://www.yes24.com/product/goods/152498115",
+      "release_date": "2025년 09월 01일",
+      "sell_num": "264"
+    },
+    {
+      "title": "SQL 실전 트레이닝",
+      "author": "김지영 저",
+      "price": "25,650원",
+      "image_url": "https://image.yes24.com/goods/150547033/L",
+      "goods_no": "150547033",
+      "detail_url": "https://www.yes24.com/product/goods/150547033",
+      "release_date": "2025년 08월 11일",
+      "sell_num": "396"
+    },
+    {
+      "title": "UX×AI 인사이트",
+      "author": "오의택 저",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/148386650/L",
+      "goods_no": "148386650",
+      "detail_url": "https://www.yes24.com/product/goods/148386650",
+      "release_date": "2025년 07월 07일",
+      "sell_num": "540"
+    },
+    {
+      "title": "인공지능, 주식분석 좀 부탁해",
+      "author": "곽경일 저",
+      "price": "21,600원",
+      "image_url": "https://image.yes24.com/goods/147852321/L",
+      "goods_no": "147852321",
+      "detail_url": "https://www.yes24.com/product/goods/147852321",
+      "release_date": "2025년 07월 01일",
+      "sell_num": "630"
+    },
+    {
+      "title": "노야의 어디서든 3D 모델링 with 노마드 스컬프",
+      "author": "김민석(노야) 저",
+      "price": "22,500원",
+      "image_url": "https://image.yes24.com/goods/147341992/L",
+      "goods_no": "147341992",
+      "detail_url": "https://www.yes24.com/product/goods/147341992",
+      "release_date": "2025년 06월 10일",
+      "sell_num": "732"
+    },
+    {
+      "title": "웹 접근성 바이블",
+      "author": "이하라 리키야고바야시 다이스케마스다 소이치야마모토 레이 저 외 1명",
+      "price": "34,200원",
+      "image_url": "https://image.yes24.com/goods/147123383/L",
+      "goods_no": "147123383",
+      "detail_url": "https://www.yes24.com/product/goods/147123383",
+      "release_date": "2025년 06월 02일",
+      "sell_num": "174"
+    },
+    {
+      "title": "한 권으로 끝내는 직장인 필수 IT 지식",
+      "author": "정명림김효섭박준영이수현 저 외 2명",
+      "price": "24,750원",
+      "image_url": "https://image.yes24.com/goods/146529227/L",
+      "goods_no": "146529227",
+      "detail_url": "https://www.yes24.com/product/goods/146529227",
+      "release_date": "2025년 05월 20일",
+      "sell_num": "834"
+    },
+    {
+      "title": "전략적 사용자 행동 분석",
+      "author": "오세규 저",
+      "price": "26,550원",
+      "image_url": "https://image.yes24.com/goods/142686838/L",
+      "goods_no": "142686838",
+      "detail_url": "https://www.yes24.com/product/goods/142686838",
+      "release_date": "2025년 02월 24일",
+      "sell_num": "1710"
+    },
+    {
+      "title": "실리콘밸리가 원하는 사람",
+      "author": "이원종 저",
+      "price": "24,300원",
+      "image_url": "https://image.yes24.com/goods/141895946/L",
+      "goods_no": "141895946",
+      "detail_url": "https://www.yes24.com/product/goods/141895946",
+      "release_date": "2025년 02월 12일",
+      "sell_num": "960"
+    },
+    {
+      "title": "자연어 처리를 위한 허깅페이스 트랜스포머 하드 트레이닝",
+      "author": "박성환남승우 저",
+      "price": "24,750원",
+      "image_url": "https://image.yes24.com/goods/140977612/L",
+      "goods_no": "140977612",
+      "detail_url": "https://www.yes24.com/product/goods/140977612",
+      "release_date": "2025년 01월 13일",
+      "sell_num": "1530"
+    }
+  ],
+  "영진닷컴": [
+    {
+      "title": "2026 이기적 컴퓨터활용능력 1급 필기 최신문제집",
+      "author": "홍태성영진정보연구소 저",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/153534879/L",
+      "goods_no": "153534879",
+      "detail_url": "https://www.yes24.com/product/goods/153534879",
+      "release_date": "2025년 10월 02일",
+      "sell_num": "0"
+    },
+    {
+      "title": "2026 이기적 워드프로세서 필기 기본서\n                \n                    \n                        [\n최신 출제 기준 반영 + 동영상 강의 무료 + CBT 온라인 문제집 제공                        ]",
+      "author": "이상미김옥남 저",
+      "price": "18,900원",
+      "image_url": "https://image.yes24.com/goods/152946761/L",
+      "goods_no": "152946761",
+      "detail_url": "https://www.yes24.com/product/goods/152946761",
+      "release_date": "2025년 09월 26일",
+      "sell_num": "1146"
+    },
+    {
+      "title": "2026 이기적 컴퓨터활용능력 2급 필기 최신문제집\n                \n                    \n                        [\n최신 출제기준 반영 + 동영상 강의 무료 + CBT 온라인 문제집 제공                        ]",
+      "author": "홍태성영진정보연구소 저",
+      "price": "15,300원",
+      "image_url": "https://image.yes24.com/goods/152388662/L",
+      "goods_no": "152388662",
+      "detail_url": "https://www.yes24.com/product/goods/152388662",
+      "release_date": "2025년 09월 19일",
+      "sell_num": "1752"
+    },
+    {
+      "title": "2026 이기적 ITQ 한글 ver.2020\n                \n                    \n                        [\n동영상 강의 무료 제공+최신 출제기준 반영+자동 채점 서비스                        ]",
+      "author": "영진정보연구소 저",
+      "price": "15,300원",
+      "image_url": "https://image.yes24.com/goods/152320560/L",
+      "goods_no": "152320560",
+      "detail_url": "https://www.yes24.com/product/goods/152320560",
+      "release_date": "2025년 09월 15일",
+      "sell_num": "1137"
+    },
+    {
+      "title": "2026 이기적 ITQ OA Master 엑셀/파워포인트 ver.2021+한글 ver.2020 올인원\n                \n                    \n                        [\n동영상 강의 무료 제공+최신 출제기준 반영+자동 채점 서비스                        ]",
+      "author": "영진정보연구소 저",
+      "price": "27,000원",
+      "image_url": "https://image.yes24.com/goods/152316228/L",
+      "goods_no": "152316228",
+      "detail_url": "https://www.yes24.com/product/goods/152316228",
+      "release_date": "2025년 09월 15일",
+      "sell_num": "1296"
+    },
+    {
+      "title": "2026 이기적 컴퓨터그래픽기능사 필기 기본서\n                \n                    \n                        [\n최신 출제기준 반영+CBT 온라인 문제집+동영상 강의 무료 제공                        ]",
+      "author": "이향아 저",
+      "price": "21,600원",
+      "image_url": "https://image.yes24.com/goods/152316176/L",
+      "goods_no": "152316176",
+      "detail_url": "https://www.yes24.com/product/goods/152316176",
+      "release_date": "2025년 09월 12일",
+      "sell_num": "1890"
+    },
+    {
+      "title": "이기적 GTQ 일러스트 2급 기본서(ver.CC 2024)\n                \n                    \n                        [\n완성 파일 제공+ 동영상 강의 무료+답안 전송 프로그램 제공                        ]",
+      "author": "박은영 저",
+      "price": "21,600원",
+      "image_url": "https://image.yes24.com/goods/151877056/L",
+      "goods_no": "151877056",
+      "detail_url": "https://www.yes24.com/product/goods/151877056",
+      "release_date": "2025년 09월 12일",
+      "sell_num": "246"
+    },
+    {
+      "title": "데이터 시각화와 탐색 with POWER BI 3rd",
+      "author": "마경근서주란 저",
+      "price": "27,000원",
+      "image_url": "https://image.yes24.com/goods/152443479/L",
+      "goods_no": "152443479",
+      "detail_url": "https://www.yes24.com/product/goods/152443479",
+      "release_date": "2025년 09월 02일",
+      "sell_num": "756"
+    },
+    {
+      "title": "2026 이기적 정보처리기사 필기+실기 올인원\n                \n                    \n                        [\n막판정리 핸드북 + CBT 온라인 문제집 + 이기적 스터디 카페                        ]",
+      "author": "고소현한진만 저",
+      "price": "44,100원",
+      "image_url": "https://image.yes24.com/goods/151161051/L",
+      "goods_no": "151161051",
+      "detail_url": "https://www.yes24.com/product/goods/151161051",
+      "release_date": "2025년 09월 01일",
+      "sell_num": "1674"
+    },
+    {
+      "title": "2026 이기적 컴퓨터활용능력 1급 필기+실기 올인원\n                \n                    \n                        [\n막판정리 핸드북 증정 + 동영상 강의 무료 + CBT 온라인 문제집 제공                        ]",
+      "author": "홍태성박윤정 저",
+      "price": "36,000원",
+      "image_url": "https://image.yes24.com/goods/151066069/L",
+      "goods_no": "151066069",
+      "detail_url": "https://www.yes24.com/product/goods/151066069",
+      "release_date": "2025년 08월 29일",
+      "sell_num": "6948"
+    }
+  ],
+  "아티오": [
+    {
+      "title": "AI 시대, 일 잘하는 사람들의 비밀",
+      "author": "남시언 저",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/153717914/L",
+      "goods_no": "153717914",
+      "detail_url": "https://www.yes24.com/product/goods/153717914",
+      "release_date": "2025년 09월 25일",
+      "sell_num": "0"
+    },
+    {
+      "title": "윈도우11&인터넷(구글, 크롬) 단계별 정복하기",
+      "author": "김수진 저",
+      "price": "9,000원",
+      "image_url": "https://image.yes24.com/goods/152111138/L",
+      "goods_no": "152111138",
+      "detail_url": "https://www.yes24.com/product/goods/152111138",
+      "release_date": "2025년 09월 10일",
+      "sell_num": "0"
+    },
+    {
+      "title": "미리캔버스로 끝내는 디자인&마케팅",
+      "author": "박길현 저",
+      "price": "18,900원",
+      "image_url": "https://image.yes24.com/goods/151852205/L",
+      "goods_no": "151852205",
+      "detail_url": "https://www.yes24.com/product/goods/151852205",
+      "release_date": "2025년 08월 30일",
+      "sell_num": "525"
+    },
+    {
+      "title": "캔바로 쉽고 빠르게 콘텐츠 디자인하기",
+      "author": "권유진백은영서미경송민경 저 외 4명",
+      "price": "16,650원",
+      "image_url": "https://image.yes24.com/goods/146262491/L",
+      "goods_no": "146262491",
+      "detail_url": "https://www.yes24.com/product/goods/146262491",
+      "release_date": "2025년 05월 30일",
+      "sell_num": "2502"
+    },
+    {
+      "title": "당근 하나로 매출 2배, 동네 1등 가게 만드는 실전 전략",
+      "author": "서혜미 저",
+      "price": "15,300원",
+      "image_url": "https://image.yes24.com/goods/146504169/L",
+      "goods_no": "146504169",
+      "detail_url": "https://www.yes24.com/product/goods/146504169",
+      "release_date": "2025년 05월 20일",
+      "sell_num": "294"
+    },
+    {
+      "title": "아이패드 디지털 캘리그라피 N잡러 되기",
+      "author": "우연주 저",
+      "price": "17,550원",
+      "image_url": "https://image.yes24.com/goods/143513509/L",
+      "goods_no": "143513509",
+      "detail_url": "https://www.yes24.com/product/goods/143513509",
+      "release_date": "2025년 03월 31일",
+      "sell_num": "480"
+    },
+    {
+      "title": "숏폼 영상 편집 3일 만에 마스터하기 with 캡컷(Capcut)\n                \n                    \n                        [\n개정판                        ]",
+      "author": "김근아 저",
+      "price": "12,600원",
+      "image_url": "https://image.yes24.com/goods/143492268/L",
+      "goods_no": "143492268",
+      "detail_url": "https://www.yes24.com/product/goods/143492268",
+      "release_date": "2025년 03월 10일",
+      "sell_num": "1242"
+    },
+    {
+      "title": "피그마 스타터 : 처음부터 차근차근 배우는 UIUX 디자인",
+      "author": "엄은영 저",
+      "price": "24,300원",
+      "image_url": "https://image.yes24.com/goods/143086625/L",
+      "goods_no": "143086625",
+      "detail_url": "https://www.yes24.com/product/goods/143086625",
+      "release_date": "2025년 03월 10일",
+      "sell_num": "954"
+    },
+    {
+      "title": "포토샵CC 기초부터 실무 활용까지",
+      "author": "유윤자 저",
+      "price": "17,100원",
+      "image_url": "https://image.yes24.com/goods/141195923/L",
+      "goods_no": "141195923",
+      "detail_url": "https://www.yes24.com/product/goods/141195923",
+      "release_date": "2025년 01월 10일",
+      "sell_num": "660"
+    },
+    {
+      "title": "스마트폰 기초 따라하기",
+      "author": "김수진 저",
+      "price": "9,000원",
+      "image_url": "https://image.yes24.com/goods/139943057/L",
+      "goods_no": "139943057",
+      "detail_url": "https://www.yes24.com/product/goods/139943057",
+      "release_date": "2025년 01월 10일",
+      "sell_num": "861"
+    }
+  ],
+  "비엘북스": [
+    {
+      "title": "미드저니와 ComfyUI로 완성하는, 게임 그래픽",
+      "author": "양영민 저",
+      "price": "29,700원",
+      "image_url": "https://image.yes24.com/goods/152649327/L",
+      "goods_no": "152649327",
+      "detail_url": "https://www.yes24.com/product/goods/152649327",
+      "release_date": "2025년 08월 25일",
+      "sell_num": "744"
+    },
+    {
+      "title": "the AI GRAPHICS : AI 영상 테크닉",
+      "author": "김민호문신우박준상배장근 저 외 8명",
+      "price": "35,100원",
+      "image_url": "https://image.yes24.com/goods/148369512/L",
+      "goods_no": "148369512",
+      "detail_url": "https://www.yes24.com/product/goods/148369512",
+      "release_date": "2025년 07월 25일",
+      "sell_num": "1668"
+    },
+    {
+      "title": "미드저니 마스터 바이블",
+      "author": "조남경 저",
+      "price": "29,700원",
+      "image_url": "https://image.yes24.com/goods/145099755/L",
+      "goods_no": "145099755",
+      "detail_url": "https://www.yes24.com/product/goods/145099755",
       "release_date": "2025년 04월 28일",
-      "sell_num": "1770"
+      "sell_num": "4956"
+    },
+    {
+      "title": "돈이 되는 AI 영상만들기",
+      "author": "심동엽 저",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/143622985/L",
+      "goods_no": "143622985",
+      "detail_url": "https://www.yes24.com/product/goods/143622985",
+      "release_date": "2025년 03월 26일",
+      "sell_num": "1434"
+    },
+    {
+      "title": "스토리보드 그리고 AI",
+      "author": "김종율 저",
+      "price": "23,400원",
+      "image_url": "https://image.yes24.com/goods/141196002/L",
+      "goods_no": "141196002",
+      "detail_url": "https://www.yes24.com/product/goods/141196002",
+      "release_date": "2025년 01월 24일",
+      "sell_num": "2232"
+    },
+    {
+      "title": "ComfyUI 100선",
+      "author": "조지훈 저",
+      "price": "29,700원",
+      "image_url": "https://image.yes24.com/goods/136900237/L",
+      "goods_no": "136900237",
+      "detail_url": "https://www.yes24.com/product/goods/136900237",
+      "release_date": "2024년 11월 26일",
+      "sell_num": "4710"
+    },
+    {
+      "title": "the AI GRAPHICS",
+      "author": "김성완김한재류내원박상준 저 외 8명",
+      "price": "39,600원",
+      "image_url": "https://image.yes24.com/goods/131192112/L",
+      "goods_no": "131192112",
+      "detail_url": "https://www.yes24.com/product/goods/131192112",
+      "release_date": "2024년 09월 24일",
+      "sell_num": "3885"
+    },
+    {
+      "title": "언리얼 엔진5로 배우는 오픈월드 레벨디자인",
+      "author": "이용태 저",
+      "price": "29,700원",
+      "image_url": "https://image.yes24.com/goods/126968213/L",
+      "goods_no": "126968213",
+      "detail_url": "https://www.yes24.com/product/goods/126968213",
+      "release_date": "2024년 06월 25일",
+      "sell_num": "1284"
+    },
+    {
+      "title": "언리얼 엔진5로 배우는 3D슈팅게임+오픈월드 레벨디자인 세트",
+      "author": "이용태 저",
+      "price": "59,400원",
+      "image_url": "https://image.yes24.com/goods/127012527/L",
+      "goods_no": "127012527",
+      "detail_url": "https://www.yes24.com/product/goods/127012527",
+      "release_date": "2024년 06월 25일",
+      "sell_num": "0"
+    },
+    {
+      "title": "만화로 보는 프로그래밍 교육",
+      "author": "마루사이 글그림신동선 역이시도 나나코 감수",
+      "price": "10,800원",
+      "image_url": "https://image.yes24.com/goods/126570125/L",
+      "goods_no": "126570125",
+      "detail_url": "https://www.yes24.com/product/goods/126570125",
+      "release_date": "2024년 05월 27일",
+      "sell_num": "12"
+    }
+  ],
+  "앤써북": [
+    {
+      "title": "생성형 AI와 엔트리로 12가지 인공지능 작품 만들기 with 뤼튼, 캔바, 미리캔버스, 투닝, ChatGPT, 위스크, 수노",
+      "author": "전진아김수연 저",
+      "price": "18,900원",
+      "image_url": "https://image.yes24.com/goods/153061112/L",
+      "goods_no": "153061112",
+      "detail_url": "https://www.yes24.com/product/goods/153061112",
+      "release_date": "2025년 09월 30일",
+      "sell_num": "102"
+    },
+    {
+      "title": "교사를 위한 실무 한글 _ 학교 업무 효율성 높이는 66제",
+      "author": "한동규 저",
+      "price": "15,930원",
+      "image_url": "https://image.yes24.com/goods/150709449/L",
+      "goods_no": "150709449",
+      "detail_url": "https://www.yes24.com/product/goods/150709449",
+      "release_date": "2025년 08월 30일",
+      "sell_num": "1677"
+    },
+    {
+      "title": "그림으로 개념 잡는 네트워크 입문",
+      "author": "C.I.K 저",
+      "price": "15,930원",
+      "image_url": "https://image.yes24.com/goods/151045539/L",
+      "goods_no": "151045539",
+      "detail_url": "https://www.yes24.com/product/goods/151045539",
+      "release_date": "2025년 08월 30일",
+      "sell_num": "210"
+    },
+    {
+      "title": "만들면서 배우는 40개의 엔트리 게임 + 인공지능 게임\n                \n                    \n                        [\n3판                        ]",
+      "author": "전진아김수연 저",
+      "price": "19,980원",
+      "image_url": "https://image.yes24.com/goods/152922455/L",
+      "goods_no": "152922455",
+      "detail_url": "https://www.yes24.com/product/goods/152922455",
+      "release_date": "2025년 08월 25일",
+      "sell_num": "2301"
+    },
+    {
+      "title": "따라하며 완성하는 클라우드 배포 입문서 AWS로 배우는 실전형 CI/CD\n                \n                    \n                        [\n2판                        ]",
+      "author": "최주호정재원류재성 저",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/149367930/L",
+      "goods_no": "149367930",
+      "detail_url": "https://www.yes24.com/product/goods/149367930",
+      "release_date": "2025년 07월 30일",
+      "sell_num": "150"
+    },
+    {
+      "title": "입상 교사만 아는 아무도 말해주지 않은 수업혁신사례연구대회 1등급의 비밀",
+      "author": "임은빈송경은김은진신혜원 저 외 3명",
+      "price": "21,600원",
+      "image_url": "https://image.yes24.com/goods/147065285/L",
+      "goods_no": "147065285",
+      "detail_url": "https://www.yes24.com/product/goods/147065285",
+      "release_date": "2025년 06월 30일",
+      "sell_num": "3360"
+    },
+    {
+      "title": "선생님을 위한 교육용 AI 챗봇 활용법",
+      "author": "임세범박지은나희정조정연 저",
+      "price": "20,250원",
+      "image_url": "https://image.yes24.com/goods/146929026/L",
+      "goods_no": "146929026",
+      "detail_url": "https://www.yes24.com/product/goods/146929026",
+      "release_date": "2025년 06월 30일",
+      "sell_num": "1731"
+    },
+    {
+      "title": "선생님을 위한 캔바 수업 활용",
+      "author": "김민주 저",
+      "price": "16,920원",
+      "image_url": "https://image.yes24.com/goods/146043037/L",
+      "goods_no": "146043037",
+      "detail_url": "https://www.yes24.com/product/goods/146043037",
+      "release_date": "2025년 05월 30일",
+      "sell_num": "4176"
+    },
+    {
+      "title": "2022 개정과 IB 교육 철학을 적용한 초등 개념기반 탐구수업•서술형평가 설계와 실천",
+      "author": "진경오 저",
+      "price": "18,900원",
+      "image_url": "https://image.yes24.com/goods/147034290/L",
+      "goods_no": "147034290",
+      "detail_url": "https://www.yes24.com/product/goods/147034290",
+      "release_date": "2025년 05월 30일",
+      "sell_num": "2607"
+    },
+    {
+      "title": "숏폼 영상 편집 제작 및 수익 창출 with 캡컷 · 생성형 AI\n                \n                    \n                        [\n2판                        ]",
+      "author": "채수창 저",
+      "price": "12,420원",
+      "image_url": "https://image.yes24.com/goods/145276955/L",
+      "goods_no": "145276955",
+      "detail_url": "https://www.yes24.com/product/goods/145276955",
+      "release_date": "2025년 05월 05일",
+      "sell_num": "4068"
+    }
+  ],
+  "디지털북스": [
+    {
+      "title": "일감각을 키우는 주니어 성장 노트",
+      "author": "고현숙 저",
+      "price": "18,000원",
+      "image_url": "https://image.yes24.com/goods/153056356/L",
+      "goods_no": "153056356",
+      "detail_url": "https://www.yes24.com/product/goods/153056356",
+      "release_date": "2025년 09월 30일",
+      "sell_num": "60"
+    },
+    {
+      "title": "한 권으로 끝내는 나만의 캐릭터 굿즈 브랜드",
+      "author": "이지안 저",
+      "price": "22,500원",
+      "image_url": "https://image.yes24.com/goods/153044896/L",
+      "goods_no": "153044896",
+      "detail_url": "https://www.yes24.com/product/goods/153044896",
+      "release_date": "2025년 09월 25일",
+      "sell_num": "0"
+    },
+    {
+      "title": "오늘부터 회사에서 AI 합니다",
+      "author": "이활석업스테이지 AI 교육 부문 저",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/149432094/L",
+      "goods_no": "149432094",
+      "detail_url": "https://www.yes24.com/product/goods/149432094",
+      "release_date": "2025년 07월 30일",
+      "sell_num": "1182"
+    },
+    {
+      "title": "실전 ComfyUI",
+      "author": "우희철 저",
+      "price": "22,500원",
+      "image_url": "https://image.yes24.com/goods/145449201/L",
+      "goods_no": "145449201",
+      "detail_url": "https://www.yes24.com/product/goods/145449201",
+      "release_date": "2025년 04월 30일",
+      "sell_num": "1224"
+    },
+    {
+      "title": "네이버 블로그 AI 자동화 마케팅 with 챗GPT+Zapier+Make",
+      "author": "조영빈 저",
+      "price": "18,000원",
+      "image_url": "https://image.yes24.com/goods/145343581/L",
+      "goods_no": "145343581",
+      "detail_url": "https://www.yes24.com/product/goods/145343581",
+      "release_date": "2025년 04월 25일",
+      "sell_num": "4548"
+    },
+    {
+      "title": "처음이지만 프로처럼 쓰는 노션(Notion)",
+      "author": "박한용 저",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/143880438/L",
+      "goods_no": "143880438",
+      "detail_url": "https://www.yes24.com/product/goods/143880438",
+      "release_date": "2025년 04월 10일",
+      "sell_num": "2802"
+    },
+    {
+      "title": "유튜브 AI 성공 전략 : 쇼츠로 시작해 수익화까지",
+      "author": "강민형 저",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/143973042/L",
+      "goods_no": "143973042",
+      "detail_url": "https://www.yes24.com/product/goods/143973042",
+      "release_date": "2025년 04월 10일",
+      "sell_num": "978"
+    },
+    {
+      "title": "진짜 업무에 쓰는 챗GPT 노코드 데이터 분석",
+      "author": "이기복 저",
+      "price": "29,700원",
+      "image_url": "https://image.yes24.com/goods/142788864/L",
+      "goods_no": "142788864",
+      "detail_url": "https://www.yes24.com/product/goods/142788864",
+      "release_date": "2025년 03월 10일",
+      "sell_num": "1968"
+    },
+    {
+      "title": "처음이라도 괜찮아, 오토핫키 프로그래밍",
+      "author": "정규승 저",
+      "price": "28,800원",
+      "image_url": "https://image.yes24.com/goods/142702332/L",
+      "goods_no": "142702332",
+      "detail_url": "https://www.yes24.com/product/goods/142702332",
+      "release_date": "2025년 02월 25일",
+      "sell_num": "1206"
+    },
+    {
+      "title": "오피스 게임",
+      "author": "초맹 저",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/141133804/L",
+      "goods_no": "141133804",
+      "detail_url": "https://www.yes24.com/product/goods/141133804",
+      "release_date": "2025년 01월 25일",
+      "sell_num": "402"
+    }
+  ],
+  "책바세": [
+    {
+      "title": "챗GPT 교사 마스터 플랜\n                \n                    \n                        [\n전면개정2판                        ]",
+      "author": "한민철 저",
+      "price": "24,300원",
+      "image_url": "https://image.yes24.com/goods/152814420/L",
+      "goods_no": "152814420",
+      "detail_url": "https://www.yes24.com/product/goods/152814420",
+      "release_date": "2025년 09월 09일",
+      "sell_num": "2448"
+    },
+    {
+      "title": "대체불가 AI 노코드 업무 툴 & 게임 개발",
+      "author": "김윤우 저",
+      "price": "18,000원",
+      "image_url": "https://image.yes24.com/goods/147572534/L",
+      "goods_no": "147572534",
+      "detail_url": "https://www.yes24.com/product/goods/147572534",
+      "release_date": "2025년 06월 25일",
+      "sell_num": "510"
+    },
+    {
+      "title": "대체불가 AI 교사 업무 자동화",
+      "author": "이승우 저",
+      "price": "21,600원",
+      "image_url": "https://image.yes24.com/goods/145338919/L",
+      "goods_no": "145338919",
+      "detail_url": "https://www.yes24.com/product/goods/145338919",
+      "release_date": "2025년 04월 25일",
+      "sell_num": "2151"
+    },
+    {
+      "title": "24시간 완성! 챗GPT 스타트업 프롬프트 설계",
+      "author": "박희용 저",
+      "price": "21,600원",
+      "image_url": "https://image.yes24.com/goods/142637189/L",
+      "goods_no": "142637189",
+      "detail_url": "https://www.yes24.com/product/goods/142637189",
+      "release_date": "2025년 02월 21일",
+      "sell_num": "2199"
+    },
+    {
+      "title": "딥시크 쇼크",
+      "author": "이용태 저",
+      "price": "10,800원",
+      "image_url": "https://image.yes24.com/goods/142274619/L",
+      "goods_no": "142274619",
+      "detail_url": "https://www.yes24.com/product/goods/142274619",
+      "release_date": "2025년 02월 18일",
+      "sell_num": "180"
+    },
+    {
+      "title": "2025 AWS(아마존 웹 서비스) 국제공인 AI 전문가 자격시험 (기출문제+적중문제)",
+      "author": "책바세 IT팀 저",
+      "price": "16,200원",
+      "image_url": "https://image.yes24.com/goods/139604589/L",
+      "goods_no": "139604589",
+      "detail_url": "https://www.yes24.com/product/goods/139604589",
+      "release_date": "2024년 12월 12일",
+      "sell_num": "798"
+    },
+    {
+      "title": "생성형 AI 뉴버전 미드저니 마스터 클래스 기초+고급+응용(실전)",
+      "author": "이용태 저",
+      "price": "22,500원",
+      "image_url": "https://image.yes24.com/goods/132619965/L",
+      "goods_no": "132619965",
+      "detail_url": "https://www.yes24.com/product/goods/132619965",
+      "release_date": "2024년 09월 16일",
+      "sell_num": "3120"
+    },
+    {
+      "title": "생성형 AI 영상 제작 : 영화·애니메이션·광고·PPT·유튜브까지",
+      "author": "김세원 저",
+      "price": "21,600원",
+      "image_url": "https://image.yes24.com/goods/129043874/L",
+      "goods_no": "129043874",
+      "detail_url": "https://www.yes24.com/product/goods/129043874",
+      "release_date": "2024년 07월 27일",
+      "sell_num": "2544"
+    },
+    {
+      "title": "챗GPT 문화·예술·교육 인사이트",
+      "author": "박은정 저",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/126821430/L",
+      "goods_no": "126821430",
+      "detail_url": "https://www.yes24.com/product/goods/126821430",
+      "release_date": "2024년 06월 12일",
+      "sell_num": "408"
+    },
+    {
+      "title": "생성형 AI 작곡 + 작사 마스터링",
+      "author": "구효인 저",
+      "price": "18,000원",
+      "image_url": "https://image.yes24.com/goods/126531992/L",
+      "goods_no": "126531992",
+      "detail_url": "https://www.yes24.com/product/goods/126531992",
+      "release_date": "2024년 05월 24일",
+      "sell_num": "3546"
+    }
+  ],
+  "로드북": [
+    {
+      "title": "AI 에이전트 생태계",
+      "author": "조쉬 저",
+      "price": "24,300원",
+      "image_url": "https://image.yes24.com/goods/149414736/L",
+      "goods_no": "149414736",
+      "detail_url": "https://www.yes24.com/product/goods/149414736",
+      "release_date": "2025년 08월 04일",
+      "sell_num": "18789"
+    },
+    {
+      "title": "해커톤",
+      "author": "노아론 저",
+      "price": "27,000원",
+      "image_url": "https://image.yes24.com/goods/149385474/L",
+      "goods_no": "149385474",
+      "detail_url": "https://www.yes24.com/product/goods/149385474",
+      "release_date": "2025년 07월 28일",
+      "sell_num": "630"
+    },
+    {
+      "title": "AI 디자인 for e-커머스",
+      "author": "지성민 저",
+      "price": "24,300원",
+      "image_url": "https://image.yes24.com/goods/144905251/L",
+      "goods_no": "144905251",
+      "detail_url": "https://www.yes24.com/product/goods/144905251",
+      "release_date": "2025년 04월 16일",
+      "sell_num": "1794"
+    },
+    {
+      "title": "챗대리의 따라하면 바로 되는 AI 마케팅 자동화",
+      "author": "챗대리 저",
+      "price": "21,600원",
+      "image_url": "https://image.yes24.com/goods/143053307/L",
+      "goods_no": "143053307",
+      "detail_url": "https://www.yes24.com/product/goods/143053307",
+      "release_date": "2025년 03월 10일",
+      "sell_num": "5376"
+    },
+    {
+      "title": "생성형 AI를 활용한 게임 개발",
+      "author": "정금호 저",
+      "price": "24,300원",
+      "image_url": "https://image.yes24.com/goods/139882194/L",
+      "goods_no": "139882194",
+      "detail_url": "https://www.yes24.com/product/goods/139882194",
+      "release_date": "2024년 12월 12일",
+      "sell_num": "2256"
+    },
+    {
+      "title": "백견불여일타 리액트 쇼핑몰 프로젝트",
+      "author": "홍준혁 저",
+      "price": "27,000원",
+      "image_url": "https://image.yes24.com/goods/125992344/L",
+      "goods_no": "125992344",
+      "detail_url": "https://www.yes24.com/product/goods/125992344",
+      "release_date": "2024년 04월 23일",
+      "sell_num": "294"
+    },
+    {
+      "title": "시작하는 개발자들을 위한 기술 여행 가이드",
+      "author": "이재용 저",
+      "price": "22,500원",
+      "image_url": "https://image.yes24.com/goods/123367539/L",
+      "goods_no": "123367539",
+      "detail_url": "https://www.yes24.com/product/goods/123367539",
+      "release_date": "2023년 11월 10일",
+      "sell_num": "60"
+    },
+    {
+      "title": "자바의 신 VOL.1\n                \n                    \n                        [\n3판                        ]",
+      "author": "이상민 저",
+      "price": "27,000원",
+      "image_url": "https://image.yes24.com/goods/122886212/L",
+      "goods_no": "122886212",
+      "detail_url": "https://www.yes24.com/product/goods/122886212",
+      "release_date": "2023년 10월 16일",
+      "sell_num": "1278"
+    },
+    {
+      "title": "자바의 신 VOL.2\n                \n                    \n                        [\n3판                        ]",
+      "author": "이상민 저",
+      "price": "31,500원",
+      "image_url": "https://image.yes24.com/goods/122886692/L",
+      "goods_no": "122886692",
+      "detail_url": "https://www.yes24.com/product/goods/122886692",
+      "release_date": "2023년 10월 16일",
+      "sell_num": "966"
+    },
+    {
+      "title": "개발자로 첫 출근했어요",
+      "author": "김설화 저",
+      "price": "20,700원",
+      "image_url": "https://image.yes24.com/goods/122789294/L",
+      "goods_no": "122789294",
+      "detail_url": "https://www.yes24.com/product/goods/122789294",
+      "release_date": "2023년 10월 13일",
+      "sell_num": "0"
+    }
+  ],
+  "성안당": [
+    {
+      "title": "백발백중 2026 ITQ 마스터종합서\n                \n                    \n                        [\n자동채점 프로그램 및 무료 동영상 강의 제공전국컴퓨터교육협의회 추천도서                        ]",
+      "author": "한정수박윤정 저",
+      "price": "30,600원",
+      "image_url": "https://image.yes24.com/goods/151264934/L",
+      "goods_no": "151264934",
+      "detail_url": "https://www.yes24.com/product/goods/151264934",
+      "release_date": "2025년 08월 20일",
+      "sell_num": "1020"
+    },
+    {
+      "title": "정보관리기술사&컴퓨터시스템응용기술사 Vol. 11 Cloud Native",
+      "author": "권영식 저",
+      "price": "40,500원",
+      "image_url": "https://image.yes24.com/goods/151997328/L",
+      "goods_no": "151997328",
+      "detail_url": "https://www.yes24.com/product/goods/151997328",
+      "release_date": "2025년 08월 20일",
+      "sell_num": "306"
+    },
+    {
+      "title": "2026 백발백중 ITQ 파워포인트 2021\n                \n                    \n                        [\n자동채점 프로그램무료 동영상 강의 제공전국컴퓨터교육협의회 추천도서                        ]",
+      "author": "한정수 저",
+      "price": "17,100원",
+      "image_url": "https://image.yes24.com/goods/151266108/L",
+      "goods_no": "151266108",
+      "detail_url": "https://www.yes24.com/product/goods/151266108",
+      "release_date": "2025년 08월 20일",
+      "sell_num": "525"
+    },
+    {
+      "title": "유니티6 독학노트",
+      "author": "김한호최태온김홍일 저",
+      "price": "35,100원",
+      "image_url": "https://image.yes24.com/goods/151353819/L",
+      "goods_no": "151353819",
+      "detail_url": "https://www.yes24.com/product/goods/151353819",
+      "release_date": "2025년 08월 13일",
+      "sell_num": "1884"
+    },
+    {
+      "title": "AI 작화법",
+      "author": "하묘 저",
+      "price": "22,500원",
+      "image_url": "https://image.yes24.com/goods/151260269/L",
+      "goods_no": "151260269",
+      "detail_url": "https://www.yes24.com/product/goods/151260269",
+      "release_date": "2025년 08월 13일",
+      "sell_num": "246"
+    },
+    {
+      "title": "AI 포토샵 & 미드저니",
+      "author": "유은진이미정앤미디어 저",
+      "price": "24,300원",
+      "image_url": "https://image.yes24.com/goods/150310664/L",
+      "goods_no": "150310664",
+      "detail_url": "https://www.yes24.com/product/goods/150310664",
+      "release_date": "2025년 08월 06일",
+      "sell_num": "744"
+    },
+    {
+      "title": "만화로 쉽게 배우는 시계열 분석",
+      "author": "다카하시 이치로 저권기태 역",
+      "price": "16,200원",
+      "image_url": "https://image.yes24.com/goods/149745776/L",
+      "goods_no": "149745776",
+      "detail_url": "https://www.yes24.com/product/goods/149745776",
+      "release_date": "2025년 07월 30일",
+      "sell_num": "246"
+    },
+    {
+      "title": "2026 백발백중 컴퓨터활용능력 2급 필기\n                \n                    \n                        [\n전국컴퓨터교육협의회 추천 도서무료 MP3 강의 제공CBT 모의고사 무료 응시권 제공유료 동영상 강의                        ]",
+      "author": "Vision IT 저",
+      "price": "20,700원",
+      "image_url": "https://image.yes24.com/goods/149617798/L",
+      "goods_no": "149617798",
+      "detail_url": "https://www.yes24.com/product/goods/149617798",
+      "release_date": "2025년 07월 23일",
+      "sell_num": "0"
+    },
+    {
+      "title": "2026 최적합 네트워크관리사 1.2급 필기+실기\n                \n                    \n                        [\n과목별 적중예상문제 무료 동영상 강의 수강권CBT 온라인 모의고사 무료 응시권PPT 강의 자료 제공                        ]",
+      "author": "허준선세리 저",
+      "price": "27,000원",
+      "image_url": "https://image.yes24.com/goods/148420573/L",
+      "goods_no": "148420573",
+      "detail_url": "https://www.yes24.com/product/goods/148420573",
+      "release_date": "2025년 07월 09일",
+      "sell_num": "858"
+    },
+    {
+      "title": "스포츠, AI와 동행하다",
+      "author": "크리스 브래디카를 튈스샤예간 오미드샤피예박재현 저 외 2명",
+      "price": "18,000원",
+      "image_url": "https://image.yes24.com/goods/148919900/L",
+      "goods_no": "148919900",
+      "detail_url": "https://www.yes24.com/product/goods/148919900",
+      "release_date": "2025년 07월 05일",
+      "sell_num": "1575"
+    }
+  ],
+  "천그루숲": [
+    {
+      "title": "업무시간을 반으로 줄이는 AI 활용법 + 업무속도를 2배로 높이는 AI 업무 활용법 세트\n                \n                    \n                        [\n2권                        ]",
+      "author": "이임복 저",
+      "price": "32,400원",
+      "image_url": "https://image.yes24.com/goods/148854125/L",
+      "goods_no": "148854125",
+      "detail_url": "https://www.yes24.com/product/goods/148854125",
+      "release_date": "2025년 07월 20일",
+      "sell_num": "0"
+    },
+    {
+      "title": "업무시간을 반으로 줄이는 챗GPT 글쓰기 (큰글자책)",
+      "author": "정태일 저",
+      "price": "36,000원",
+      "image_url": "https://image.yes24.com/goods/145995000/L",
+      "goods_no": "145995000",
+      "detail_url": "https://www.yes24.com/product/goods/145995000",
+      "release_date": "2025년 05월 08일",
+      "sell_num": "24"
+    },
+    {
+      "title": "업무시간을 반으로 줄이는 AI 활용법 + 챗GPT 글쓰기 세트\n                \n                    \n                        [\n2권                        ]",
+      "author": "정태일이임복 저",
+      "price": "32,400원",
+      "image_url": "https://image.yes24.com/goods/144453425/L",
+      "goods_no": "144453425",
+      "detail_url": "https://www.yes24.com/product/goods/144453425",
+      "release_date": "2025년 04월 10일",
+      "sell_num": "0"
+    },
+    {
+      "title": "AI로 이미지, 영상, 음악 한 번에 끝내기 (큰글자책)",
+      "author": "이현 저",
+      "price": "48,000원",
+      "image_url": "https://image.yes24.com/goods/141311308/L",
+      "goods_no": "141311308",
+      "detail_url": "https://www.yes24.com/product/goods/141311308",
+      "release_date": "2025년 01월 24일",
+      "sell_num": "36"
+    },
+    {
+      "title": "AI로 이미지, 영상, 음악 한 번에 끝내기",
+      "author": "이현 저",
+      "price": "16,200원",
+      "image_url": "https://image.yes24.com/goods/139563085/L",
+      "goods_no": "139563085",
+      "detail_url": "https://www.yes24.com/product/goods/139563085",
+      "release_date": "2024년 11월 20일",
+      "sell_num": "4038"
+    },
+    {
+      "title": "크러쉬 잇! (CRUSH IT)\n                \n                    \n                        [\n개정판                        ]",
+      "author": "게리 바이너척 저최소영 역정진수 감수",
+      "price": "15,300원",
+      "image_url": "https://image.yes24.com/goods/132766309/L",
+      "goods_no": "132766309",
+      "detail_url": "https://www.yes24.com/product/goods/132766309",
+      "release_date": "2024년 08월 30일",
+      "sell_num": "1596"
+    },
+    {
+      "title": "크러싱 잇! SNS로 부자가 된 사람들 + 크러쉬 잇! (CRUSH IT) 세트\n                \n                    \n                        [\n2권                        ]",
+      "author": "게리 바이너척 저최소영김진희 역에릭남 감수 외 1명",
+      "price": "30,600원",
+      "image_url": "https://image.yes24.com/goods/133174647/L",
+      "goods_no": "133174647",
+      "detail_url": "https://www.yes24.com/product/goods/133174647",
+      "release_date": "2024년 08월 30일",
+      "sell_num": "0"
+    },
+    {
+      "title": "챗GPT - 질문하는 인간, 답하는 AI (큰글자책)",
+      "author": "이임복 저",
+      "price": "40,000원",
+      "image_url": "https://image.yes24.com/goods/118220655/L",
+      "goods_no": "118220655",
+      "detail_url": "https://www.yes24.com/product/goods/118220655",
+      "release_date": "2023년 04월 11일",
+      "sell_num": "0"
+    },
+    {
+      "title": "챗GPT : 질문하는 인간, 답하는 AI",
+      "author": "이임복 저",
+      "price": "13,500원",
+      "image_url": "https://image.yes24.com/goods/117830134/L",
+      "goods_no": "117830134",
+      "detail_url": "https://www.yes24.com/product/goods/117830134",
+      "release_date": "2023년 03월 10일",
+      "sell_num": "228"
+    },
+    {
+      "title": "서비스 기획자로 일하고 있습니다",
+      "author": "강승훈 저",
+      "price": "15,300원",
+      "image_url": "https://image.yes24.com/goods/112373296/L",
+      "goods_no": "112373296",
+      "detail_url": "https://www.yes24.com/product/goods/112373296",
+      "release_date": "2022년 09월 10일",
+      "sell_num": "432"
+    }
+  ],
+  "생능북": [
+    {
+      "title": "AI 이후의 인간",
+      "author": "반병현 저",
+      "price": "20,700원",
+      "image_url": "https://image.yes24.com/goods/153821283/L",
+      "goods_no": "153821283",
+      "detail_url": "https://www.yes24.com/product/goods/153821283",
+      "release_date": "2025년 10월 08일",
+      "sell_num": "0"
+    },
+    {
+      "title": "AI 캡컷",
+      "author": "민지영문수민앤미디어 저",
+      "price": "23,400원",
+      "image_url": "https://image.yes24.com/goods/152369808/L",
+      "goods_no": "152369808",
+      "detail_url": "https://www.yes24.com/product/goods/152369808",
+      "release_date": "2025년 09월 15일",
+      "sell_num": "2553"
+    },
+    {
+      "title": "삼성에서 ERP로 먹고사는 컨설턴트가 알려주는 ABAP of SAP",
+      "author": "주호재서기준 저",
+      "price": "22,500원",
+      "image_url": "https://image.yes24.com/goods/151041989/L",
+      "goods_no": "151041989",
+      "detail_url": "https://www.yes24.com/product/goods/151041989",
+      "release_date": "2025년 08월 20일",
+      "sell_num": "1989"
+    },
+    {
+      "title": "삼성에서 ERP로 먹고사는 컨설턴트가 알려주는 SAP + 삼성에서 ERP로 먹고사는 컨설턴트가 알려주는 ABAP of SAP 세트\n                \n                    \n                        [\n2권                        ]",
+      "author": "주호재서기준 저",
+      "price": "43,200원",
+      "image_url": "https://image.yes24.com/goods/151884950/L",
+      "goods_no": "151884950",
+      "detail_url": "https://www.yes24.com/product/goods/151884950",
+      "release_date": "2025년 08월 20일",
+      "sell_num": "0"
+    },
+    {
+      "title": "숏폼 마케팅 with 캡컷",
+      "author": "김혜림 저",
+      "price": "16,200원",
+      "image_url": "https://image.yes24.com/goods/148475570/L",
+      "goods_no": "148475570",
+      "detail_url": "https://www.yes24.com/product/goods/148475570",
+      "release_date": "2025년 07월 15일",
+      "sell_num": "1524"
+    },
+    {
+      "title": "교사를 위한 생성형 AI 활용 수업",
+      "author": "김종혜 저",
+      "price": "14,400원",
+      "image_url": "https://image.yes24.com/goods/144129260/L",
+      "goods_no": "144129260",
+      "detail_url": "https://www.yes24.com/product/goods/144129260",
+      "release_date": "2025년 04월 22일",
+      "sell_num": "2805"
+    },
+    {
+      "title": "AI는 회사에서 어떻게 쓰이는가",
+      "author": "케이트리 저",
+      "price": "17,100원",
+      "image_url": "https://image.yes24.com/goods/143846890/L",
+      "goods_no": "143846890",
+      "detail_url": "https://www.yes24.com/product/goods/143846890",
+      "release_date": "2025년 03월 28일",
+      "sell_num": "618"
+    },
+    {
+      "title": "디지털 전환 시대의 AI 디지털 교육",
+      "author": "홍지연홍장우 저",
+      "price": "18,000원",
+      "image_url": "https://image.yes24.com/goods/141696274/L",
+      "goods_no": "141696274",
+      "detail_url": "https://www.yes24.com/product/goods/141696274",
+      "release_date": "2025년 02월 10일",
+      "sell_num": "3012"
+    },
+    {
+      "title": "시니어를 위한 스마트폰 활용 with 챗GPT",
+      "author": "곽민철정희철 저",
+      "price": "17,820원",
+      "image_url": "https://image.yes24.com/goods/141129131/L",
+      "goods_no": "141129131",
+      "detail_url": "https://www.yes24.com/product/goods/141129131",
+      "release_date": "2025년 01월 10일",
+      "sell_num": "5571"
+    },
+    {
+      "title": "처음 배우는 플러터 앱 개발",
+      "author": "후지카와 케이 저이영란 역",
+      "price": "18,000원",
+      "image_url": "https://image.yes24.com/goods/138601929/L",
+      "goods_no": "138601929",
+      "detail_url": "https://www.yes24.com/product/goods/138601929",
+      "release_date": "2024년 11월 25일",
+      "sell_num": "1146"
+    }
+  ],
+  "한빛비즈": [
+    {
+      "title": "10배 빠르게 일하고 연봉 높이는 챗GPT 업무 비법",
+      "author": "유캔코드 저",
+      "price": "20,700원",
+      "image_url": "https://image.yes24.com/goods/152647602/L",
+      "goods_no": "152647602",
+      "detail_url": "https://www.yes24.com/product/goods/152647602",
+      "release_date": "2025년 09월 02일",
+      "sell_num": "816"
+    },
+    {
+      "title": "보고서 기획서 고민 없이 시작해서 30분 만에 끝내주는 프롬프트 책",
+      "author": "박경수 저",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/150009333/L",
+      "goods_no": "150009333",
+      "detail_url": "https://www.yes24.com/product/goods/150009333",
+      "release_date": "2025년 08월 02일",
+      "sell_num": "3219"
+    },
+    {
+      "title": "왜 구글인가\n                \n                    \n                        [\n양장                        ]",
+      "author": "마키노 다케후미 저정정일 역",
+      "price": "12,420원",
+      "image_url": "https://image.yes24.com/goods/4376722/L",
+      "goods_no": "4376722",
+      "detail_url": "https://www.yes24.com/product/goods/4376722",
+      "release_date": "2010년 11월 22일",
+      "sell_num": "0"
+    },
+    {
+      "title": "한빛비즈 커리어툰",
+      "author": "저자 정보 없음",
+      "price": "가격 정보 없음",
+      "image_url": "https://image.yes24.com/goods/128820479/L",
+      "goods_no": "128820479",
+      "detail_url": "https://www.yes24.com/product/goods/128820479",
+      "release_date": "2024년 06월 21일",
+      "sell_num": "0"
+    },
+    {
+      "title": "한빛비즈 문학툰",
+      "author": "저자 정보 없음",
+      "price": "가격 정보 없음",
+      "image_url": "https://image.yes24.com/goods/111705745/L",
+      "goods_no": "111705745",
+      "detail_url": "https://www.yes24.com/product/goods/111705745",
+      "release_date": "출간일 정보 없음",
+      "sell_num": "0"
+    },
+    {
+      "title": "한빛비즈 교양툰",
+      "author": "저자 정보 없음",
+      "price": "가격 정보 없음",
+      "image_url": "https://image.yes24.com/goods/64708949/L",
+      "goods_no": "64708949",
+      "detail_url": "https://www.yes24.com/product/goods/64708949",
+      "release_date": "2018년 10월 10일",
+      "sell_num": "6054"
+    }
+  ],
+  "다빈치books": [
+    {
+      "title": "바로 배워서 바로 써먹는 바이브 코딩",
+      "author": "박찬김병석전수연김지용 저 외 4명",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/152079426/L",
+      "goods_no": "152079426",
+      "detail_url": "https://www.yes24.com/product/goods/152079426",
+      "release_date": "2025년 09월 02일",
+      "sell_num": "7626"
+    },
+    {
+      "title": "우리는 AI와 공부한다",
+      "author": "박찬김병석전수연전은경 저 외 6명",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/142558644/L",
+      "goods_no": "142558644",
+      "detail_url": "https://www.yes24.com/product/goods/142558644",
+      "release_date": "2025년 02월 18일",
+      "sell_num": "1008"
+    },
+    {
+      "title": "스마트폰, 학교 수업에 들어오다!\n                \n                    \n                        [\n개정판                        ]",
+      "author": "박만재 저",
+      "price": "28,800원",
+      "image_url": "https://image.yes24.com/goods/141312058/L",
+      "goods_no": "141312058",
+      "detail_url": "https://www.yes24.com/product/goods/141312058",
+      "release_date": "2025년 01월 15일",
+      "sell_num": "654"
+    },
+    {
+      "title": "생성형 인공지능과 함께하는 사회정서학습",
+      "author": "박찬김병석전은경전수연 저 외 2명",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/125137664/L",
+      "goods_no": "125137664",
+      "detail_url": "https://www.yes24.com/product/goods/125137664",
+      "release_date": "2024년 03월 07일",
+      "sell_num": "3978"
+    },
+    {
+      "title": "유튜버 백세시대 (큰글씨책)",
+      "author": "이유진 저",
+      "price": "13,500원",
+      "image_url": "https://image.yes24.com/goods/121129679/L",
+      "goods_no": "121129679",
+      "detail_url": "https://www.yes24.com/product/goods/121129679",
+      "release_date": "2023년 08월 01일",
+      "sell_num": "24"
+    },
+    {
+      "title": "스마트폰, 학교 수업에 들어오다!",
+      "author": "박만재 저",
+      "price": "22,500원",
+      "image_url": "https://image.yes24.com/goods/111731504/L",
+      "goods_no": "111731504",
+      "detail_url": "https://www.yes24.com/product/goods/111731504",
+      "release_date": "2022년 08월 17일",
+      "sell_num": "516"
+    },
+    {
+      "title": "메타버스 교육 프로젝트",
+      "author": "변문경김경한박찬이정훈 저",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/104232704/L",
+      "goods_no": "104232704",
+      "detail_url": "https://www.yes24.com/product/goods/104232704",
+      "release_date": "2021년 10월 21일",
+      "sell_num": "0"
+    },
+    {
+      "title": "메타버스 FOR 에듀테크",
+      "author": "변문경김병석이정훈박찬 저",
+      "price": "22,500원",
+      "image_url": "https://image.yes24.com/goods/103412179/L",
+      "goods_no": "103412179",
+      "detail_url": "https://www.yes24.com/product/goods/103412179",
+      "release_date": "2021년 09월 09일",
+      "sell_num": "378"
+    },
+    {
+      "title": "쉽게 따라하는 인공지능 FOR 클래스룸",
+      "author": "전수연진성임손미현노희진 저 외 5명",
+      "price": "16,200원",
+      "image_url": "https://image.yes24.com/goods/97667686/L",
+      "goods_no": "97667686",
+      "detail_url": "https://www.yes24.com/product/goods/97667686",
+      "release_date": "2021년 03월 02일",
+      "sell_num": "0"
+    },
+    {
+      "title": "코딩으로 제어하는 가상현실(VR) 프로젝트",
+      "author": "김병석박정민박찬 저",
+      "price": "16,200원",
+      "image_url": "https://image.yes24.com/goods/51128014/L",
+      "goods_no": "51128014",
+      "detail_url": "https://www.yes24.com/product/goods/51128014",
+      "release_date": "2018년 09월 01일",
+      "sell_num": "0"
+    }
+  ],
+  "미디어북": [
+    {
+      "title": "AI에이전트 시대 젠스파크 AI 300배 활용법",
+      "author": "최재용권혁용나병인노지영 저 외 6명",
+      "price": "18,000원",
+      "image_url": "https://image.yes24.com/goods/152119137/L",
+      "goods_no": "152119137",
+      "detail_url": "https://www.yes24.com/product/goods/152119137",
+      "release_date": "2025년 08월 29일",
+      "sell_num": "2730"
+    },
+    {
+      "title": "AI 에이전트 시대, 누구나 크리에이터가 되는 콘텐츠 실무서",
+      "author": "김진희김금란강효자박창선 저 외 6명",
+      "price": "18,000원",
+      "image_url": "https://image.yes24.com/goods/145575183/L",
+      "goods_no": "145575183",
+      "detail_url": "https://www.yes24.com/product/goods/145575183",
+      "release_date": "2025년 04월 23일",
+      "sell_num": "600"
+    },
+    {
+      "title": "AI 에이전트와 업무생산성 향상",
+      "author": "김진희김지연노진아서순향 저 외 6명",
+      "price": "20,000원",
+      "image_url": "https://image.yes24.com/goods/143754127/L",
+      "goods_no": "143754127",
+      "detail_url": "https://www.yes24.com/product/goods/143754127",
+      "release_date": "2025년 03월 20일",
+      "sell_num": "372"
+    },
+    {
+      "title": "AI 하나로 광고의 신이 되는 법",
+      "author": "최재용김준태박광록오원석 저 외 4명",
+      "price": "20,000원",
+      "image_url": "https://image.yes24.com/goods/143049185/L",
+      "goods_no": "143049185",
+      "detail_url": "https://www.yes24.com/product/goods/143049185",
+      "release_date": "2025년 03월 06일",
+      "sell_num": "408"
+    },
+    {
+      "title": "이것이 AI에이전트 · 챗봇이다",
+      "author": "권오형최재용김은정김진경 저 외 6명",
+      "price": "22,000원",
+      "image_url": "https://image.yes24.com/goods/139895037/L",
+      "goods_no": "139895037",
+      "detail_url": "https://www.yes24.com/product/goods/139895037",
+      "release_date": "2024년 12월 12일",
+      "sell_num": "1350"
+    },
+    {
+      "title": "단돈 5만원으로 AI홍보영상 달인되기",
+      "author": "최재용유미경이대윤김수진 저 외 6명",
+      "price": "18,000원",
+      "image_url": "https://image.yes24.com/goods/136301849/L",
+      "goods_no": "136301849",
+      "detail_url": "https://www.yes24.com/product/goods/136301849",
+      "release_date": "2024년 11월 01일",
+      "sell_num": "978"
+    },
+    {
+      "title": "누구나 따라할 수 있는 업무자동화 'MS365 코파일럿'",
+      "author": "최재용노경훈신진주유채린 저 외 8명",
+      "price": "18,000원",
+      "image_url": "https://image.yes24.com/goods/136301931/L",
+      "goods_no": "136301931",
+      "detail_url": "https://www.yes24.com/product/goods/136301931",
+      "release_date": "2024년 11월 01일",
+      "sell_num": "1350"
+    },
+    {
+      "title": "생성형 AI 활용 생산성 향상",
+      "author": "최재용강혜정김재연노경훈 저 외 10명",
+      "price": "20,000원",
+      "image_url": "https://image.yes24.com/goods/128088686/L",
+      "goods_no": "128088686",
+      "detail_url": "https://www.yes24.com/product/goods/128088686",
+      "release_date": "2024년 06월 13일",
+      "sell_num": "120"
+    },
+    {
+      "title": "챗GPT 프롬프트의 신세계",
+      "author": "최재용홍성훈이신우 저김진선 감수",
+      "price": "18,000원",
+      "image_url": "https://image.yes24.com/goods/125649200/L",
+      "goods_no": "125649200",
+      "detail_url": "https://www.yes24.com/product/goods/125649200",
+      "release_date": "2024년 03월 28일",
+      "sell_num": "204"
+    },
+    {
+      "title": "중소상공인을 위한 생성형 AI 챗GPT 홍보마케팅",
+      "author": "최재용강성희김정인김태연 저 외 8명",
+      "price": "18,000원",
+      "image_url": "https://image.yes24.com/goods/125649190/L",
+      "goods_no": "125649190",
+      "detail_url": "https://www.yes24.com/product/goods/125649190",
+      "release_date": "2024년 03월 28일",
+      "sell_num": "96"
+    }
+  ],
+  "생능출판사": [
+    {
+      "title": "양자 알고리즘",
+      "author": "양성봉 저",
+      "price": "27,000원",
+      "image_url": "https://image.yes24.com/goods/151173289/L",
+      "goods_no": "151173289",
+      "detail_url": "https://www.yes24.com/product/goods/151173289",
+      "release_date": "2025년 08월 25일",
+      "sell_num": "0"
+    },
+    {
+      "title": "명품 C++ Programming\n                \n                    \n                        [\n개정3판                        ]",
+      "author": "황기태 저",
+      "price": "34,000원",
+      "image_url": "https://image.yes24.com/goods/149597633/L",
+      "goods_no": "149597633",
+      "detail_url": "https://www.yes24.com/product/goods/149597633",
+      "release_date": "2025년 07월 25일",
+      "sell_num": "4695"
+    },
+    {
+      "title": "C 언어 워크북",
+      "author": "안기수 저",
+      "price": "12,000원",
+      "image_url": "https://image.yes24.com/goods/146832513/L",
+      "goods_no": "146832513",
+      "detail_url": "https://www.yes24.com/product/goods/146832513",
+      "release_date": "2025년 05월 26일",
+      "sell_num": "711"
+    },
+    {
+      "title": "컴퓨팅 사고와 정보과학 : 2024년도 기출문제집(초등학생용)",
+      "author": "Bebras Korea 저",
+      "price": "11,700원",
+      "image_url": "https://image.yes24.com/goods/142844446/L",
+      "goods_no": "142844446",
+      "detail_url": "https://www.yes24.com/product/goods/142844446",
+      "release_date": "2025년 03월 14일",
+      "sell_num": "1158"
+    },
+    {
+      "title": "컴퓨팅 사고와 정보과학 : 2024년도 기출문제집(중·고등학생용)",
+      "author": "Bebras Korea 저",
+      "price": "13,500원",
+      "image_url": "https://image.yes24.com/goods/142844457/L",
+      "goods_no": "142844457",
+      "detail_url": "https://www.yes24.com/product/goods/142844457",
+      "release_date": "2025년 03월 14일",
+      "sell_num": "1434"
+    },
+    {
+      "title": "Wireshark로 배우는 컴퓨터 네트워크\n                \n                    \n                        [\n개정3판                        ]",
+      "author": "김봉한이재광 저",
+      "price": "39,000원",
+      "image_url": "https://image.yes24.com/goods/141799500/L",
+      "goods_no": "141799500",
+      "detail_url": "https://www.yes24.com/product/goods/141799500",
+      "release_date": "2025년 01월 31일",
+      "sell_num": "1464"
+    },
+    {
+      "title": "파이썬 워크북",
+      "author": "안기수 저",
+      "price": "15,000원",
+      "image_url": "https://image.yes24.com/goods/142082385/L",
+      "goods_no": "142082385",
+      "detail_url": "https://www.yes24.com/product/goods/142082385",
+      "release_date": "2025년 01월 15일",
+      "sell_num": "408"
+    },
+    {
+      "title": "파이썬으로 배우는 확률과 통계",
+      "author": "이재광전태일 저",
+      "price": "36,000원",
+      "image_url": "https://image.yes24.com/goods/140199863/L",
+      "goods_no": "140199863",
+      "detail_url": "https://www.yes24.com/product/goods/140199863",
+      "release_date": "2024년 12월 20일",
+      "sell_num": "336"
+    },
+    {
+      "title": "으뜸 데이터 분석과 머신러닝\n                \n                    \n                        [\n개정판                        ]",
+      "author": "박동규강영민김병욱 저",
+      "price": "32,000원",
+      "image_url": "https://image.yes24.com/goods/139931427/L",
+      "goods_no": "139931427",
+      "detail_url": "https://www.yes24.com/product/goods/139931427",
+      "release_date": "2024년 12월 16일",
+      "sell_num": "1488"
+    },
+    {
+      "title": "만들면서 배우는 생성형 AI 첫걸음",
+      "author": "천인국 저",
+      "price": "29,000원",
+      "image_url": "https://image.yes24.com/goods/139896911/L",
+      "goods_no": "139896911",
+      "detail_url": "https://www.yes24.com/product/goods/139896911",
+      "release_date": "2024년 12월 13일",
+      "sell_num": "2592"
+    }
+  ],
+  "북엔드": [
+    {
+      "title": "혁펜하임의 Easy! 딥러닝",
+      "author": "혁펜하임 저",
+      "price": "31,500원",
+      "image_url": "https://image.yes24.com/goods/139734696/L",
+      "goods_no": "139734696",
+      "detail_url": "https://www.yes24.com/product/goods/139734696",
+      "release_date": "2024년 11월 26일",
+      "sell_num": "9018"
+    },
+    {
+      "title": "텍스트 투 에브리씽",
+      "author": "조동근 저",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/124027825/L",
+      "goods_no": "124027825",
+      "detail_url": "https://www.yes24.com/product/goods/124027825",
+      "release_date": "2023년 11월 10일",
+      "sell_num": "90"
+    }
+  ],
+  "디비안(DBian)": [
+    {
+      "title": "PostgreSQL DBA를 위한 Admin 이야기",
+      "author": "김시연최두원 저",
+      "price": "29,000원",
+      "image_url": "https://image.yes24.com/goods/149195623/L",
+      "goods_no": "149195623",
+      "detail_url": "https://www.yes24.com/product/goods/149195623",
+      "release_date": "2025년 07월 15일",
+      "sell_num": "1290"
+    },
+    {
+      "title": "뚝딱 PostgreSQL 레시피",
+      "author": "김익서 저",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/129043457/L",
+      "goods_no": "129043457",
+      "detail_url": "https://www.yes24.com/product/goods/129043457",
+      "release_date": "2024년 07월 15일",
+      "sell_num": "510"
+    },
+    {
+      "title": "2024 국가공인 SQLP 자격검정 핵심노트 I\n                \n                    \n                        [\n개정판                        ]",
+      "author": "조시형 저",
+      "price": "32,000원",
+      "image_url": "https://image.yes24.com/goods/129602186/L",
+      "goods_no": "129602186",
+      "detail_url": "https://www.yes24.com/product/goods/129602186",
+      "release_date": "2024년 07월 12일",
+      "sell_num": "4236"
+    },
+    {
+      "title": "2024 국가공인 SQLP 자격검정 핵심노트 II",
+      "author": "조시형 저",
+      "price": "32,000원",
+      "image_url": "https://image.yes24.com/goods/129602748/L",
+      "goods_no": "129602748",
+      "detail_url": "https://www.yes24.com/product/goods/129602748",
+      "release_date": "2024년 07월 12일",
+      "sell_num": "3450"
+    },
+    {
+      "title": "2024 국가공인 SQLD 자격검정 핵심노트\n                \n                    \n                        [\n개정판                        ]",
+      "author": "조시형신동민정희락김경수 저",
+      "price": "21,600원",
+      "image_url": "https://image.yes24.com/goods/125648104/L",
+      "goods_no": "125648104",
+      "detail_url": "https://www.yes24.com/product/goods/125648104",
+      "release_date": "2024년 03월 22일",
+      "sell_num": "504"
+    },
+    {
+      "title": "오라클 성능 고도화 원리와 해법 2",
+      "author": "조시형 저",
+      "price": "49,000원",
+      "image_url": "https://image.yes24.com/goods/112347078/L",
+      "goods_no": "112347078",
+      "detail_url": "https://www.yes24.com/product/goods/112347078",
+      "release_date": "2022년 08월 01일",
+      "sell_num": "3168"
+    },
+    {
+      "title": "오라클 성능 고도화 원리와 해법 1",
+      "author": "조시형 저",
+      "price": "39,000원",
+      "image_url": "https://image.yes24.com/goods/112343709/L",
+      "goods_no": "112343709",
+      "detail_url": "https://www.yes24.com/product/goods/112343709",
+      "release_date": "2022년 08월 01일",
+      "sell_num": "2814"
+    },
+    {
+      "title": "평생 필요한 데이터 분석\n                \n                    \n                        [\n확장판                        ]",
+      "author": "유일환 저",
+      "price": "32,000원",
+      "image_url": "https://image.yes24.com/goods/110413459/L",
+      "goods_no": "110413459",
+      "detail_url": "https://www.yes24.com/product/goods/110413459",
+      "release_date": "2022년 07월 01일",
+      "sell_num": "114"
+    },
+    {
+      "title": "국가공인 SQLP 자격검정 핵심노트 II",
+      "author": "조시형 저",
+      "price": "27,000원",
+      "image_url": "https://image.yes24.com/goods/103521655/L",
+      "goods_no": "103521655",
+      "detail_url": "https://www.yes24.com/product/goods/103521655",
+      "release_date": "2021년 09월 05일",
+      "sell_num": "0"
+    },
+    {
+      "title": "국가공인 SQLP 자격검정 핵심노트 I",
+      "author": "조시형 저",
+      "price": "27,000원",
+      "image_url": "https://image.yes24.com/goods/103510806/L",
+      "goods_no": "103510806",
+      "detail_url": "https://www.yes24.com/product/goods/103510806",
+      "release_date": "2021년 09월 05일",
+      "sell_num": "0"
+    }
+  ],
+  "아이콕스(iCox)": [
+    {
+      "title": "1인 앱 개발, 커서 AI와 함께 배우기",
+      "author": "이석현 저",
+      "price": "27,000원",
+      "image_url": "https://image.yes24.com/goods/152449732/L",
+      "goods_no": "152449732",
+      "detail_url": "https://www.yes24.com/product/goods/152449732",
+      "release_date": "2025년 09월 15일",
+      "sell_num": "612"
+    },
+    {
+      "title": "쉽게 배우고 생활에 바로 쓰는 AI 활용",
+      "author": "오상열 저",
+      "price": "13,500원",
+      "image_url": "https://image.yes24.com/goods/149607439/L",
+      "goods_no": "149607439",
+      "detail_url": "https://www.yes24.com/product/goods/149607439",
+      "release_date": "2025년 08월 11일",
+      "sell_num": "438"
+    },
+    {
+      "title": "쉽게 배우고 생활에 바로 쓰는 컴퓨터 활용 (윈도우 11)",
+      "author": "오상열 저",
+      "price": "13,500원",
+      "image_url": "https://image.yes24.com/goods/152110612/L",
+      "goods_no": "152110612",
+      "detail_url": "https://www.yes24.com/product/goods/152110612",
+      "release_date": "2025년 08월 10일",
+      "sell_num": "102"
+    },
+    {
+      "title": "기초에서 응용까지 AutoCAD 2D",
+      "author": "배찬우 저",
+      "price": "27,000원",
+      "image_url": "https://image.yes24.com/goods/148079920/L",
+      "goods_no": "148079920",
+      "detail_url": "https://www.yes24.com/product/goods/148079920",
+      "release_date": "2025년 07월 21일",
+      "sell_num": "24"
+    },
+    {
+      "title": "동영상편집 최강자 캡컷",
+      "author": "오상열 저",
+      "price": "13,500원",
+      "image_url": "https://image.yes24.com/goods/148080194/L",
+      "goods_no": "148080194",
+      "detail_url": "https://www.yes24.com/product/goods/148080194",
+      "release_date": "2025년 07월 15일",
+      "sell_num": "1656"
+    },
+    {
+      "title": "구글 스프레드시트 & 앱스스크립트 업무 자동화",
+      "author": "천용민 저",
+      "price": "31,500원",
+      "image_url": "https://image.yes24.com/goods/149734843/L",
+      "goods_no": "149734843",
+      "detail_url": "https://www.yes24.com/product/goods/149734843",
+      "release_date": "2025년 07월 14일",
+      "sell_num": "1107"
+    },
+    {
+      "title": "실무에서 바로쓰는 네이버 클라우드 플랫폼",
+      "author": "써드아이시스템 저",
+      "price": "35,100원",
+      "image_url": "https://image.yes24.com/goods/146956822/L",
+      "goods_no": "146956822",
+      "detail_url": "https://www.yes24.com/product/goods/146956822",
+      "release_date": "2025년 06월 10일",
+      "sell_num": "780"
+    },
+    {
+      "title": "실전 코드부터 배우는 실무 활용 파이썬 with 챗GPT",
+      "author": "박찬의 저",
+      "price": "19,800원",
+      "image_url": "https://image.yes24.com/goods/141129252/L",
+      "goods_no": "141129252",
+      "detail_url": "https://www.yes24.com/product/goods/141129252",
+      "release_date": "2025년 01월 31일",
+      "sell_num": "540"
+    },
+    {
+      "title": "AI, 결국 인간이 써야 한다",
+      "author": "이석현 저",
+      "price": "21,600원",
+      "image_url": "https://image.yes24.com/goods/139854086/L",
+      "goods_no": "139854086",
+      "detail_url": "https://www.yes24.com/product/goods/139854086",
+      "release_date": "2024년 12월 20일",
+      "sell_num": "606"
+    },
+    {
+      "title": "윈도우 11",
+      "author": "오상열 저",
+      "price": "12,600원",
+      "image_url": "https://image.yes24.com/goods/139592033/L",
+      "goods_no": "139592033",
+      "detail_url": "https://www.yes24.com/product/goods/139592033",
+      "release_date": "2024년 12월 10일",
+      "sell_num": "720"
     }
   ]
 }

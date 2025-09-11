@@ -1,0 +1,65 @@
+name: Update Books Data
+
+on:
+  schedule:
+    # 매일 한국시간 오전 9시 (UTC 0시)에 실행
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+    # 수동 실행 가능
+
+jobs:
+  update-books:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Install Chrome browser
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y wget gnupg
+        wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+        echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+        sudo apt-get update
+        sudo apt-get install -y google-chrome-stable
+        
+    - name: Set up virtual display
+      run: |
+        sudo apt-get install -y xvfb
+        export DISPLAY=:99
+        sudo Xvfb :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
+        sleep 3
+        
+    - name: Run books scraper
+      run: |
+        export DISPLAY=:99
+        python newbooks.py
+        
+    - name: Check for changes
+      id: verify-changed-files
+      run: |
+        if git diff --quiet books_data.json; then
+          echo "changed=false" >> $GITHUB_OUTPUT
+        else
+          echo "changed=true" >> $GITHUB_OUTPUT
+        fi
+        
+    - name: Commit and push changes
+      if: steps.verify-changed-files.outputs.changed == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add books_data.json
+        git commit -m "Update books data - $(date +'%Y-%m-%d %H:%M:%S')"
+        git push
