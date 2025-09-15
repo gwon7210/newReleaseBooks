@@ -25,26 +25,44 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         
-    - name: Install Chrome browser
+    - name: Install Chrome and setup
       run: |
+        # Chrome 설치
         sudo apt-get update
-        sudo apt-get install -y wget gnupg
+        sudo apt-get install -y wget gnupg xvfb
         wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
         echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
         sudo apt-get update
         sudo apt-get install -y google-chrome-stable
         
-    - name: Set up virtual display
-      run: |
-        sudo apt-get install -y xvfb
+        # Chrome 버전 확인
+        google-chrome --version
+        
+        # ChromeDriver 자동 설치 (Chrome과 호환 버전)
+        CHROME_VERSION=$(google-chrome --version | cut -d " " -f3 | cut -d "." -f1-3)
+        echo "Chrome version: $CHROME_VERSION"
+        
+        # Virtual display 설정
         export DISPLAY=:99
         sudo Xvfb :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
         sleep 3
         
+        # 메모리 및 프로세스 제한 설정
+        echo "Setting up system limits for stability..."
+        ulimit -n 1024
+        ulimit -u 512
+        
     - name: Run books scraper
       run: |
         export DISPLAY=:99
+        export CHROME_BIN=/usr/bin/google-chrome-stable
+        export CHROMEDRIVER_PATH=/usr/bin/chromedriver
+        ulimit -n 1024
+        ulimit -u 512
         python newbooks.py
+      env:
+        GITHUB_ACTIONS: true
+        DISPLAY: :99
         
     - name: Check for changes
       id: verify-changed-files

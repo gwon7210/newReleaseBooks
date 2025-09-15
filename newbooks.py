@@ -14,54 +14,114 @@ import re
 
 def setup_driver():
     chrome_options = Options()
+    
+    # 기본 헤드리스 설정 (안정성 우선)
     chrome_options.add_argument('--headless=new')
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.add_argument('--disable-gpu')
     chrome_options.add_argument('--window-size=1280,1024')
-    chrome_options.add_argument('--disable-extensions')
-    chrome_options.add_argument('--proxy-server="direct://"')
-    chrome_options.add_argument('--proxy-bypass-list=*')
-    chrome_options.add_argument('--disable-blink-features=AutomationControlled')
-    chrome_options.add_argument('--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36')
     
-    # GitHub Actions 환경에서 안정성을 위한 추가 옵션들
+    # 로그 및 에러 메시지 억제
+    chrome_options.add_argument('--log-level=3')
+    chrome_options.add_argument('--disable-logging')
+    chrome_options.add_argument('--silent')
+    
+    # 불필요한 기능 비활성화 (JavaScript는 유지)
+    chrome_options.add_argument('--disable-extensions')
+    chrome_options.add_argument('--disable-plugins')
+    chrome_options.add_argument('--disable-images')  # 성능 향상을 위해
+    chrome_options.add_argument('--disable-background-networking')
+    chrome_options.add_argument('--disable-sync')
+    chrome_options.add_argument('--disable-default-apps')
+    
+    # 자동화 감지 방지
+    chrome_options.add_argument('--disable-blink-features=AutomationControlled')
+    chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    chrome_options.add_experimental_option('useAutomationExtension', False)
+    
+    # User Agent 설정
+    chrome_options.add_argument('--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36')
+    
+    # GitHub Actions 환경 설정
     if 'GITHUB_ACTIONS' in os.environ:
-        chrome_options.add_argument('--single-process')
+        # 안정성을 위한 GitHub Actions 전용 설정
+        chrome_options.add_argument('--disable-features=VizDisplayCompositor')
         chrome_options.add_argument('--disable-background-timer-throttling')
         chrome_options.add_argument('--disable-renderer-backgrounding')
         chrome_options.add_argument('--disable-backgrounding-occluded-windows')
-        chrome_options.add_argument('--disable-features=TranslateUI')
         chrome_options.add_argument('--disable-crash-reporter')
         chrome_options.add_argument('--disable-breakpad')
-        chrome_options.add_argument('--disable-background-networking')
-        chrome_options.add_argument('--disable-sync')
-        chrome_options.add_argument('--disable-default-apps')
         chrome_options.add_argument('--memory-pressure-off')
-        chrome_options.add_argument('--max_old_space_size=4096')
-        chrome_options.add_argument('--force-device-scale-factor=1')
-        chrome_options.add_argument('--aggressive-cache-discard')
-        # Chrome 바이너리 경로 설정
-        chrome_options.binary_location = '/usr/bin/google-chrome'
+        
+        # Chrome 바이너리 경로 (여러 가능한 경로 시도)
+        possible_chrome_paths = [
+            '/usr/bin/google-chrome',
+            '/usr/bin/google-chrome-stable',
+            '/usr/bin/chromium-browser',
+            '/usr/bin/chromium'
+        ]
+        
+        for path in possible_chrome_paths:
+            if os.path.exists(path):
+                chrome_options.binary_location = path
+                print(f"Chrome binary found at: {path}")
+                break
+        
         print("Running in GitHub Actions environment")
     
+    # 환경변수 설정
+    os.environ['WDM_LOG_LEVEL'] = '0'
+    
+    # 드라이버 초기화 시도
     try:
-        service = Service()
+        # GitHub Actions에서는 시스템 ChromeDriver 우선 사용
+        if 'GITHUB_ACTIONS' in os.environ:
+            # 시스템에 설치된 ChromeDriver 사용
+            service = Service()
+        else:
+            # 로컬에서는 ChromeDriverManager 사용
+            service = Service(ChromeDriverManager().install())
+            
         driver = webdriver.Chrome(service=service, options=chrome_options)
-        driver.set_page_load_timeout(30)  # 페이지 로드 타임아웃을 30초로 조정
-        driver.implicitly_wait(10)  # 암시적 대기 시간 설정
-        return driver
+        driver.set_page_load_timeout(30)
+        driver.implicitly_wait(10)
+        
+        # 드라이버가 정상적으로 작동하는지 테스트
+        try:
+            driver.get("data:text/html,<html><body><h1>Test</h1></body></html>")
+            print("Chrome driver initialized successfully")
+            return driver
+        except Exception as test_error:
+            print(f"Driver test failed: {test_error}")
+            driver.quit()
+            raise test_error
+            
     except Exception as e:
         print(f"Chrome 드라이버 초기화 실패: {e}")
+        
+        # 대안 방법 시도
         try:
-            service = Service(ChromeDriverManager().install())
+            if 'GITHUB_ACTIONS' in os.environ:
+                # GitHub Actions에서 ChromeDriverManager로 재시도
+                print("Trying ChromeDriverManager as fallback...")
+                service = Service(ChromeDriverManager().install())
+            else:
+                # 로컬에서 시스템 드라이버로 재시도
+                service = Service()
+                
             driver = webdriver.Chrome(service=service, options=chrome_options)
-            driver.set_page_load_timeout(30)  # 페이지 로드 타임아웃을 30초로 조정
-            driver.implicitly_wait(10)  # 암시적 대기 시간 설정
+            driver.set_page_load_timeout(30)
+            driver.implicitly_wait(10)
+            
+            # 테스트
+            driver.get("data:text/html,<html><body><h1>Test</h1></body></html>")
+            print("Chrome driver initialized successfully with fallback method")
             return driver
+            
         except Exception as e2:
-            print(f"ChromeDriverManager로도 초기화 실패: {e2}")
-            raise e2
+            print(f"모든 초기화 방법 실패: {e2}")
+            raise Exception(f"Chrome driver initialization failed: {e2}")
 
 def get_book_release_date(driver, goods_no):
     if not goods_no:
