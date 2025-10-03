@@ -1,0 +1,202 @@
+[
+  {
+    "title": "AI Model Evaluation",
+    "detail_link": "https://www.manning.com/books/ai-model-evaluation",
+    "cover_image": "https://images.manning.com/320/400/resize/book/d/25f8824-fbc9-40cc-85ad-cee717973c78/Nassery-MEAP-HI.png"
+  },
+  {
+    "title": "Spring AI in Action",
+    "detail_link": "https://www.manning.com/books/spring-ai-in-action",
+    "cover_image": "https://images.manning.com/320/400/resize/book/8/0a0783c-8da2-407e-b60e-78683cc72618/WallsMEAP.png"
+  },
+  {
+    "title": "Grokking Bayes",
+    "detail_link": "https://www.manning.com/books/grokking-bayes",
+    "cover_image": "https://images.manning.com/320/400/resize/book/8/97eeeb3-91b8-404b-9d83-63ac449b7c8a/Nguyen-MEAP-HI.png"
+  },
+  {
+    "title": "Kafka for Architects",
+    "detail_link": "https://www.manning.com/books/kafka-for-architects",
+    "cover_image": "https://images.manning.com/320/400/resize/book/8/2997023-5b83-4f93-8d4b-f31832d47cb2/Gorshkova2-MEAP-HI.png"
+  },
+  {
+    "title": "Python Workout, Second Edition",
+    "detail_link": "https://www.manning.com/books/python-workout-second-edition",
+    "cover_image": "https://images.manning.com/320/400/resize/book/e/c696413-9ac7-4629-8e96-925ac938e8a3/Lerner2-MEAP-HI.png"
+  },
+  {
+    "title": "Systems Programming with Zig",
+    "detail_link": "https://www.manning.com/books/systems-programming-with-zig",
+    "cover_image": "https://images.manning.com/320/400/resize/book/2/acda96a-f7b2-4d5d-8e06-a02998c0cbb4/Hinson-Hasty-MEAP-HI.png"
+  },
+  {
+    "title": "Kubernetes in Action, Second Edition",
+    "detail_link": "https://www.manning.com/books/kubernetes-in-action-second-edition",
+    "cover_image": "https://images.manning.com/320/400/resize/book/7/29cf2fc-7808-4fd8-95e0-82225e9f0b5a/Luksa-Kubernetes-2ed-MEAP-HI.png"
+  },
+  {
+    "title": "Grokking Statistics",
+    "detail_link": "https://www.manning.com/books/grokking-statistics",
+    "cover_image": "https://images.manning.com/320/400/resize/book/6/4a173e9-aee5-4c50-89a5-98821a8612f5/Nield-MEAP-HI.png"
+  },
+  {
+    "title": "Math for Frontend Web Dev",
+    "detail_link": "https://www.manning.com/books/math-for-frontend-web-dev",
+    "cover_image": "https://images.manning.com/320/400/resize/book/b/d6b410f-f138-45f6-affc-8c32e3432dad/McFedries-HI-MEAP.png"
+  },
+  {
+    "title": "Financial AI in Practice",
+    "detail_link": "https://www.manning.com/books/financial-ai-in-practice",
+    "cover_image": "https://images.manning.com/320/400/resize/book/d/baf24ee-8a97-46e3-9302-15c79d71d8ae/Kim-MEAP-HI.png"
+  },
+  {
+    "title": "Practical FinOps",
+    "detail_link": "https://www.manning.com/books/practical-finops",
+    "cover_image": "https://images.manning.com/320/400/resize/book/4/18d2343-bc7c-45a9-811c-b92c2c38a39d/Labouardy-MEAP-HI.png"
+  },
+  {
+    "title": "Software Design in Python",
+    "detail_link": "https://www.manning.com/books/software-design-in-python",
+    "cover_image": "https://images.manning.com/320/400/resize/book/0/1ad1015-2360-4332-988c-121f60e2f309/Mak-MEAP-HI.png"
+  },
+  {
+    "title": "Acing the Certified Kubernetes Administrator Exam, Second Edition",
+    "detail_link": "https://www.manning.com/books/acing-the-certified-kubernetes-administrator-exam-second-edition",
+    "cover_image": "https://images.manning.com/320/400/resize/book/d/5fed6d7-1b73-4036-ba82-8130aa3a1aef/Crowell2-MEAP-HI.png"
+  },
+  {
+    "title": "Microservices Patterns, Second Edition",
+    "detail_link": "https://www.manning.com/books/microservices-patterns-second-edition",
+    "cover_image": "https://images.manning.com/320/400/resize/book/9/8cb6463-bb6b-426c-b244-bb2a67c44c25/Richardson2ed-MEAP-HI.png"
+  },
+  {
+    "title": "Java Logging",
+    "detail_link": "https://www.manning.com/books/java-logging",
+    "cover_image": "https://images.manning.com/320/400/resize/book/1/3531ac0-10f3-4e53-acc2-7774ed305bb6/Grobmeier-MEAP-HI.png"
+  },
+  {
+    "title": "Reinforcement Learning for Business",
+    "detail_link": "https://www.manning.com/books/reinforcement-learning-for-business",
+    "cover_image": "https://images.manning.com/320/400/resize/book/8/2e4b6ea-d9ae-4c94-ac9c-f5d5c15392b4/Aghazadeh-MEAP-HI.png"
+  },
+  {
+    "title": "Microsoft Azure in Action",
+    "detail_link": "https://www.manning.com/books/microsoft-azure-in-action",
+    "cover_image": "https://images.manning.com/320/400/resize/book/b/7928fec-b5ca-423e-aad8-7736b6df918b/Klint-MEAP-HI.png"
+  },
+  {
+    "title": "Data Pipelines with Apache Airflow, Second Edition",
+    "detail_link": "https://www.manning.com/books/data-pipelines-with-apache-airflow-second-edition",
+    "cover_image": "https://images.manning.com/320/400/resize/book/a/916f8c7-11a4-4f4b-980e-85937af8203d/Ruiter-MEAP-HI.png"
+  },
+  {
+    "title": "Transformers in Action",
+    "detail_link": "https://www.manning.com/books/transformers-in-action",
+    "cover_image": "https://images.manning.com/320/400/resize/book/c/8d93c12-06bf-4333-950f-abfc48817032/Koenigstein-MEAP-HI.png"
+  },
+  {
+    "title": "Just Use Postgres!",
+    "detail_link": "https://www.manning.com/books/just-use-postgres",
+    "cover_image": "https://images.manning.com/320/400/resize/book/4/4e506c5-e701-4fb8-8708-6bcc89c8ec15/Magda-MEAP.jpg"
+  },
+  {
+    "title": "Learn AI Data Engineering in a Month of Lunches",
+    "detail_link": "https://www.manning.com/books/learn-ai-data-engineering-in-a-month-of-lunches",
+    "cover_image": "https://images.manning.com/320/400/resize/book/9/1a39853-0bda-4b1a-99ce-42a1a59ed0de/Melillo-MEAP-HI.png"
+  },
+  {
+    "title": "Hugging Face in Action",
+    "detail_link": "https://www.manning.com/books/hugging-face-in-action",
+    "cover_image": "https://images.manning.com/320/400/resize/book/f/a01e910-53f2-4990-8e98-cf2476ef29f9/Lee-MEAP-HI.png"
+  },
+  {
+    "title": "Secrets of the JavaScript Ninja, Third Edition",
+    "detail_link": "https://www.manning.com/books/secrets-of-the-javascript-ninja-third-edition",
+    "cover_image": "https://images.manning.com/320/400/resize/book/4/8810e9c-7b53-4f64-a765-1b08b4f8015f/Burnham3ed-MEAP-HI.png"
+  },
+  {
+    "title": "Dynamic Authorization",
+    "detail_link": "https://www.manning.com/books/dynamic-authorization",
+    "cover_image": "https://images.manning.com/320/400/resize/book/8/d626803-f6b2-477c-8f60-74feea356754/Windley-MEAP-HI.png"
+  },
+  {
+    "title": "Data-Oriented Design for Games",
+    "detail_link": "https://www.manning.com/books/data-oriented-design-for-games",
+    "cover_image": "https://images.manning.com/320/400/resize/book/d/a6ce06c-e537-4a2a-890b-64ffef9985d8/Wilnai-MEAP-HI.png"
+  },
+  {
+    "title": "Effective Platform Engineering",
+    "detail_link": "https://www.manning.com/books/effective-platform-engineering",
+    "cover_image": "https://images.manning.com/320/400/resize/book/4/e9b3704-e76c-467c-8351-175c7f37cd24/Chankramath-MEAP-HI.png"
+  },
+  {
+    "title": "Introduction to Generative AI, Second Edition",
+    "detail_link": "https://www.manning.com/books/introduction-to-generative-ai-second-edition",
+    "cover_image": "https://images.manning.com/320/400/resize/book/8/e274f5a-5f63-49a3-83f2-7320560395f1/Dhamani-2ed-MEAP-HI.png"
+  },
+  {
+    "title": "Building Reliable AI Systems",
+    "detail_link": "https://www.manning.com/books/building-reliable-ai-systems",
+    "cover_image": "https://images.manning.com/320/400/resize/book/1/b5738fb-3782-4075-827b-a5c6d91f59ca/Shahani-HI-MEAP.png"
+  },
+  {
+    "title": "Sutskever's List",
+    "detail_link": "https://www.manning.com/books/sutskevers-list",
+    "cover_image": "https://images.manning.com/320/400/resize/book/1/90fb9ec-1669-4c8f-b200-2999cf26b10d/Heimann-MEAP-HI.png"
+  },
+  {
+    "title": "Domain-Specific Small Language Models",
+    "detail_link": "https://www.manning.com/books/domain-specific-small-language-models",
+    "cover_image": "https://images.manning.com/320/400/resize/book/9/f6309a8-b227-478c-957c-8b9871356ccb/Iozzia-MEAP-HI.png"
+  },
+  {
+    "title": "AI Agents and Applications",
+    "detail_link": "https://www.manning.com/books/ai-agents-and-applications",
+    "cover_image": "https://images.manning.com/320/400/resize/book/f/5a227ad-5963-4ee0-bfc5-8253448606b1/Infante-MEAP-HI.png"
+  },
+  {
+    "title": "Build a Reasoning Model (From Scratch)",
+    "detail_link": "https://www.manning.com/books/build-a-reasoning-model-from-scratch",
+    "cover_image": "https://images.manning.com/320/400/resize/book/6/32352cc-64b4-49a8-bb8e-b20292086bdb/Raschka2-MEAP-HI.png"
+  },
+  {
+    "title": "Acing the Frontend Interview",
+    "detail_link": "https://www.manning.com/books/acing-the-frontend-interview",
+    "cover_image": "https://images.manning.com/320/400/resize/book/6/00c703c-02d2-41c0-ad88-ec461955126d/Fu-MEAP-HI.png"
+  },
+  {
+    "title": "Machine Learning for Drug Discovery",
+    "detail_link": "https://www.manning.com/books/machine-learning-for-drug-discovery",
+    "cover_image": "https://images.manning.com/320/400/resize/book/9/cf266f9-c0f1-4a05-a5ae-b3922a400b0d/Flynn-HI-MEAP.png"
+  },
+  {
+    "title": "Troubleshooting Java, Second Edition",
+    "detail_link": "https://www.manning.com/books/troubleshooting-java-second-edition",
+    "cover_image": "https://images.manning.com/320/400/resize/book/2/6509c3f-9eeb-4dc9-9303-bb346f38a371/Spilca2-MEAP-HI.png"
+  },
+  {
+    "title": "Build a Text-to-Image Generator (from Scratch)",
+    "detail_link": "https://www.manning.com/books/build-a-text-to-image-generator-from-scratch",
+    "cover_image": "https://images.manning.com/320/400/resize/book/a/490aba5-5467-4efd-9e61-940b348ec605/Liu2-MEAP-HI.png"
+  },
+  {
+    "title": "Deep Learning with PyTorch, Second Edition",
+    "detail_link": "https://www.manning.com/books/deep-learning-with-pytorch-second-edition",
+    "cover_image": "https://images.manning.com/320/400/resize/book/f/eef63ff-16f9-486f-9d08-f80864045b9a/Huang-2ed-MEAP-HI.png"
+  },
+  {
+    "title": "AI Applications Made Easy",
+    "detail_link": "https://www.manning.com/books/ai-applications-made-easy",
+    "cover_image": "https://images.manning.com/320/400/resize/book/3/dc9ffe4-225d-43a4-b9d5-e84d30bc2e88/DeMauro-MEAP-HI.png"
+  },
+  {
+    "title": "Acing the ISC2 Cybersecurity Certification Exam",
+    "detail_link": "https://www.manning.com/books/acing-the-isc2-cybersecurity-certification-exam",
+    "cover_image": "https://images.manning.com/320/400/resize/book/2/3a858fb-b253-4ea4-bbf5-0b1eadcd64ad/Carreira-MEAP-HI.png"
+  },
+  {
+    "title": "Tiny PowerShell Projects",
+    "detail_link": "https://www.manning.com/books/tiny-powershell-projects",
+    "cover_image": "https://images.manning.com/320/400/resize/book/e/f70e1ed-b12e-486b-b371-5eb0114f7dc2/Burns-MEAP-HI.png"
+  }
+]
