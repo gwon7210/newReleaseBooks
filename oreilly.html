@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>O'Reilly 출판사 신간 대시보드</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    .top-nav {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+    .top-nav a {
+      padding: 8px 14px;
+      border-radius: 20px;
+      background-color: #f1f1f1;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    .top-nav a:hover {
+      background-color: #e0e0e0;
+      color: #0066cc;
+    }
+    .top-nav a.active {
+      background-color: #0066cc;
+      color: white;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .book-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .book-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .book-card header {
+      display: flex;
+      gap: 15px;
+    }
+    .cover-wrapper {
+      flex-shrink: 0;
+    }
+    .cover-wrapper img {
+      width: 90px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 6px;
+      background-color: #f1f1f1;
+    }
+    .book-info {
+      flex: 1;
+    }
+    .book-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .book-order {
+      display: inline-block;
+      min-width: 26px;
+      margin-right: 8px;
+      color: #0066cc;
+      font-weight: bold;
+    }
+    .book-title a {
+      color: #333;
+      text-decoration: none;
+    }
+    .book-title a:hover {
+      color: #0066cc;
+      text-decoration: underline;
+    }
+    .book-description {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      white-space: pre-line;
+    }
+    .book-meta {
+      font-size: 13px;
+      color: #777;
+    }
+    .loading {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+    }
+    .description-toggle {
+      align-self: flex-start;
+      border: none;
+      background: none;
+      color: #0066cc;
+      font-size: 13px;
+      cursor: pointer;
+      padding: 0;
+      margin-top: -6px;
+    }
+    .description-toggle:hover {
+      text-decoration: underline;
+    }
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+    .modal-overlay.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal-dialog {
+      background: #fff;
+      border-radius: 10px;
+      width: min(640px, 100%);
+      max-height: 80vh;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      display: flex;
+      flex-direction: column;
+    }
+    .modal-header {
+      padding: 18px 22px 12px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .modal-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      margin: 0;
+      flex: 1;
+    }
+    .modal-close {
+      border: none;
+      background: none;
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+      color: #999;
+    }
+    .modal-close:hover {
+      color: #333;
+    }
+    .modal-body {
+      padding: 18px 22px 24px;
+      overflow-y: auto;
+      font-size: 14px;
+      color: #444;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+    <a href="index.html">YES24 대시보드</a>
+    <a href="oreilly.html">O'Reilly 대시보드</a>
+  </nav>
+  <h1>O'Reilly 출판사 신간 도서 대시보드</h1>
+  <div class="book-list" id="oreilly-books">
+    <div class="loading">데이터를 불러오는 중...</div>
+  </div>
+  <div id="description-modal" class="modal-overlay">
+    <div class="modal-dialog" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-title"></h2>
+        <button type="button" class="modal-close" aria-label="닫기">×</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <script>
+    function setActiveNav() {
+      const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+      const navLinks = document.querySelectorAll('.top-nav a');
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPath) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    function buildBookCard(book, index) {
+      const card = document.createElement('article');
+      card.className = 'book-card';
+
+      const header = document.createElement('header');
+
+      if (book.cover_image) {
+        const coverWrapper = document.createElement('div');
+        coverWrapper.className = 'cover-wrapper';
+        const img = document.createElement('img');
+        const coverSrc = book.cover_image.startsWith('http') ? book.cover_image : `https://www.oreilly.com${book.cover_image}`;
+        img.src = coverSrc;
+        img.alt = book.title || '도서 표지';
+        coverWrapper.appendChild(img);
+        header.appendChild(coverWrapper);
+      }
+
+      const info = document.createElement('div');
+      info.className = 'book-info';
+
+      const title = document.createElement('div');
+      title.className = 'book-title';
+
+      const order = document.createElement('span');
+      order.className = 'book-order';
+      order.textContent = `${index}.`;
+      title.appendChild(order);
+      if (book.detail_link) {
+        const link = document.createElement('a');
+        link.href = book.detail_link;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = book.title || '제목 정보 없음';
+        title.appendChild(link);
+      } else {
+        title.appendChild(document.createTextNode(book.title || '제목 정보 없음'));
+      }
+      info.appendChild(title);
+
+      if (book.description) {
+        const description = document.createElement('div');
+        description.className = 'book-description';
+        description.textContent = book.description;
+        info.appendChild(description);
+
+        if ((book.description || '').length > 160) {
+          const toggle = document.createElement('button');
+          toggle.type = 'button';
+          toggle.className = 'description-toggle';
+          toggle.textContent = '더보기';
+          toggle.addEventListener('click', () => {
+            openDescriptionModal(book.title || '제목 정보 없음', book.description);
+          });
+          info.appendChild(toggle);
+        }
+      }
+
+      if (book.published_at) {
+        const meta = document.createElement('div');
+        meta.className = 'book-meta';
+        meta.textContent = `출판일: ${book.published_at}`;
+        info.appendChild(meta);
+      }
+
+      header.appendChild(info);
+      card.appendChild(header);
+
+      return card;
+    }
+
+    async function loadOreillyBooks() {
+      const container = document.getElementById('oreilly-books');
+      container.innerHTML = '<div class="loading">데이터를 불러오는 중...</div>';
+      try {
+        const response = await fetch('oreilly_books.json');
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+        const data = await response.json();
+
+        container.innerHTML = '';
+        if (!Array.isArray(data) || data.length === 0) {
+          container.innerHTML = '<div class="loading">표시할 도서가 없습니다.</div>';
+          return;
+        }
+
+        data.forEach((book, idx) => {
+          const card = buildBookCard(book, idx + 1);
+          container.appendChild(card);
+        });
+      } catch (error) {
+        console.error('Error loading O\'Reilly books:', error);
+        container.innerHTML = '<div class="loading">데이터를 불러오는 중 오류가 발생했습니다.</div>';
+      }
+    }
+
+    const modalOverlay = document.getElementById('description-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalBody = document.getElementById('modal-body');
+
+    function openDescriptionModal(title, description) {
+      modalTitle.textContent = title;
+      modalBody.textContent = description;
+      modalOverlay.classList.add('visible');
+    }
+
+    function closeDescriptionModal() {
+      modalOverlay.classList.remove('visible');
+    }
+
+    modalOverlay.addEventListener('click', event => {
+      if (event.target === modalOverlay || event.target.classList.contains('modal-close')) {
+        closeDescriptionModal();
+      }
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        closeDescriptionModal();
+      }
+    });
+
+    setActiveNav();
+    loadOreillyBooks();
+  </script>
+</body>
+</html>

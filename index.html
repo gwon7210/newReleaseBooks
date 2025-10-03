@@ -9,6 +9,28 @@
       padding: 30px;
       background-color: #f9f9f9;
     }
+    .top-nav {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+    .top-nav a {
+      padding: 8px 14px;
+      border-radius: 20px;
+      background-color: #f1f1f1;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    .top-nav a:hover {
+      background-color: #e0e0e0;
+      color: #0066cc;
+    }
+    .top-nav a.active {
+      background-color: #0066cc;
+      color: white;
+    }
     .dashboard {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -100,7 +122,11 @@
   </style>
 </head>
 <body>
-  <h1>출판사 신간 도서 대시보드</h1>
+  <nav class="top-nav">
+    <a href="index.html">YES24 대시보드</a>
+    <a href="oreilly.html">O'Reilly 대시보드</a>
+  </nav>
+  <h1>YES24 출판사 신간 도서 대시보드</h1>
   <div class="dashboard" id="dashboard">
     <div class="loading">데이터를 불러오는 중...</div>
   </div>
@@ -110,6 +136,17 @@
   </div>
 
   <script>
+    function setActiveNav() {
+      const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+      const navLinks = document.querySelectorAll('.top-nav a');
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPath) {
+          link.classList.add('active');
+        }
+      });
+    }
+
     async function loadBooks() {
       try {
         const response = await fetch('books_data.json');
@@ -216,6 +253,7 @@
       }
     }
     
+    setActiveNav();
     loadBooks();
   </script>
 </body>
