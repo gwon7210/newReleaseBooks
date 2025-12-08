@@ -183,8 +183,8 @@ def save_books(books: List[Dict[str, str]], output_path: str = OUTPUT_FILE) -> N
 
 
 def main() -> None:
-    books = fetch_books()
-    save_books(books)
+    # books = fetch_books()
+    # save_books(books)
     print(f"Saved {len(books)} books to {OUTPUT_FILE}")
 
 
