@@ -95,6 +95,14 @@
     .page-header h1 {
       margin: 0;
     }
+    .nav a {
+      margin-right: 12px;
+      color: #0066cc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .nav a.active { color: #333; }
+    .nav a:hover { text-decoration: underline; }
     .deploy-date {
       color: #888;
       font-size: 0.85em;
@@ -113,6 +121,10 @@
 <body>
   <header class="page-header">
     <h1>IT 출판사 신간 대시보드</h1>
+    <nav class="nav">
+      <a href="index.html" class="active">신간</a>
+      <a href="sales.html">판매지수</a>
+    </nav>
     <span class="deploy-date">업데이트 <span id="deploy-date"></span></span>
   </header>
   <div class="dashboard" id="dashboard">

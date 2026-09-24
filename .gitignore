@@ -34,8 +34,9 @@ ENV/
 .DS_Store
 Thumbs.db
 
-# Data files
-books_data.json 
+# Generated data (rebuilt every run)
+books_data.json
+sales_data.json
 # Generated site
 public/
 deploy_info.json

@@ -75,10 +75,32 @@ class ParseDetailTest(unittest.TestCase):
         self.assertEqual(date, "2025년 05월 13일")
         self.assertEqual(sell_num, "1128")
 
-    def test_missing_fields(self):
+    def test_missing_fields_are_none(self):
         date, sell_num = newbooks.parse_detail("<html></html>")
         self.assertIsNone(date)
-        self.assertEqual(sell_num, "0")
+        self.assertIsNone(sell_num)
+
+
+class ApplyDetailsTest(unittest.TestCase):
+    def test_fills_list_books_from_details(self):
+        lists = {"출판사": newbooks.parse_search(SEARCH_HTML)}
+        details = {
+            "196521682": ("2026년 10월 01일", "500"),  # 상세 조회 성공
+            "146041188": None,                          # 상세 조회 실패
+        }
+        newbooks.apply_details(lists, details)
+        first, second = lists["출판사"]
+        self.assertEqual(first["release_date"], "2026년 10월 01일")
+        self.assertEqual(first["sell_num"], "500")
+        self.assertEqual(second["release_date"], newbooks.NO_DATE_TEXT)
+        self.assertEqual(second["sell_num"], "0")
+
+    def test_missing_sell_num_becomes_zero_and_list_date_is_kept(self):
+        lists = {"출판사": newbooks.parse_search(SEARCH_HTML, limit=1)}
+        newbooks.apply_details(lists, {"196521682": (None, None)})
+        book = lists["출판사"][0]
+        self.assertEqual(book["release_date"], "2026년 10월 12일")
+        self.assertEqual(book["sell_num"], "0")
 
 
 if __name__ == "__main__":

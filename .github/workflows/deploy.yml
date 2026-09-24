@@ -10,9 +10,13 @@ on:
     - cron: '0 3 * * *'    # 매일 12:00 (KST)
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
+
+concurrency:
+  group: deploy-main
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -33,13 +37,29 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Run tests
+        run: python -m unittest discover -s tests -t .
+
       - name: Run scraper
         run: python newbooks.py
+
+      - name: Commit sales data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then
+            echo "No data changes"
+            exit 0
+          fi
+          git commit -m "Update sales data $(TZ='Asia/Seoul' date '+%Y-%m-%d %H:%M')"
+          git pull --rebase origin main
+          git push origin HEAD:main
 
       - name: Build site
         run: |
           mkdir -p public
-          cp index.html books_data.json public/
+          cp index.html sales.html books_data.json sales_data.json public/
           echo "{\"last_deploy\": \"$(TZ='Asia/Seoul' date '+%Y년 %m월 %d일 %H:%M')\"}" > public/deploy_info.json
 
       - name: Setup Pages

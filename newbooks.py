@@ -1,8 +1,11 @@
-"""YES24 출판사별 신간 수집기.
+"""YES24 출판사별 신간 수집기 + 판매지수 기록.
 
-publishers.json에 적힌 출판사마다 YES24 모바일 검색(최신순)을 조회해
-도서 목록을 만들고, 각 도서의 상세 페이지에서 출간일과 판매지수를 보강한 뒤
-books_data.json으로 저장한다. 브라우저 없이 requests만 사용한다.
+1. publishers.json의 출판사마다 YES24 모바일 검색(최신순)으로 최신 도서 목록을 받는다.
+2. 목록을 data/books.json 카탈로그에 합친다. 한 번 등장한 책은 계속 추적 대상이다.
+3. 카탈로그의 모든 책 상세 페이지에서 출간일과 판매지수를 병렬로 조회한다.
+4. books_data.json(신간 대시보드), data/history/(판매지수 이력), sales_data.json(판매 대시보드)을 쓴다.
+
+브라우저 없이 requests만 사용한다.
 """
 
 import json
@@ -11,11 +14,14 @@ import sys
 import threading
 import time
 import urllib.parse
+from collections.abc import Iterable
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import requests
 from bs4 import BeautifulSoup
+
+import sales_history as sh
 
 BASE_URL = "https://m.yes24.com"
 PUBLISHERS_FILE = Path("publishers.json")
@@ -75,6 +81,10 @@ def fetch(session: requests.Session, url: str) -> str:
             return response.text
         except requests.RequestException as exc:
             last_error = exc
+            status = getattr(exc.response, "status_code", None)
+            if status is not None and 400 <= status < 500:
+                # 없는 상품(404) 등은 재시도해도 결과가 같다
+                raise RuntimeError(f"HTTP {status}: {url}") from exc
             print(f"  요청 실패 ({attempt}/{RETRIES}) {url}: {exc}")
             if attempt < RETRIES:
                 time.sleep(RETRY_WAIT_SECONDS * attempt)
@@ -149,13 +159,18 @@ def parse_search(html: str, limit: int = MAX_BOOKS_PER_PUBLISHER) -> list[dict]:
     return books
 
 
-def parse_detail(html: str) -> tuple[str | None, str]:
-    """상세 페이지에서 (출간일, 판매지수)를 꺼낸다. 판매지수는 숫자만 남긴다."""
+def parse_detail(html: str) -> tuple[str | None, str | None]:
+    """상세 페이지에서 (출간일, 판매지수)를 꺼낸다.
+
+    판매지수는 숫자만 남긴다. 요소 자체가 없으면(예약판매, 마크업 변경) None을 돌려주어
+    "0"으로 기록되는 일을 막는다.
+    """
     soup = BeautifulSoup(html, "html.parser")
     date = normalize_date(_text(soup, ".authPub .date") or _text(soup, ".gd_date"))
-    sell_text = _text(soup, ".gdBasicSet.gdRating .sellNum .num") or _text(soup, ".gd_sellNum") or ""
-    digits = re.sub(r"\D", "", sell_text)
-    return date, digits or "0"
+    sell_text = _text(soup, ".gdBasicSet.gdRating .sellNum .num") or _text(soup, ".gd_sellNum")
+    if sell_text is None:
+        return date, None
+    return date, re.sub(r"\D", "", sell_text) or "0"
 
 
 # --------------------------------------------------------------------------- #
@@ -186,45 +201,78 @@ def fetch_publisher_books(publisher: dict) -> tuple[str, list[dict]]:
     return name, books
 
 
-def enrich_book(book: dict) -> dict:
-    if not book["goods_no"]:
-        book["release_date"] = book["release_date"] or NO_DATE_TEXT
-        return book
-    try:
-        date, sell_num = parse_detail(
-            fetch(thread_session(), f"{BASE_URL}/goods/detail/{book['goods_no']}")
-        )
-        book["release_date"] = date or book["release_date"] or NO_DATE_TEXT
-        book["sell_num"] = sell_num
-    except Exception as exc:
-        print(f"  상세 조회 실패 {book['goods_no']}: {exc}")
-        book["release_date"] = book["release_date"] or NO_DATE_TEXT
-    return book
-
-
-def collect(publishers: list[dict]) -> dict[str, list[dict]]:
+def collect_lists(publishers: list[dict]) -> dict[str, list[dict]]:
+    """출판사별 최신 도서 목록. {출판사명: [도서, ...]} (publishers.json 순서 유지)"""
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
-        results = dict(pool.map(fetch_publisher_books, publishers))
-        all_books = [book for books in results.values() for book in books]
-        print(f"상세 페이지 {len(all_books)}건 조회 중...")
-        list(pool.map(enrich_book, all_books))
+        return dict(pool.map(fetch_publisher_books, publishers))
+
+
+def fetch_detail(goods_no: str) -> tuple[str | None, str | None] | None:
+    """상세 페이지의 (출간일, 판매지수). 요청 실패는 None."""
+    try:
+        return parse_detail(fetch(thread_session(), f"{BASE_URL}/goods/detail/{goods_no}"))
+    except Exception as exc:
+        print(f"  상세 조회 실패 {goods_no}: {exc}")
+        return None
+
+
+def fetch_details(goods_nos: Iterable[str]) -> dict[str, tuple[str | None, str | None] | None]:
+    targets = sorted(set(goods_nos))
+    print(f"상세 페이지 {len(targets)}건 조회 중...")
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
+        results = dict(zip(targets, pool.map(fetch_detail, targets)))
+    ok = sum(1 for r in results.values() if r is not None)
+    print(f"상세 조회 성공 {ok}/{len(targets)}")
+    if targets and ok < len(targets) / 2:
+        print("경고: 상세 조회 성공률이 50% 미만입니다. 차단 또는 사이트 구조 변경을 확인하세요.")
     return results
+
+
+def apply_details(lists: dict[str, list[dict]], details: dict[str, tuple | None]) -> None:
+    """목록 도서에 상세 조회 결과를 반영한다. books_data.json 형식은 예전과 같다."""
+    for books in lists.values():
+        for book in books:
+            result = details.get(book["goods_no"]) if book["goods_no"] else None
+            date, sell_num = result if result else (None, None)
+            book["release_date"] = date or book["release_date"] or NO_DATE_TEXT
+            book["sell_num"] = sell_num if sell_num is not None else "0"
 
 
 def main() -> int:
     publishers = json.loads(PUBLISHERS_FILE.read_text(encoding="utf-8"))
+    today = sh.kst_today()
     started = time.time()
-    data = collect(publishers)
-    OUTPUT_FILE.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    total = sum(len(v) for v in data.values())
-    empty = [name for name, books in data.items() if not books]
-    print(f"완료: {len(data)}개 출판사, {total}권, {time.time() - started:.0f}초 -> {OUTPUT_FILE}")
-    if empty:
-        print(f"도서가 없는 출판사 {len(empty)}곳: {', '.join(empty)}")
-    if total == 0:
+    lists = collect_lists(publishers)
+    listed = sum(len(v) for v in lists.values())
+    if listed == 0:
         print("수집된 도서가 없습니다. 사이트 구조가 바뀌었는지 확인하세요.")
         return 1
+
+    catalog = sh.load_catalog(sh.CATALOG_FILE)
+    sh.merge_catalog(catalog, lists, today)
+
+    details = fetch_details(catalog.keys())
+
+    apply_details(lists, details)
+    OUTPUT_FILE.write_text(json.dumps(lists, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    sh.apply_release_dates(catalog, details)
+    sh.save_catalog(sh.CATALOG_FILE, catalog)
+
+    values = {g: int(r[1]) for g, r in details.items() if r and r[1] is not None}
+    rows = sh.upsert_day(sh.HISTORY_DIR, today, values)
+
+    sales = sh.build_sales_data(catalog, sh.load_history(sh.HISTORY_DIR), today, [p["name"] for p in publishers])
+    sh.SALES_DATA_FILE.write_text(json.dumps(sales, ensure_ascii=False), encoding="utf-8")
+
+    empty = [name for name, books in lists.items() if not books]
+    print(
+        f"완료: 출판사 {len(lists)}곳, 목록 {listed}권, 추적 {len(catalog)}권, "
+        f"오늘 기록 {rows}행, 기록 일수 {len(sales['dates'])}일, {time.time() - started:.0f}초"
+    )
+    if empty:
+        print(f"도서가 없는 출판사 {len(empty)}곳: {', '.join(empty)}")
     return 0
 
 
