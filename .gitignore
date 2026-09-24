@@ -36,3 +36,6 @@ Thumbs.db
 
 # Data files
 books_data.json 
+# Generated site
+public/
+deploy_info.json

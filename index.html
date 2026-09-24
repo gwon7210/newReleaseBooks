@@ -2,34 +2,12 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>출판사 신간 대시보드.</title>
+  <title>IT 출판사 신간 대시보드</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       padding: 30px;
       background-color: #f9f9f9;
-    }
-    .top-nav {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 25px;
-    }
-    .top-nav a {
-      padding: 8px 14px;
-      border-radius: 20px;
-      background-color: #f1f1f1;
-      color: #333;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.2s ease, color 0.2s ease;
-    }
-    .top-nav a:hover {
-      background-color: #e0e0e0;
-      color: #0066cc;
-    }
-    .top-nav a.active {
-      background-color: #0066cc;
-      color: white;
     }
     .dashboard {
       display: grid;
@@ -107,14 +85,25 @@
       font-style: normal;
       font-weight: bold;
     }
+    .page-header {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      margin-bottom: 20px;
+    }
+    .page-header h1 {
+      margin: 0;
+    }
+    .deploy-date {
+      color: #888;
+      font-size: 0.85em;
+    }
     .footer {
       margin-top: 30px;
       text-align: center;
       color: #666;
       font-size: 0.9em;
-    }
-    .deploy-date {
-      margin-bottom: 5px;
     }
     .creator {
       font-style: italic;
@@ -122,32 +111,18 @@
   </style>
 </head>
 <body>
-  <nav class="top-nav">
-    <a href="index.html">YES24 대시보드</a>
-    <a href="oreilly.html">O'Reilly 대시보드</a>
-    <a href="manning.html">Manning 대시보드</a>
-  </nav>
-  <h1>YES24 출판사 신간 도서 대시보드</h1>
+  <header class="page-header">
+    <h1>IT 출판사 신간 대시보드</h1>
+    <span class="deploy-date">업데이트 <span id="deploy-date"></span></span>
+  </header>
   <div class="dashboard" id="dashboard">
     <div class="loading">데이터를 불러오는 중...</div>
   </div>
   <div class="footer">
-    <p class="deploy-date">마지막 업데이트: <span id="deploy-date"></span></p>
     <p class="creator">Created by J.W.Park</p>
   </div>
 
   <script>
-    function setActiveNav() {
-      const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-      const navLinks = document.querySelectorAll('.top-nav a');
-      navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === currentPath) {
-          link.classList.add('active');
-        }
-      });
-    }
-
     async function loadBooks() {
       try {
         const response = await fetch('books_data.json');
@@ -205,7 +180,7 @@
               
               if (book.release_date) {
                 const dateStr = book.release_date;
-                const matches = dateStr.match(/(\d{4})년\s*(\d{1,2})월\s*(\d{1,2})일/);
+                const matches = dateStr.match(/(\d{4})[년.]\s*(\d{1,2})[월.]\s*(\d{1,2})/);
                 if (matches) {
                   const [_, year, month, day] = matches;
                   const releaseDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
@@ -225,15 +200,22 @@
               const meta = document.createElement('div');
               meta.className = 'book-meta';
               
-              const releaseInfo = book.release_date ? 
-                `<span class="release-date">${book.release_date}</span> | ` : '';
-              
-              meta.innerHTML = `${releaseInfo}${book.author} | ${book.price}`;
+              if (book.release_date) {
+                const releaseDate = document.createElement('span');
+                releaseDate.className = 'release-date';
+                releaseDate.textContent = book.release_date;
+                meta.appendChild(releaseDate);
+                meta.appendChild(document.createTextNode(' | '));
+              }
+              meta.appendChild(document.createTextNode(`${book.author} | ${book.price}`));
               
               if (book.sell_num && book.sell_num !== "0") {
                 const sellNum = document.createElement('div');
                 sellNum.className = 'sell-num';
-                sellNum.innerHTML = `판매지수 <em>${book.sell_num}</em>`;
+                sellNum.textContent = '판매지수 ';
+                const em = document.createElement('em');
+                em.textContent = Number(book.sell_num).toLocaleString('ko-KR');
+                sellNum.appendChild(em);
                 meta.appendChild(sellNum);
               }
               
@@ -254,7 +236,6 @@
       }
     }
     
-    setActiveNav();
     loadBooks();
   </script>
 </body>

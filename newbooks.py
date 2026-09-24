@@ -1,380 +1,232 @@
+"""YES24 출판사별 신간 수집기.
+
+publishers.json에 적힌 출판사마다 YES24 모바일 검색(최신순)을 조회해
+도서 목록을 만들고, 각 도서의 상세 페이지에서 출간일과 판매지수를 보강한 뒤
+books_data.json으로 저장한다. 브라우저 없이 requests만 사용한다.
+"""
+
 import json
+import re
+import sys
+import threading
 import time
 import urllib.parse
-import os
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from webdriver_manager.chrome import ChromeDriverManager
+from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
+
+import requests
 from bs4 import BeautifulSoup
-import re
 
-def setup_driver():
-    chrome_options = Options()
-    
-    # 기본 헤드리스 설정 (안정성 우선)
-    chrome_options.add_argument('--headless=new')
-    chrome_options.add_argument('--no-sandbox')
-    chrome_options.add_argument('--disable-dev-shm-usage')
-    chrome_options.add_argument('--disable-gpu')
-    chrome_options.add_argument('--window-size=1280,1024')
-    
-    # 로그 및 에러 메시지 억제
-    chrome_options.add_argument('--log-level=3')
-    chrome_options.add_argument('--disable-logging')
-    chrome_options.add_argument('--silent')
-    
-    # 불필요한 기능 비활성화 (JavaScript는 유지)
-    chrome_options.add_argument('--disable-extensions')
-    chrome_options.add_argument('--disable-plugins')
-    chrome_options.add_argument('--disable-images')  # 성능 향상을 위해
-    chrome_options.add_argument('--disable-background-networking')
-    chrome_options.add_argument('--disable-sync')
-    chrome_options.add_argument('--disable-default-apps')
-    
-    # 자동화 감지 방지
-    chrome_options.add_argument('--disable-blink-features=AutomationControlled')
-    chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
-    chrome_options.add_experimental_option('useAutomationExtension', False)
-    
-    # User Agent 설정
-    chrome_options.add_argument('--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36')
-    
-    # GitHub Actions 환경 설정
-    if 'GITHUB_ACTIONS' in os.environ:
-        # 안정성을 위한 GitHub Actions 전용 설정
-        chrome_options.add_argument('--disable-features=VizDisplayCompositor')
-        chrome_options.add_argument('--disable-background-timer-throttling')
-        chrome_options.add_argument('--disable-renderer-backgrounding')
-        chrome_options.add_argument('--disable-backgrounding-occluded-windows')
-        chrome_options.add_argument('--disable-crash-reporter')
-        chrome_options.add_argument('--disable-breakpad')
-        chrome_options.add_argument('--memory-pressure-off')
-        
-        # Chrome 바이너리 경로 (여러 가능한 경로 시도)
-        possible_chrome_paths = [
-            '/usr/bin/google-chrome',
-            '/usr/bin/google-chrome-stable',
-            '/usr/bin/chromium-browser',
-            '/usr/bin/chromium'
-        ]
-        
-        for path in possible_chrome_paths:
-            if os.path.exists(path):
-                chrome_options.binary_location = path
-                print(f"Chrome binary found at: {path}")
-                break
-        
-        print("Running in GitHub Actions environment")
-    
-    # 환경변수 설정
-    os.environ['WDM_LOG_LEVEL'] = '0'
-    
-    # 드라이버 초기화 시도
-    try:
-        # GitHub Actions에서는 시스템 ChromeDriver 우선 사용
-        if 'GITHUB_ACTIONS' in os.environ:
-            # 시스템에 설치된 ChromeDriver 사용
-            service = Service()
-        else:
-            # 로컬에서는 ChromeDriverManager 사용
-            service = Service(ChromeDriverManager().install())
-            
-        driver = webdriver.Chrome(service=service, options=chrome_options)
-        driver.set_page_load_timeout(30)
-        driver.implicitly_wait(10)
-        
-        # 드라이버가 정상적으로 작동하는지 테스트
-        try:
-            driver.get("data:text/html,<html><body><h1>Test</h1></body></html>")
-            print("Chrome driver initialized successfully")
-            return driver
-        except Exception as test_error:
-            print(f"Driver test failed: {test_error}")
-            driver.quit()
-            raise test_error
-            
-    except Exception as e:
-        print(f"Chrome 드라이버 초기화 실패: {e}")
-        
-        # 대안 방법 시도
-        try:
-            if 'GITHUB_ACTIONS' in os.environ:
-                # GitHub Actions에서 ChromeDriverManager로 재시도
-                print("Trying ChromeDriverManager as fallback...")
-                service = Service(ChromeDriverManager().install())
-            else:
-                # 로컬에서 시스템 드라이버로 재시도
-                service = Service()
-                
-            driver = webdriver.Chrome(service=service, options=chrome_options)
-            driver.set_page_load_timeout(30)
-            driver.implicitly_wait(10)
-            
-            # 테스트
-            driver.get("data:text/html,<html><body><h1>Test</h1></body></html>")
-            print("Chrome driver initialized successfully with fallback method")
-            return driver
-            
-        except Exception as e2:
-            print(f"모든 초기화 방법 실패: {e2}")
-            raise Exception(f"Chrome driver initialization failed: {e2}")
+BASE_URL = "https://m.yes24.com"
+PUBLISHERS_FILE = Path("publishers.json")
+OUTPUT_FILE = Path("books_data.json")
+NO_IMAGE_URL = "https://image.yes24.com/momo/Noimg_L.jpg"
+NO_DATE_TEXT = "출간일 정보 없음"
 
-def get_book_release_date(driver, goods_no):
-    if not goods_no:
-        return "출간일 정보 없음", "0"
-        
-    url = f"https://m.yes24.com/goods/detail/{goods_no}"
-    max_retries = 3
-    retry_count = 0
-    
-    while retry_count < max_retries:
-        try:
-            # 탭 크래시 방지를 위한 새 탭 생성 및 이동
-            if len(driver.window_handles) > 1:
-                driver.close()
-                driver.switch_to.window(driver.window_handles[0])
-            
-            driver.get(url)
-            # 페이지가 로드될 때까지 대기
-            wait = WebDriverWait(driver, 20)  # 대기 시간을 20초로 조정
-            wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
-            
-            # 추가 대기 시간
-            time.sleep(1)  # 대기 시간을 1초로 줄임
-            
-            # 페이지 소스 가져오기
-            page_source = driver.page_source
-            if not page_source or len(page_source) < 100:
-                raise Exception("페이지 소스가 비어있거나 너무 짧습니다")
-                
-            soup = BeautifulSoup(page_source, 'html.parser')
-            
-            # 출간일 정보 찾기 (여러 선택자 시도)
-            date_elem = soup.select_one('.authPub .date') or soup.select_one('.gd_date')
-            date_text = date_elem.get_text(strip=True) if date_elem else "출간일 정보 없음"
-            
-            # 판매지수 찾기 (여러 선택자 시도)
-            sell_num_elem = soup.select_one('.gdBasicSet.gdRating .sellNum .num') or soup.select_one('.gd_sellNum')
-            sell_num = "0"
-            if sell_num_elem:
-                # 판매지수에서 숫자만 추출
-                sell_num_text = sell_num_elem.text.strip()
-                numbers = re.findall(r'\d+', sell_num_text)
-                if numbers:
-                    sell_num = ''.join(numbers)  # 쉼표 제거하고 숫자만 합치기
-            
-            return date_text, sell_num
-            
-        except Exception as e:
-            retry_count += 1
-            print(f"Error fetching release date for book {goods_no} (Attempt {retry_count}/{max_retries}): {e}")
-            
-            # 탭 크래시나 심각한 오류 시 새 탭 생성
-            try:
-                if "tab crashed" in str(e).lower() or "session" in str(e).lower():
-                    driver.execute_script("window.open('','_blank');")
-                    driver.switch_to.window(driver.window_handles[-1])
-            except:
-                pass
-                
-            if retry_count < max_retries:
-                time.sleep(3)  # 재시도 전 대기 시간을 3초로 줄임
-            else:
-                print(f"Failed to fetch release date for book {goods_no} after {max_retries} attempts")
-                return "출간일 정보 없음", "0"
+MAX_BOOKS_PER_PUBLISHER = 10
+MAX_WORKERS = 8
+RETRIES = 3
+RETRY_WAIT_SECONDS = 2
+TIMEOUT_SECONDS = 30
 
-def get_publisher_books(driver, publisher_name, publisher_id):
-    encoded_name = urllib.parse.quote(publisher_name)
-    url = f"https://m.yes24.com/search?query={encoded_name}&domain=BOOK&viewMode=&dispNo2=001001003&mkEntrNo={publisher_id}&order=RECENT"
-    
-    try:
-        driver.get(url)
-        # 페이지가 로드될 때까지 대기 시간 증가
-        WebDriverWait(driver, 30).until(  # WebDriverWait 시간을 30초로 증가
-            EC.presence_of_element_located((By.CSS_SELECTOR, ".itemUnit"))
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    ),
+    "Accept-Language": "ko-KR,ko;q=0.9",
+}
+
+_DOTTED_DATE = re.compile(r"(\d{4})\.(\d{1,2})\.(\d{1,2})\.?")
+_GOODS_IN_PATH = re.compile(r"/goods/(?:detail/)?(\d+)")
+
+_thread_local = threading.local()
+
+
+# --------------------------------------------------------------------------- #
+# HTTP
+# --------------------------------------------------------------------------- #
+def new_session() -> requests.Session:
+    """헤더가 설정된 세션을 만들고 홈을 한 번 방문해 쿠키를 받아 둔다.
+
+    검색 페이지는 세션 쿠키가 없으면 홈으로 리다이렉트된다.
+    """
+    session = requests.Session()
+    session.headers.update(HEADERS)
+    session.get(BASE_URL, timeout=TIMEOUT_SECONDS)
+    return session
+
+
+def thread_session() -> requests.Session:
+    """스레드마다 하나씩 세션을 재사용한다."""
+    session = getattr(_thread_local, "session", None)
+    if session is None:
+        session = new_session()
+        _thread_local.session = session
+    return session
+
+
+def fetch(session: requests.Session, url: str) -> str:
+    last_error: Exception | None = None
+    for attempt in range(1, RETRIES + 1):
+        try:
+            response = session.get(url, timeout=TIMEOUT_SECONDS)
+            response.raise_for_status()
+            return response.text
+        except requests.RequestException as exc:
+            last_error = exc
+            print(f"  요청 실패 ({attempt}/{RETRIES}) {url}: {exc}")
+            if attempt < RETRIES:
+                time.sleep(RETRY_WAIT_SECONDS * attempt)
+    raise RuntimeError(f"{RETRIES}회 재시도 후에도 실패: {url}") from last_error
+
+
+# --------------------------------------------------------------------------- #
+# 파싱
+# --------------------------------------------------------------------------- #
+def normalize_date(text: str | None) -> str | None:
+    """'2025.05.13.' 형태를 대시보드가 읽는 '2025년 05월 13일'로 맞춘다."""
+    if not text:
+        return None
+    text = text.strip()
+    match = _DOTTED_DATE.fullmatch(text)
+    if match:
+        year, month, day = match.groups()
+        return f"{year}년 {int(month):02d}월 {int(day):02d}일"
+    return text
+
+
+def _text(node, selector: str) -> str | None:
+    found = node.select_one(selector)
+    return found.get_text(strip=True) if found else None
+
+
+def _image_url(item) -> str:
+    img = item.select_one("img")
+    if not img:
+        return NO_IMAGE_URL
+    url = img.get("data-original") or img.get("src") or ""
+    if url and not url.startswith("http"):
+        url = "https:" + url
+    if not url or "Noimg_L.jpg" in url:
+        return NO_IMAGE_URL
+    return url
+
+
+def _goods_no(item, image_url: str) -> str:
+    for link in item.select("a[href]"):
+        match = _GOODS_IN_PATH.search(link["href"])
+        if match:
+            return match.group(1)
+    match = _GOODS_IN_PATH.search(image_url)
+    return match.group(1) if match else ""
+
+
+def parse_search(html: str, limit: int = MAX_BOOKS_PER_PUBLISHER) -> list[dict]:
+    soup = BeautifulSoup(html, "html.parser")
+    books = []
+    for item in soup.select(".itemUnit"):
+        title = _text(item, ".info_name")
+        if not title:
+            continue
+        title = title.replace("[도서]", "").strip()
+        image_url = _image_url(item)
+        goods_no = _goods_no(item, image_url)
+        books.append(
+            {
+                "title": title,
+                "author": _text(item, ".info_auth") or "저자 정보 없음",
+                "price": _text(item, ".txt_num") or "가격 정보 없음",
+                "image_url": image_url,
+                "goods_no": goods_no,
+                "detail_url": f"https://www.yes24.com/product/goods/{goods_no}" if goods_no else "",
+                "release_date": normalize_date(_text(item, ".info_date")),
+                "sell_num": "0",
+            }
         )
-        
-        # 잠시 대기하여 동적 콘텐츠가 로드되도록 함
-        time.sleep(2)  # 대기 시간을 2초로 증가
-        
-        # 페이지 소스 가져오기
-        page_source = driver.page_source
-        soup = BeautifulSoup(page_source, 'html.parser')
-        
-        books = []
-        book_items = soup.select('.itemUnit')
-        
-        for item in book_items[:10]:  # 최대 5개 도서만 가져오기
-            try:
-                # 제목 선택자 수정
-                title_elem = item.select_one('.info_name')
-                if not title_elem:
-                    continue
-                title = title_elem.text.strip().replace('[도서]', '').strip()
-                
-                # 저자 선택자 수정
-                author_elem = item.select_one('.info_auth')
-                author = author_elem.text.strip() if author_elem else "저자 정보 없음"
-                
-                # 가격 선택자 수정
-                price_elem = item.select_one('.txt_num')
-                price = price_elem.text.strip() if price_elem else "가격 정보 없음"
-                
-                # 이미지 URL 선택자 수정
-                img_elem = item.select_one('img')
-                image_url = ""
-                if img_elem:
-                    # src 또는 data-original 속성에서 URL 가져오기
-                    image_url = img_elem.get('data-original') or img_elem.get('src', '')
-                    if image_url and not image_url.startswith('http'):
-                        image_url = 'https:' + image_url
-                    if not image_url or 'Noimg_L.jpg' in image_url:
-                        image_url = 'https://image.yes24.com/momo/Noimg_L.jpg'
-                
-                if title:  # 제목이 있는 경우에만 추가
-                    # 상품 번호 추출
-                    goods_no = item.get('data-goods-no') if isinstance(item, dict) else item.attrs.get('data-goods-no', '')
-                    detail_url = f"https://www.yes24.com/product/goods/{goods_no}" if goods_no else ""
-                    
-                    # 이미지 URL에서 상품 번호 추출 (백업 방법)
-                    if not goods_no and image_url:
-                        # 이미지 URL 형식: https://image.yes24.com/goods/146041188/L
-                        try:
-                            goods_no = image_url.split('/goods/')[1].split('/')[0]
-                            detail_url = f"https://www.yes24.com/product/goods/{goods_no}"
-                        except:
-                            pass
-                    
-                    # 출간일 정보 가져오기
-                    release_date, sell_num = get_book_release_date(driver, goods_no)
-                    
-                    book_data = {
-                        'title': title,
-                        'author': author,
-                        'price': price,
-                        'image_url': image_url,
-                        'goods_no': goods_no,
-                        'detail_url': detail_url,
-                        'release_date': release_date,
-                        'sell_num': sell_num
-                    }
-                    
-                    books.append(book_data)
-            except Exception as e:
-                print(f"Error parsing book item for {publisher_name}: {e}")
-                continue
-        
-        print(f"Found {len(books)} books for {publisher_name}")
-        return books
-    except Exception as e:
-        print(f"Error fetching data for {publisher_name}: {e}")
-        return []
+        if len(books) >= limit:
+            break
+    return books
 
-def main():
-    publishers = [
-        {"name": "골든래빗", "id": "287363"},
-        {"name": "한빛미디어", "id": "1469"},
-        {"name": "인사이트", "id": "289113"},
-        {"name": "리코멘드", "id": "314006"},
-        {"name": "길벗", "id": "231"},
-        {"name": "길벗캠퍼스", "id": "303742"},
-        {"name": "책만", "id": "297319"},
-        {"name": "프리렉", "id": "10755"},
-        {"name": "이지스퍼블리싱", "id": "117983"},
-        {"name": "제이펍", "id": "107878"},
-        {"name": "위키북스", "id": "120040"},
-        {"name": "시프트", "id": "327076"},
-        {"name": "루비페이퍼", "id": "183510"},
-        {"name": "에이콘출판사", "id": "7813"},
-        {"name": "에이콘온", "id": "332424"},
-        {"name": "정보문화사", "id": "1"},
-        {"name": "스마트북스", "id": "132231"},
-        {"name": "비제이퍼블릭", "id": "108933"},
-        {"name": "영진닷컴", "id": "260"},
-        {"name": "아티오", "id": "170992"},
-        {"name": "비엘북스", "id": "122064"},
-        {"name": "앤써북", "id": "109677"},
-        {"name": "디지털북스", "id": "4629"},
-        {"name": "책바세", "id": "313134"},
-        {"name": "로드북", "id": "135197"},
-        {"name": "성안당", "id": "498"},
-        {"name": "천그루숲", "id": "303200"},
-        {"name": "생능북", "id": "296623"},
-        {"name": "한빛비즈", "id": "106844"},
-        {"name": "다빈치books", "id": "156100"},
-        {"name": "미디어북", "id": "234011"},
-        {"name": "생능출판사", "id": "896"},
-        {"name": "북엔드", "id": "318093"},
-        {"name": "디비안(DBian)", "id": "246403"},
-        {"name": "아이콕스(iCox)", "id": "150859"},
-        {"name": "안경다리BOOKS", "id": "352567"},
-        {"name": "더 타이즈", "id": "341711"}
-    ]
-    
-    max_retries = 3
-    retry_count = 0
-    
-    while retry_count < max_retries:
-        try:
-            driver = setup_driver()
-            print("Warming up WebDriver...")
-            driver.get("https://m.yes24.com")
-            time.sleep(2)  # 웜업을 위한 대기 시간
-            
-            all_data = {}
-            processed_count = 0
-            
-            for publisher in publishers:
-                try:
-                    print(f"Fetching data for {publisher['name']} ({processed_count + 1}/{len(publishers)})...")
-                    books = get_publisher_books(driver, publisher["name"], publisher["id"])
-                    if books:  # 데이터를 성공적으로 가져온 경우에만 추가
-                        all_data[publisher["name"]] = books
-                        print(f"Successfully fetched {len(books)} books for {publisher['name']}")
-                    else:
-                        print(f"No books found for {publisher['name']}")
-                    
-                    processed_count += 1
-                    
-                    # 메모리 정리를 위해 주기적으로 가비지 컬렉션 실행
-                    if processed_count % 5 == 0:
-                        import gc
-                        gc.collect()
-                        
-                    # GitHub Actions 환경에서는 더 짧은 대기 시간
-                    if 'GITHUB_ACTIONS' in os.environ:
-                        time.sleep(1)
-                    else:
-                        time.sleep(2)
-                        
-                except Exception as e:
-                    print(f"Error processing publisher {publisher['name']}: {e}")
-                    continue
-            
-            # JSON 파일로 저장
-            with open('books_data.json', 'w', encoding='utf-8') as f:
-                json.dump(all_data, f, ensure_ascii=False, indent=2)
-            
-            print("Data collection completed!")
-            break  # 성공적으로 완료되면 루프 종료
-            
-        except Exception as e:
-            retry_count += 1
-            print(f"Error in main process (Attempt {retry_count}/{max_retries}): {e}")
-            if retry_count < max_retries:
-                print("Retrying...")
-                time.sleep(5)  # 재시도 전 대기
-            else:
-                print("Failed to complete data collection after maximum retries")
-        finally:
-            try:
-                driver.quit()
-            except:
-                pass
+
+def parse_detail(html: str) -> tuple[str | None, str]:
+    """상세 페이지에서 (출간일, 판매지수)를 꺼낸다. 판매지수는 숫자만 남긴다."""
+    soup = BeautifulSoup(html, "html.parser")
+    date = normalize_date(_text(soup, ".authPub .date") or _text(soup, ".gd_date"))
+    sell_text = _text(soup, ".gdBasicSet.gdRating .sellNum .num") or _text(soup, ".gd_sellNum") or ""
+    digits = re.sub(r"\D", "", sell_text)
+    return date, digits or "0"
+
+
+# --------------------------------------------------------------------------- #
+# 수집
+# --------------------------------------------------------------------------- #
+def search_url(publisher: dict) -> str:
+    query = urllib.parse.urlencode(
+        {
+            "query": publisher["name"],
+            "domain": "BOOK",
+            "viewMode": "",
+            "dispNo2": "001001003",  # 컴퓨터/IT 카테고리
+            "mkEntrNo": publisher["id"],
+            "order": "RECENT",
+        }
+    )
+    return f"{BASE_URL}/search?{query}"
+
+
+def fetch_publisher_books(publisher: dict) -> tuple[str, list[dict]]:
+    name = publisher["name"]
+    try:
+        books = parse_search(fetch(thread_session(), search_url(publisher)))
+        print(f"{name}: {len(books)}권")
+    except Exception as exc:  # 한 출판사 실패가 전체를 막지 않도록
+        print(f"{name}: 목록 조회 실패 - {exc}")
+        books = []
+    return name, books
+
+
+def enrich_book(book: dict) -> dict:
+    if not book["goods_no"]:
+        book["release_date"] = book["release_date"] or NO_DATE_TEXT
+        return book
+    try:
+        date, sell_num = parse_detail(
+            fetch(thread_session(), f"{BASE_URL}/goods/detail/{book['goods_no']}")
+        )
+        book["release_date"] = date or book["release_date"] or NO_DATE_TEXT
+        book["sell_num"] = sell_num
+    except Exception as exc:
+        print(f"  상세 조회 실패 {book['goods_no']}: {exc}")
+        book["release_date"] = book["release_date"] or NO_DATE_TEXT
+    return book
+
+
+def collect(publishers: list[dict]) -> dict[str, list[dict]]:
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
+        results = dict(pool.map(fetch_publisher_books, publishers))
+        all_books = [book for books in results.values() for book in books]
+        print(f"상세 페이지 {len(all_books)}건 조회 중...")
+        list(pool.map(enrich_book, all_books))
+    return results
+
+
+def main() -> int:
+    publishers = json.loads(PUBLISHERS_FILE.read_text(encoding="utf-8"))
+    started = time.time()
+    data = collect(publishers)
+    OUTPUT_FILE.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    total = sum(len(v) for v in data.values())
+    empty = [name for name, books in data.items() if not books]
+    print(f"완료: {len(data)}개 출판사, {total}권, {time.time() - started:.0f}초 -> {OUTPUT_FILE}")
+    if empty:
+        print(f"도서가 없는 출판사 {len(empty)}곳: {', '.join(empty)}")
+    if total == 0:
+        print("수집된 도서가 없습니다. 사이트 구조가 바뀌었는지 확인하세요.")
+        return 1
+    return 0
+
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
