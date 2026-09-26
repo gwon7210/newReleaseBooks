@@ -13,6 +13,7 @@
       color: #333;
       margin: 0;
     }
+    [hidden] { display: none !important; }
     .page-header {
       display: flex;
       align-items: baseline;
@@ -23,11 +24,11 @@
     .page-header h1 { margin: 0; }
     .nav a {
       margin-right: 12px;
-      color: #0066cc;
+      color: #888;
       text-decoration: none;
       font-weight: bold;
     }
-    .nav a.active { color: #333; }
+    .nav a.active { color: #0066cc; }
     .nav a:hover { text-decoration: underline; }
     .deploy-date { color: #888; font-size: 0.85em; }
 
@@ -46,6 +47,69 @@
     }
     .card h3 { font-size: 15px; margin: 0 0 8px; color: #555; }
     .hint { color: #888; font-size: 0.85em; margin: 0 0 10px; }
+    .info {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      margin-left: 6px;
+      border-radius: 50%;
+      border: 1px solid #aaa;
+      color: #888;
+      font-size: 11px;
+      font-weight: bold;
+      vertical-align: middle;
+      cursor: help;
+    }
+    .info:hover, .info:focus { border-color: #0066cc; color: #0066cc; outline: none; }
+    .info::after {
+      content: attr(data-tip);
+      position: absolute;
+      left: 0;
+      top: calc(100% + 6px);
+      width: 260px;
+      padding: 8px 10px;
+      border-radius: 6px;
+      background: #333;
+      color: #fff;
+      font-size: 12px;
+      font-weight: normal;
+      line-height: 1.4;
+      white-space: normal;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 10;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.1s;
+    }
+    .info:hover::after, .info:focus::after { opacity: 1; visibility: visible; }
+    .tip { position: relative; cursor: help; }
+    .tip::after {
+      content: attr(data-tip);
+      position: absolute;
+      right: 0;
+      top: calc(100% + 4px);
+      width: max-content;
+      max-width: 240px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      background: #333;
+      color: #fff;
+      font-size: 12px;
+      font-weight: normal;
+      text-align: left;
+      line-height: 1.4;
+      white-space: normal;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 10;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.1s;
+      pointer-events: none;
+    }
+    .tip:hover::after { opacity: 1; visibility: visible; }
 
     .tiles {
       display: grid;
@@ -60,6 +124,82 @@
     }
     .tile .label { color: #888; font-size: 0.8em; margin-bottom: 4px; }
     .tile .value { font-size: 24px; font-weight: bold; }
+    .tile .sub { font-size: 0.85em; color: #555; margin-top: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .tile .sub a { color: #333; text-decoration: none; }
+    .tile .sub a:hover { color: #0066cc; text-decoration: underline; }
+    .tile.clickable { cursor: pointer; }
+    .tile.clickable:hover { box-shadow: 0 2px 8px rgba(0,102,204,0.25); }
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 100;
+    }
+    .modal {
+      background: #fff;
+      border-radius: 10px;
+      width: min(960px, 100%);
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
+    .modal-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      border-bottom: 1px solid #eee;
+    }
+    .modal-head h2 { margin: 0; font-size: 18px; flex: 1; }
+    .modal-close {
+      border: none;
+      background: none;
+      font-size: 24px;
+      line-height: 1;
+      color: #888;
+      padding: 0 4px;
+    }
+    .modal-close:hover { color: #333; background: none; }
+    .modal-body { padding: 18px; overflow-y: auto; }
+    .modal-body .empty { padding: 30px 0; }
+    .book-list { display: flex; flex-direction: column; }
+    .book-item {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+      min-width: 0;
+    }
+    .book-item:last-child { border-bottom: none; }
+    .book-item img { width: 40px; height: 56px; object-fit: cover; border-radius: 4px; flex-shrink: 0; }
+    .book-item .book-title {
+      flex: 1;
+      min-width: 0;
+      font-weight: bold;
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .book-item .book-title a { color: #333; text-decoration: none; }
+    .book-item .book-title a:hover { color: #0066cc; text-decoration: underline; }
+    .book-item .book-date { font-size: 12px; color: #888; flex-shrink: 0; }
+    .new-badge {
+      display: inline-block;
+      background-color: #e74c3c;
+      color: white;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 11px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
 
     .controls {
       display: flex;
@@ -90,6 +230,8 @@
     button:hover { background: #eef5ff; }
     button:disabled { color: #aaa; border-color: #ddd; cursor: default; background: #fff; }
     .toggle button.active { background: #0066cc; color: #fff; }
+    button.selected { background: #0066cc; color: #fff; }
+    button.selected:hover { background: #c0392b; border-color: #c0392b; }
 
     .table-wrap { overflow-x: auto; }
     table {
@@ -105,10 +247,8 @@
       white-space: nowrap;
     }
     th { color: #666; font-weight: bold; background: #fafafa; }
-    th.sortable { cursor: pointer; user-select: none; }
-    th.sortable:hover { color: #0066cc; }
     td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
-    td.title { white-space: normal; min-width: 220px; }
+    td.title { max-width: 0; width: 60%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     td.title a { color: #333; text-decoration: none; font-weight: bold; }
     td.title a:hover { color: #0066cc; text-decoration: underline; }
     td.rank { color: #888; width: 36px; }
@@ -119,25 +259,10 @@
     .stale { color: #aaa; }
     .empty { color: #888; padding: 16px 0; text-align: center; }
 
-    .two-col {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 18px;
-    }
-    .pub-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 14px;
-    }
-    .pub-card {
       border: 1px solid #eee;
       border-radius: 8px;
       padding: 10px 12px;
     }
-    .pub-card h3 { margin-bottom: 6px; }
-    .pub-card ol { margin: 0; padding-left: 20px; font-size: 13px; }
-    .pub-card li { margin-bottom: 4px; }
-    .pub-card li span { color: #c0392b; margin-left: 6px; font-variant-numeric: tabular-nums; }
 
     .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
     .chip {
@@ -192,82 +317,49 @@
   <div id="app" hidden>
     <div class="tiles" id="tiles" style="margin-bottom: 20px;"></div>
 
-    <section class="card" id="ranking">
-      <h2>판매지수 순위</h2>
-      <p class="hint">YES24 판매지수는 최근 판매량을 반영한 가중 지수입니다. 누적 판매 부수가 아니며, 판매가 뜸해지면 내려갑니다.</p>
-      <div class="controls">
-        <label>출판사 <select id="publisher-select"></select></label>
-        <label>표시 수
-          <select id="limit-select">
-            <option value="20">20</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-            <option value="0">전체</option>
-          </select>
-        </label>
-        <input type="search" id="query" placeholder="제목 검색">
-        <span class="toggle">
-          <button type="button" data-view="all" class="active">전체</button>
-          <button type="button" data-view="publisher">출판사별</button>
-        </span>
-      </div>
-      <div id="ranking-body"></div>
-    </section>
 
     <section class="card" id="momentum">
-      <h2>상승세</h2>
-      <p class="hint">최근 7일과 30일 동안 판매지수가 가장 많이 오른 책입니다. 기록이 기준 일수보다 짧으면 *를 붙이고 실제 일수를 표시합니다. 출판사 필터를 함께 적용합니다.</p>
+      <h2>상승세 <span class="info" tabindex="0" data-tip="*가 붙은 값은 기록이 선택한 기간보다 짧아, 있는 기록 중 가장 오래된 날과 비교한 값입니다. 숫자에 마우스를 올리면 며칠 기준인지 나옵니다.">!</span></h2>
       <div class="controls">
-        <label><input type="checkbox" id="new-only"> 신간만 (출간 30일 이내)</label>
+        <label>출판사 <select id="publisher-select"></select></label>
+        <input type="search" id="query" placeholder="제목 검색">
+        <span class="toggle">
+          <button type="button" data-window="1">1일</button>
+          <button type="button" data-window="3">3일</button>
+          <button type="button" data-window="7" class="active">7일</button>
+          <button type="button" data-window="30">30일</button>
+        </span>
       </div>
-      <div class="two-col">
-        <div>
-          <h3>7일 변화 Top 20</h3>
-          <div id="momentum-7"></div>
-        </div>
-        <div>
-          <h3>30일 변화 Top 20</h3>
-          <div id="momentum-30"></div>
-        </div>
-      </div>
+      <div id="momentum-body"></div>
     </section>
 
     <section class="card" id="trend">
       <h2>추이</h2>
-      <p class="hint">책을 골라 판매지수 변화를 비교합니다. 최대 8권까지 담을 수 있고, 순위와 상승세 표의 "비교" 버튼으로도 추가됩니다.</p>
+      <p class="hint">책을 골라 판매지수 변화를 비교합니다. 최대 8권까지 담을 수 있고, 상승세 표의 "비교" 버튼으로도 추가됩니다.</p>
       <div class="controls">
         <div class="search-box">
           <input type="text" id="trend-search" placeholder="제목으로 책 추가" autocomplete="off">
           <div class="matches" id="trend-matches" hidden></div>
         </div>
-        <button type="button" id="add-top5">상위 5권 담기</button>
         <button type="button" id="clear-selected">모두 비우기</button>
-        <span class="toggle">
-          <button type="button" data-mode="cum" class="active">누적</button>
-          <button type="button" data-mode="diff">일별 변화</button>
-        </span>
       </div>
       <div class="chips" id="chips"></div>
-      <div class="chart-box"><canvas id="trend-chart"></canvas></div>
+      <div class="empty" id="trend-empty">비교할 책을 검색하거나 상승세 표에서 "비교"를 눌러 담아 주세요.</div>
+      <div class="chart-box" id="trend-box" hidden><canvas id="trend-chart"></canvas></div>
     </section>
 
-    <section class="card" id="publishers">
-      <h2>출판사 비교</h2>
-      <p class="hint">추적 중인 도서 기준입니다. 신간은 출간 30일 이내 도서입니다. 열 제목을 누르면 정렬됩니다.</p>
-      <div class="controls">
-        <label>차트 지표
-          <select id="pub-metric">
-            <option value="total">판매지수 합계</option>
-            <option value="avg">도서당 평균</option>
-            <option value="delta7">7일 변화</option>
-            <option value="delta30">30일 변화</option>
-            <option value="new_avg">신간 평균</option>
-          </select>
-        </label>
+  </div>
+
+  <div class="modal-backdrop" id="fresh-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="fresh-title">
+      <div class="modal-head">
+        <h2 id="fresh-title">새로 들어온 도서</h2>
+        <button type="button" class="modal-close" id="fresh-close" title="닫기">×</button>
       </div>
-      <div class="chart-box"><canvas id="pub-chart"></canvas></div>
-      <div class="table-wrap" id="pub-table"></div>
-    </section>
+      <div class="modal-body">
+        <div class="book-list" id="fresh-list"></div>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -280,16 +372,10 @@
       data: null,
       byGoods: new Map(),
       publisher: '',
-      limit: 20,
       query: '',
-      view: 'all',
-      newOnly: false,
+      window: 7,
       selected: [],          // [{goods_no, color}]
-      trendMode: 'cum',
       trendChart: null,
-      pubChart: null,
-      pubMetric: 'total',
-      pubSort: { key: 'total', dir: -1 },
     };
 
     // ------------------------------------------------------------------ helpers
@@ -319,12 +405,12 @@
 
     function deltaCell(value, days, window) {
       if (value === null || value === undefined) {
-        return el('td', { className: 'num partial', text: '-', title: '기록이 2일 미만입니다' });
+        return el('td', { className: 'num partial tip', text: '-', 'data-tip': '기록이 이틀 미만이라 변화를 계산할 수 없습니다' });
       }
       const cls = value > 0 ? 'pos' : value < 0 ? 'neg' : '';
       const partial = days < window;
-      const td = el('td', { className: `num ${cls}`, text: fmtSigned(value) + (partial ? '*' : '') });
-      if (partial) td.title = `${window}일 미만 데이터 (${days}일 기준)`;
+      const td = el('td', { className: `num ${cls} ${partial ? 'tip' : ''}`, text: fmtSigned(value) + (partial ? '*' : '') });
+      if (partial) td.setAttribute('data-tip', `${window}일 전 기록이 없어 ${days}일 전 값과 비교했습니다`);
       return td;
     }
 
@@ -332,16 +418,26 @@
       const link = book.detail_url
         ? el('a', { href: book.detail_url, target: '_blank', rel: 'noopener', text: book.title })
         : el('span', { text: book.title });
-      return el('td', { className: 'title' }, [link]);
+      return el('td', { className: 'title', title: book.title }, [link]);
     }
 
     function compareButton(book) {
       const already = state.selected.some(s => s.goods_no === book.goods_no);
+      if (already) {
+        return el('button', {
+          type: 'button',
+          className: 'selected',
+          text: '담김 ×',
+          title: '비교에서 빼기',
+          onClick: () => removeSelected(book.goods_no),
+        });
+      }
       const full = state.selected.length >= MAX_SELECTED;
       return el('button', {
         type: 'button',
-        text: already ? '담김' : '비교',
-        disabled: already || full ? '' : null,
+        text: '비교',
+        disabled: full ? '' : null,
+        title: full ? `최대 ${MAX_SELECTED}권까지 비교할 수 있습니다` : null,
         onClick: () => addSelected(book.goods_no),
       });
     }
@@ -358,97 +454,84 @@
       );
     }
 
-    function isNewRelease(book) {
-      const anchor = book.release_date || book.first_seen;
-      if (!anchor) return false;
-      const cutoff = new Date(state.data.today);
-      cutoff.setDate(cutoff.getDate() - 30);
-      return new Date(anchor) >= cutoff;
-    }
-
     function expandSeries(book) {
       if (!book.series) return [];
       return Array(book.series_start).fill(null).concat(book.series);
     }
 
-    function dailyDiff(values) {
-      const out = [];
-      let prev = null;
-      for (const v of values) {
-        if (v === null || prev === null) out.push(null);
-        else out.push(v - prev);
-        if (v !== null) prev = v;
+    // ------------------------------------------------------------------ summary
+    function moverTile(label, book, key, daysKey) {
+      if (!book) {
+        return el('div', { className: 'tile' }, [el('div', { className: 'label', text: label }), el('div', { className: 'value partial', text: '-' }),
+          el('div', { className: 'sub', text: '기록이 이틀 이상 필요합니다' })]);
       }
-      return out;
+      const stale = book[daysKey] !== 1;   // 어제 기록이 없어 더 이전 값과 비교한 경우
+      const value = el('div', { className: `value ${book[key] > 0 ? 'pos' : book[key] < 0 ? 'neg' : ''} ${stale ? 'tip' : ''}`, text: fmtSigned(book[key]) + (stale ? '*' : '') });
+      if (stale) value.setAttribute('data-tip', `어제 기록이 없어 ${book[daysKey]}일 전 값과 비교했습니다`);
+      const link = book.detail_url ? el('a', { href: book.detail_url, target: '_blank', rel: 'noopener', text: book.title }) : el('span', { text: book.title });
+      return el('div', { className: 'tile' }, [el('div', { className: 'label', text: label }), value,
+        el('div', { className: 'sub', title: `${book.title} · ${book.publisher}` }, [link, ` · ${book.publisher}`])]);
     }
 
-    // ------------------------------------------------------------------ summary
-    function renderSummary() {
-      const d = state.data;
-      const tracked = d.books.length;
-      const withToday = d.books.filter(b => b.latest_date === d.latest_date).length;
-      const tiles = [
-        ['추적 도서', fmt(tracked)],
-        ['출판사', fmt(d.publishers.length)],
-        ['기록 일수', `${fmt(d.dates.length)}일`],
-        ['기준일 수집 성공', fmt(withToday)],
-      ];
-      const box = document.getElementById('tiles');
-      box.replaceChildren(...tiles.map(([label, value]) =>
-        el('div', { className: 'tile' }, [el('div', { className: 'label', text: label }), el('div', { className: 'value', text: value })])
+    function freshBooks(days) {
+      const since = new Date(state.data.today);
+      since.setDate(since.getDate() - (days - 1));
+      const sinceIso = since.toISOString().slice(0, 10);
+      return state.data.books
+        .filter(b => b.first_seen && b.first_seen >= sinceIso)
+        .sort((a, b) => (b.release_date || '').localeCompare(a.release_date || ''));   // 출간일 최신순, 출간일 없는 책은 뒤로
+    }
+
+    function renderFresh() {
+      const books = freshBooks(7);
+      document.getElementById('fresh-title').textContent = `최근 7일 새로 들어온 도서 (${fmt(books.length)}권)`;
+      const list = document.getElementById('fresh-list');
+      if (books.length === 0) {
+        list.replaceChildren(el('div', { className: 'empty', text: '해당 기간에 새로 들어온 도서가 없습니다.' }));
+        return;
+      }
+      list.replaceChildren(...books.map(b =>
+        el('div', { className: 'book-item' }, [
+          b.image_url ? el('img', { src: b.image_url, alt: '' }) : null,
+          el('div', { className: 'book-title', title: b.title }, [
+            b.first_seen === state.data.today ? el('span', { className: 'new-badge', text: 'NEW' }) : null,
+            b.detail_url ? el('a', { href: b.detail_url, target: '_blank', rel: 'noopener', text: b.title }) : el('span', { text: b.title }),
+          ]),
+          el('div', { className: 'book-date', text: b.release_date ? `출간 ${b.release_date}` : '' }),
+        ])
       ));
     }
 
-    // ------------------------------------------------------------------ ranking
-    function rankingTable(books) {
-      const head = el('tr', {}, [
-        el('th', { text: '순위' }), el('th', { text: '' }), el('th', { text: '제목' }), el('th', { text: '출판사' }),
-        el('th', { className: 'num', text: '판매지수' }), el('th', { className: 'num', text: '7일 변화' }),
-        el('th', { className: 'num', text: '30일 변화' }), el('th', { text: '' }),
-      ]);
-      const rows = books.map((b, i) => {
-        const stale = b.latest_date !== state.data.latest_date;
-        return el('tr', {}, [
-          el('td', { className: 'rank', text: String(i + 1) }),
-          el('td', {}, [b.image_url ? el('img', { src: b.image_url, alt: '', loading: 'lazy' }) : null]),
-          titleCell(b),
-          el('td', { text: b.publisher }),
-          el('td', { className: `num ${stale ? 'stale' : ''}`, text: fmt(b.latest), title: stale ? `마지막 기록 ${b.latest_date}` : null }),
-          deltaCell(b.delta7, b.delta7_days, 7),
-          deltaCell(b.delta30, b.delta30_days, 30),
-          el('td', {}, [compareButton(b)]),
-        ]);
-      });
-      return el('div', { className: 'table-wrap' }, [el('table', {}, [el('thead', {}, [head]), el('tbody', {}, rows)])]);
+    function openFresh() {
+      renderFresh();
+      document.getElementById('fresh-modal').hidden = false;
+      document.getElementById('fresh-close').focus();
     }
 
-    function renderRanking() {
-      const body = document.getElementById('ranking-body');
-      const books = filtered().sort((a, b) => b.latest - a.latest);
-      if (books.length === 0) {
-        body.replaceChildren(el('div', { className: 'empty', text: '조건에 맞는 도서가 없습니다.' }));
-        return;
-      }
-      if (state.view === 'all') {
-        body.replaceChildren(rankingTable(state.limit ? books.slice(0, state.limit) : books));
-        return;
-      }
-      const groups = new Map();
-      for (const b of books) {
-        if (!groups.has(b.publisher)) groups.set(b.publisher, []);
-        groups.get(b.publisher).push(b);
-      }
-      const order = state.data.publishers.map(p => p.name).filter(n => groups.has(n));
-      const cards = order.map(name => {
-        const items = groups.get(name).slice(0, 5).map(b =>
-          el('li', {}, [
-            b.detail_url ? el('a', { href: b.detail_url, target: '_blank', rel: 'noopener', text: b.title, style: 'color:#333;text-decoration:none' }) : b.title,
-            el('span', { text: fmt(b.latest) }),
-          ])
-        );
-        return el('div', { className: 'pub-card' }, [el('h3', { text: `${name} (${groups.get(name).length}권)` }), el('ol', {}, items)]);
-      });
-      body.replaceChildren(el('div', { className: 'pub-grid' }, cards));
+    function closeFresh() {
+      document.getElementById('fresh-modal').hidden = true;
+    }
+
+    function renderSummary() {
+      const d = state.data;
+      const key = 'delta1', daysKey = 'delta1_days';
+      const movers = ranked().filter(b => b[key] !== null);
+      const top = movers.length ? movers.reduce((a, b) => (b[key] > a[key] ? b : a)) : null;
+      const bottom = movers.length ? movers.reduce((a, b) => (b[key] < a[key] ? b : a)) : null;
+      const today = freshBooks(1).length, week = freshBooks(7).length;
+      const freshTile = el('div', { className: 'tile clickable', onClick: openFresh }, [
+        el('div', { className: 'label', text: '오늘 새로 들어온 도서' }),
+        el('div', { className: 'value', text: `${fmt(today)}권` }),
+        el('div', { className: 'sub', text: `최근 7일 ${fmt(week)}권 · 눌러서 목록 보기` }),
+      ]);
+      const plain = (label, value) => el('div', { className: 'tile' }, [el('div', { className: 'label', text: label }), el('div', { className: 'value', text: value })]);
+      document.getElementById('tiles').replaceChildren(
+        plain('추적 도서', fmt(d.books.length)),
+        plain('출판사', fmt(d.publishers.length)),
+        moverTile('전일 대비 최다 상승', top, key, daysKey),
+        moverTile('전일 대비 최다 하락', bottom, key, daysKey),
+        freshTile,
+      );
     }
 
     // ------------------------------------------------------------------ momentum
@@ -472,10 +555,9 @@
     }
 
     function renderMomentum() {
-      const base = filtered().filter(b => !state.newOnly || isNewRelease(b));
-      const top = (key) => base.filter(b => b[key] !== null).sort((a, b) => b[key] - a[key]).slice(0, 20);
-      document.getElementById('momentum-7').replaceChildren(momentumTable(top('delta7'), 'delta7', 'delta7_days', 7));
-      document.getElementById('momentum-30').replaceChildren(momentumTable(top('delta30'), 'delta30', 'delta30_days', 30));
+      const key = `delta${state.window}`;
+      const top = filtered().filter(b => b[key] !== null).sort((a, b) => b[key] - a[key]).slice(0, 20);
+      document.getElementById('momentum-body').replaceChildren(momentumTable(top, key, `${key}_days`, state.window));
     }
 
     // ------------------------------------------------------------------ trend
@@ -486,14 +568,12 @@
       const color = PALETTE.find(c => !used.has(c));   // 슬롯 순서대로, 비어 있는 첫 색
       state.selected.push({ goods_no: goodsNo, color });
       renderTrend();
-      renderRanking();
       renderMomentum();
     }
 
     function removeSelected(goodsNo) {
       state.selected = state.selected.filter(s => s.goods_no !== goodsNo);
       renderTrend();
-      renderRanking();
       renderMomentum();
     }
 
@@ -511,13 +591,15 @@
 
     function renderTrend() {
       renderChips();
+      document.getElementById('trend-empty').hidden = state.selected.length > 0;
+      document.getElementById('trend-box').hidden = state.selected.length === 0;
       const labels = state.data.dates;
       const datasets = state.selected.map(s => {
         const book = state.byGoods.get(s.goods_no);
         const values = expandSeries(book);
         return {
           label: book.title.length > 30 ? book.title.slice(0, 30) + '…' : book.title,
-          data: state.trendMode === 'diff' ? dailyDiff(values) : values,
+          data: values,
           borderColor: s.color,
           backgroundColor: s.color,
           borderWidth: 2,
@@ -527,7 +609,6 @@
           tension: 0,
         };
       });
-      const cum = state.trendMode === 'cum';
       const options = {
         responsive: true,
         maintainAspectRatio: false,
@@ -536,18 +617,18 @@
           legend: { display: datasets.length > 0, position: 'bottom', labels: { boxWidth: 12, usePointStyle: true } },
           tooltip: {
             callbacks: {
-              label: (ctx) => ` ${ctx.dataset.label}: ${cum ? fmt(ctx.parsed.y) : fmtSigned(ctx.parsed.y)}`,
+              label: (ctx) => ` ${ctx.dataset.label}: ${fmt(ctx.parsed.y)}`,
             },
           },
         },
         scales: {
           x: { grid: { display: false }, ticks: { color: MUTED, maxTicksLimit: 12, maxRotation: 0, autoSkipPadding: 16, callback: (v, i) => (labels[i] || '').slice(5) } },
           y: {
-            beginAtZero: cum,
+            beginAtZero: true,
             grid: { color: GRID },
             border: { display: false },
             ticks: { color: MUTED, callback: (v) => fmt(v) },
-            title: { display: true, text: cum ? '판매지수' : '전일 대비 변화', color: MUTED },
+            title: { display: true, text: '판매지수', color: MUTED },
           },
         },
       };
@@ -575,95 +656,6 @@
       box.hidden = false;
     }
 
-    // ------------------------------------------------------------------ publishers
-    const PUB_COLUMNS = [
-      ['name', '출판사', false], ['book_count', '도서 수', true], ['total', '합계', true], ['avg', '평균', true],
-      ['delta7', '7일 변화', true], ['delta30', '30일 변화', true], ['new_count', '신간 수', true],
-      ['new_avg', '신간 평균', true], ['new_delta7', '신간 7일 변화', true], ['top_goods_no', '1위 도서', false],
-    ];
-
-    function renderPublisherTable() {
-      const { key, dir } = state.pubSort;
-      const rows = [...state.data.publishers].sort((a, b) => {
-        const av = a[key], bv = b[key];
-        if (av === null || av === undefined) return 1;
-        if (bv === null || bv === undefined) return -1;
-        return (typeof av === 'string' ? av.localeCompare(bv, 'ko') : av - bv) * dir;
-      });
-      const head = el('tr', {}, PUB_COLUMNS.map(([k, label, numeric]) =>
-        el('th', {
-          className: `sortable ${numeric ? 'num' : ''}`,
-          text: label + (state.pubSort.key === k ? (dir < 0 ? ' ▼' : ' ▲') : ''),
-          onClick: () => {
-            state.pubSort = state.pubSort.key === k ? { key: k, dir: -dir } : { key: k, dir: numeric ? -1 : 1 };
-            renderPublisherTable();
-          },
-        })
-      ));
-      const body = rows.map(p => {
-        const top = p.top_goods_no ? state.byGoods.get(p.top_goods_no) : null;
-        return el('tr', {}, [
-          el('td', { text: p.name }),
-          el('td', { className: 'num', text: fmt(p.book_count) }),
-          el('td', { className: 'num', text: fmt(p.total) }),
-          el('td', { className: 'num', text: fmt(p.avg) }),
-          el('td', { className: `num ${p.delta7 > 0 ? 'pos' : p.delta7 < 0 ? 'neg' : ''}`, text: fmtSigned(p.delta7) }),
-          el('td', { className: `num ${p.delta30 > 0 ? 'pos' : p.delta30 < 0 ? 'neg' : ''}`, text: fmtSigned(p.delta30) }),
-          el('td', { className: 'num', text: fmt(p.new_count) }),
-          el('td', { className: 'num', text: fmt(p.new_avg) }),
-          el('td', { className: `num ${p.new_delta7 > 0 ? 'pos' : p.new_delta7 < 0 ? 'neg' : ''}`, text: fmtSigned(p.new_delta7) }),
-          top ? titleCell(top) : el('td', { text: '-' }),
-        ]);
-      });
-      document.getElementById('pub-table').replaceChildren(el('table', {}, [el('thead', {}, [head]), el('tbody', {}, body)]));
-    }
-
-    function renderPublisherChart() {
-      const metric = state.pubMetric;
-      const label = PUB_COLUMNS.find(c => c[0] === metric)[1];
-      const rows = state.data.publishers
-        .filter(p => p[metric] !== null && p[metric] !== undefined && p.book_count > 0)
-        .sort((a, b) => b[metric] - a[metric]);
-      const signed = metric.startsWith('delta');
-      const data = {
-        labels: rows.map(p => p.name),
-        datasets: [{
-          label,
-          data: rows.map(p => p[metric]),
-          backgroundColor: rows.map(p => (signed && p[metric] < 0) ? '#1c5cab' : '#2a78d6'),
-          borderRadius: 4,
-          borderSkipped: 'start',
-          maxBarThickness: 28,
-        }],
-      };
-      document.getElementById('pub-chart').parentElement.style.height = `${Math.max(200, rows.length * 18 + 50)}px`;
-      const options = {
-        responsive: true,
-        maintainAspectRatio: false,
-        indexAxis: 'y',
-        plugins: {
-          legend: { display: false },
-          tooltip: { callbacks: { label: (ctx) => ` ${label}: ${signed ? fmtSigned(ctx.parsed.x) : fmt(ctx.parsed.x)}` } },
-        },
-        scales: {
-          x: { position: 'top', grid: { color: GRID }, border: { display: false }, ticks: { color: MUTED, callback: (v) => fmt(v) } },
-          y: { grid: { display: false }, ticks: { color: MUTED, autoSkip: false, font: { size: 11 } } },
-        },
-      };
-      if (state.pubChart) {
-        state.pubChart.data = data;
-        state.pubChart.options = options;
-        state.pubChart.update();
-      } else {
-        state.pubChart = new Chart(document.getElementById('pub-chart'), { type: 'bar', data, options });
-      }
-    }
-
-    function renderPublishers() {
-      renderPublisherChart();
-      renderPublisherTable();
-    }
-
     // ------------------------------------------------------------------ wiring
     function bindControls() {
       const pubSelect = document.getElementById('publisher-select');
@@ -671,15 +663,13 @@
         el('option', { value: '', text: '전체' }),
         ...state.data.publishers.map(p => el('option', { value: p.name, text: p.name }))
       );
-      pubSelect.addEventListener('change', () => { state.publisher = pubSelect.value; renderRanking(); renderMomentum(); });
-      document.getElementById('limit-select').addEventListener('change', (e) => { state.limit = Number(e.target.value); renderRanking(); });
-      document.getElementById('query').addEventListener('input', (e) => { state.query = e.target.value; renderRanking(); renderMomentum(); });
-      document.querySelectorAll('#ranking .toggle button').forEach(btn => btn.addEventListener('click', () => {
-        document.querySelectorAll('#ranking .toggle button').forEach(b => b.classList.toggle('active', b === btn));
-        state.view = btn.dataset.view;
-        renderRanking();
+      pubSelect.addEventListener('change', () => { state.publisher = pubSelect.value; renderMomentum(); });
+      document.getElementById('query').addEventListener('input', (e) => { state.query = e.target.value; renderMomentum(); });
+      document.querySelectorAll('#momentum [data-window]').forEach(btn => btn.addEventListener('click', () => {
+        document.querySelectorAll('#momentum [data-window]').forEach(b => b.classList.toggle('active', b === btn));
+        state.window = Number(btn.dataset.window);
+        renderMomentum();
       }));
-      document.getElementById('new-only').addEventListener('change', (e) => { state.newOnly = e.target.checked; renderMomentum(); });
 
       const search = document.getElementById('trend-search');
       search.addEventListener('input', renderMatches);
@@ -687,16 +677,14 @@
       document.addEventListener('click', (e) => {
         if (!e.target.closest('.search-box')) document.getElementById('trend-matches').hidden = true;
       });
-      document.getElementById('add-top5').addEventListener('click', () => {
-        filtered().sort((a, b) => b.latest - a.latest).slice(0, 5).forEach(b => addSelected(b.goods_no));
-      });
-      document.getElementById('clear-selected').addEventListener('click', () => { state.selected = []; renderTrend(); renderRanking(); renderMomentum(); });
-      document.querySelectorAll('#trend .toggle button').forEach(btn => btn.addEventListener('click', () => {
-        document.querySelectorAll('#trend .toggle button').forEach(b => b.classList.toggle('active', b === btn));
-        state.trendMode = btn.dataset.mode;
-        renderTrend();
-      }));
-      document.getElementById('pub-metric').addEventListener('change', (e) => { state.pubMetric = e.target.value; renderPublisherChart(); });
+      document.getElementById('clear-selected').addEventListener('click', () => { state.selected = []; renderTrend(); renderMomentum(); });
+    }
+
+    function bindFreshModal() {
+      const modal = document.getElementById('fresh-modal');
+      document.getElementById('fresh-close').addEventListener('click', closeFresh);
+      modal.addEventListener('click', (e) => { if (e.target === modal) closeFresh(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.hidden) closeFresh(); });
     }
 
     async function loadAll() {
@@ -721,11 +709,10 @@
       document.getElementById('loading').hidden = true;
       document.getElementById('app').hidden = false;
       bindControls();
+      bindFreshModal();
       renderSummary();
-      renderRanking();
       renderMomentum();
       renderTrend();
-      renderPublishers();
     }
 
     loadAll();

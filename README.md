@@ -1,7 +1,7 @@
 # 신간 도서 대시보드
 
 YES24에서 IT·컴퓨터 분야 출판사별 신간 도서를 매일 수집해 한눈에 볼 수 있는 대시보드입니다.
-GitHub Actions가 하루 두 번 수집을 실행하고 GitHub Pages로 배포합니다.
+GitHub Actions가 매일 아침 7시(KST)에 수집을 실행하고 GitHub Pages로 배포합니다. 예약 실행은 GitHub 사정에 따라 몇 시간 늦어질 수 있습니다.
 
 ## 기능
 
@@ -17,6 +17,7 @@ GitHub Actions가 하루 두 번 수집을 실행하고 GitHub Pages로 배포�
 | `publishers.json` | 수집 대상 출판사 목록. 이름과 YES24 출판사 번호(`mkEntrNo`) |
 | `newbooks.py` | YES24 검색·상세 페이지를 requests로 조회. 수집 전체 흐름을 담당 |
 | `sales_history.py` | 카탈로그·판매지수 이력 저장과 대시보드용 집계 (순수 함수) |
+| `sample_data.py` | 로컬 미리보기용 가짜 이력 생성. `sales_data.json`만 덮어씀 |
 | `data/books.json` | 추적 도서 카탈로그. 워크플로가 매 실행 후 커밋 |
 | `data/history/YYYY-MM.csv` | 날짜·도서별 판매지수 기록. 월별 파일, 워크플로가 커밋 |
 | `books_data.json` | 신간 대시보드 데이터 (생성 파일, 커밋하지 않음) |
@@ -27,7 +28,7 @@ GitHub Actions가 하루 두 번 수집을 실행하고 GitHub Pages로 배포�
 
 ## 판매지수 기록 방식
 
-- 매 실행마다 카탈로그의 모든 책 상세 페이지에서 판매지수를 읽어 그날(KST) 기록으로 저장합니다. 같은 날 두 번 실행되면 나중 값이 남습니다.
+- 매 실행마다 카탈로그의 모든 책 상세 페이지에서 판매지수를 읽어 그날(KST) 기록으로 저장합니다. 같은 날 여러 번 실행되면 나중 값이 남습니다.
 - 판매지수 요소가 없는 책(예약판매 등)이나 조회에 실패한 책은 그날 기록을 남기지 않습니다. 0으로 기록되지 않습니다.
 - YES24 판매지수는 최근 판매량을 반영한 가중 지수이므로, 판매가 뜸해지면 값이 내려가 변화량이 음수가 될 수 있습니다.
 
@@ -47,6 +48,14 @@ python -m unittest discover -s tests -t .   # 단위 테스트
 python newbooks.py                          # 수집 (약 1분). data/와 두 JSON을 생성·갱신
 python sales_history.py                     # data/만으로 sales_data.json 다시 만들기
 python -m http.server 8000                  # http://localhost:8000 접속
+```
+
+판매지수 대시보드는 기록이 하루뿐이면 변화량이 비어 있습니다. 로컬에서 미리 보려면 샘플 이력을 만들 수 있습니다.
+
+```bash
+python sample_data.py            # 40일치 가짜 이력으로 sales_data.json 생성 (data/는 그대로)
+python sample_data.py --days 90
+python sales_history.py          # 실제 데이터로 되돌리기
 ```
 
 로컬에서는 `deploy_info.json`이 없으므로 업데이트 시각이 "정보 없음"으로 표시됩니다.

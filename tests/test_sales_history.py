@@ -160,6 +160,15 @@ class BuildSalesDataTest(unittest.TestCase):
         self.assertEqual(b["latest"], 40)
         self.assertEqual(b["latest_date"], "2026-09-24")
 
+    def test_delta1_uses_previous_point(self):
+        self.assertEqual((self.books["1"]["delta1"], self.books["1"]["delta1_days"]), (20, 2))  # 09-22 -> 09-24
+        self.assertEqual((self.books["2"]["delta1"], self.books["2"]["delta1_days"]), (100, 7))
+        self.assertIsNone(self.books["3"]["delta1"])
+
+    def test_delta3(self):
+        self.assertEqual((self.books["1"]["delta3"], self.books["1"]["delta3_days"]), (30, 3))  # 09-21 -> 09-24
+        self.assertEqual((self.books["2"]["delta3"], self.books["2"]["delta3_days"]), (100, 7))
+
     def test_series_ignores_points_before_window_but_deltas_use_them(self):
         b = self.books["2"]
         self.assertEqual(b["series_start"], 0)

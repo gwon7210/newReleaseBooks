@@ -196,6 +196,10 @@ def build_book_entry(goods_no: str, meta: dict, points: list[tuple[str, int]], d
         "last_seen": meta.get("last_seen"),
         "latest": None,
         "latest_date": None,
+        "delta1": None,
+        "delta1_days": None,
+        "delta3": None,
+        "delta3_days": None,
         "delta7": None,
         "delta7_days": None,
         "delta30": None,
@@ -205,6 +209,8 @@ def build_book_entry(goods_no: str, meta: dict, points: list[tuple[str, int]], d
         return entry
 
     entry["latest_date"], entry["latest"] = points[-1]
+    entry["delta1"], entry["delta1_days"] = compute_delta(points, 1)
+    entry["delta3"], entry["delta3_days"] = compute_delta(points, 3)
     entry["delta7"], entry["delta7_days"] = compute_delta(points, 7)
     entry["delta30"], entry["delta30_days"] = compute_delta(points, 30)
 
