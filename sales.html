@@ -113,7 +113,7 @@
 
     .tiles {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 14px;
     }
     .tile {
@@ -295,6 +295,22 @@
     .matches div:hover { background: #eef5ff; }
     .matches .pub { color: #888; margin-left: 6px; font-size: 0.9em; }
     .chart-box { position: relative; height: 360px; }
+    .chart-tip {
+      position: absolute;
+      background: rgba(0,0,0,0.8);
+      color: #fff;
+      padding: 8px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      line-height: 1.5;
+      pointer-events: none;
+      white-space: nowrap;
+      z-index: 5;
+    }
+    .chart-tip-title { font-weight: bold; margin-bottom: 2px; max-width: 320px; overflow: hidden; text-overflow: ellipsis; }
+    .chart-tip-change { font-weight: bold; color: #ccc; }
+    .chart-tip-change.up { color: #ff6b6b; }
+    .chart-tip-change.down { color: #6fa8ff; }
 
     @media (max-width: 600px) {
       body { padding: 16px; }
@@ -524,10 +540,7 @@
         el('div', { className: 'value', text: `${fmt(today)}권` }),
         el('div', { className: 'sub', text: `최근 7일 ${fmt(week)}권 · 눌러서 목록 보기` }),
       ]);
-      const plain = (label, value) => el('div', { className: 'tile' }, [el('div', { className: 'label', text: label }), el('div', { className: 'value', text: value })]);
       document.getElementById('tiles').replaceChildren(
-        plain('추적 도서', fmt(d.books.length)),
-        plain('출판사', fmt(d.publishers.length)),
         moverTile('전일 대비 최다 상승', top, key, daysKey),
         moverTile('전일 대비 최다 하락', bottom, key, daysKey),
         freshTile,
@@ -589,6 +602,45 @@
       }));
     }
 
+    function pointChange(item) {
+      // 같은 책의 바로 앞 기록(빈 날은 건너뜀)과의 차이. 앞 기록이 없으면 null
+      if (!item) return null;
+      const data = item.dataset.data;
+      for (let i = item.dataIndex - 1; i >= 0; i--) {
+        if (data[i] !== null && data[i] !== undefined) return item.parsed.y - data[i];
+      }
+      return null;
+    }
+
+    function renderTrendTooltip({ chart, tooltip }) {
+      let box = document.getElementById('trend-tooltip');
+      if (!box) {
+        box = el('div', { id: 'trend-tooltip', className: 'chart-tip' });
+        chart.canvas.parentElement.appendChild(box);
+      }
+      const item = tooltip.dataPoints && tooltip.dataPoints[0];
+      if (tooltip.opacity === 0 || !item) { box.hidden = true; return; }
+
+      const change = pointChange(item);
+      const changeNode = el('div', { className: 'chart-tip-change' });
+      if (change === null) changeNode.textContent = '이전 기록 없음';
+      else if (change > 0) { changeNode.textContent = `▲ ${fmt(change)}`; changeNode.classList.add('up'); }
+      else if (change < 0) { changeNode.textContent = `▼ ${fmt(-change)}`; changeNode.classList.add('down'); }
+      else changeNode.textContent = '변화 없음';
+
+      box.replaceChildren(
+        el('div', { className: 'chart-tip-title', text: item.dataset.label }),
+        el('div', {}, [`${item.label} · 판매지수 ${fmt(item.parsed.y)}`]),
+        changeNode,
+      );
+      box.hidden = false;
+      const { offsetLeft, offsetTop } = chart.canvas;
+      const left = offsetLeft + tooltip.caretX + 12;
+      const flip = left + box.offsetWidth > chart.canvas.parentElement.clientWidth;
+      box.style.left = `${flip ? offsetLeft + tooltip.caretX - box.offsetWidth - 12 : left}px`;
+      box.style.top = `${offsetTop + tooltip.caretY - box.offsetHeight / 2}px`;
+    }
+
     function renderTrend() {
       renderChips();
       document.getElementById('trend-empty').hidden = state.selected.length > 0;
@@ -612,14 +664,10 @@
       const options = {
         responsive: true,
         maintainAspectRatio: false,
-        interaction: { mode: 'index', intersect: false },
+        interaction: { mode: 'nearest', intersect: true },   // 마우스가 닿은 점 하나만
         plugins: {
           legend: { display: datasets.length > 0, position: 'bottom', labels: { boxWidth: 12, usePointStyle: true } },
-          tooltip: {
-            callbacks: {
-              label: (ctx) => ` ${ctx.dataset.label}: ${fmt(ctx.parsed.y)}`,
-            },
-          },
+          tooltip: { enabled: false, external: renderTrendTooltip },
         },
         scales: {
           x: { grid: { display: false }, ticks: { color: MUTED, maxTicksLimit: 12, maxRotation: 0, autoSkipPadding: 16, callback: (v, i) => (labels[i] || '').slice(5) } },
