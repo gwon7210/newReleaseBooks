@@ -2579,6 +2579,17 @@
     "release_date": "2026년 09월 20일",
     "title": "2027 이기적 컴퓨터활용능력 2급 필기+실기 올인원[2027년 출제기준 변경 반영 + 동영상 강의 무료 + CBT 온라인 문제집 제공]"
   },
+  "195043001": {
+    "author": "진한별 저",
+    "detail_url": "https://www.yes24.com/product/goods/195043001",
+    "first_seen": "2026-09-29",
+    "image_url": "https://image.yes24.com/goods/195043001/L",
+    "last_seen": "2026-09-29",
+    "publisher": "영진닷컴",
+    "release_date": "2026년 08월 21일",
+    "title": "클로드 역대급 활용법 with 코워크, 디자인, 코드, 스킬, 커넥터, 플러그인",
+    "tracked": true
+  },
   "195075733": {
     "author": "심동엽저",
     "detail_url": "https://www.yes24.com/product/goods/195075733",
@@ -2980,7 +2991,7 @@
     "title": "일상에 바로 쓰는 일잘러의 바이브 코딩 활용법[반양장]"
   },
   "196013239": {
-    "author": "박창민윤태영김미승김상백저 외 3명",
+    "author": "윤태영박창민김미승김상백저 외 3명",
     "detail_url": "https://www.yes24.com/product/goods/196013239",
     "first_seen": "2026-09-24",
     "image_url": "https://image.yes24.com/goods/196013239/L",
@@ -3438,6 +3449,46 @@
     "publisher": "골든래빗",
     "release_date": "2026년 10월 01일",
     "title": "이게 되네? 힉스필드 AI 영상 만들기 캡컷·수노"
+  },
+  "197068685": {
+    "author": "정경석이철로정상기저",
+    "detail_url": "https://www.yes24.com/product/goods/197068685",
+    "first_seen": "2026-09-29",
+    "image_url": "https://image.yes24.com/goods/197068685/L",
+    "last_seen": "2026-09-29",
+    "publisher": "한빛미디어",
+    "release_date": "2026년 09월 28일",
+    "title": "난생처음 AI x 부동산 with 클로드, 제미나이, 챗GPT, 퍼플렉시티"
+  },
+  "197068692": {
+    "author": "오렐리앙 제롱저박해선역",
+    "detail_url": "https://www.yes24.com/product/goods/197068692",
+    "first_seen": "2026-09-29",
+    "image_url": "https://image.yes24.com/goods/197068692/L",
+    "last_seen": "2026-09-29",
+    "publisher": "한빛미디어",
+    "release_date": "2026년 09월 28일",
+    "title": "핸즈온 머신러닝 with 사이킷런, 파이토치"
+  },
+  "197068695": {
+    "author": "최윤석저",
+    "detail_url": "https://www.yes24.com/product/goods/197068695",
+    "first_seen": "2026-09-29",
+    "image_url": "https://image.yes24.com/goods/197068695/L",
+    "last_seen": "2026-09-29",
+    "publisher": "한빛미디어",
+    "release_date": "2026년 09월 30일",
+    "title": "일하는 AI 에이전트, 설계하는 사람"
+  },
+  "197101357": {
+    "author": "STUDIO SHIN 저윤준 역",
+    "detail_url": "https://www.yes24.com/product/goods/197101357",
+    "first_seen": "2026-09-29",
+    "image_url": "https://image.yes24.com/goods/197101357/L",
+    "last_seen": "2026-09-29",
+    "publisher": "제이펍",
+    "release_date": "2026년 10월 15일",
+    "title": "누구나 할 수 있는 유니티 2D 게임 제작(제3판)[반양장]"
   },
   "4376722": {
     "author": "마키노 다케후미저정정일역",
