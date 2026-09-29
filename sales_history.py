@@ -102,6 +102,26 @@ def merge_catalog(catalog: dict[str, dict], lists: dict[str, list[dict]], today:
     return catalog
 
 
+def add_tracked_book(catalog: dict[str, dict], meta: dict, today: str) -> bool:
+    """직접 지정한 책(tracked_books.json)을 카탈로그에 등록한다.
+
+    이미 있는 책은 건드리지 않고 False를 돌려준다. 등록된 책은 `tracked: True`로 표시해
+    출판사 목록에서 들어온 책과 구분한다.
+    """
+    goods_no = meta.get("goods_no")
+    if not goods_no or goods_no in catalog:
+        return False
+    catalog[goods_no] = {
+        **{field: meta.get(field, "") for field in _CATALOG_FIELDS_FROM_LIST},
+        "publisher": meta.get("publisher", ""),
+        "release_date": meta.get("release_date"),
+        "first_seen": today,
+        "last_seen": today,
+        "tracked": True,
+    }
+    return True
+
+
 def apply_release_dates(catalog: dict[str, dict], details: dict[str, tuple | None]) -> None:
     """상세 페이지에서 얻은 출간일을 카탈로그에 반영한다. 조회 실패(None)는 건너뛴다."""
     for goods_no, result in details.items():

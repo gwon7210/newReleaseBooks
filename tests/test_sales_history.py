@@ -72,6 +72,29 @@ class MergeCatalogTest(unittest.TestCase):
         self.assertEqual(catalog["1"]["release_date"], "2026년 09월 01일")
 
 
+class AddTrackedBookTest(unittest.TestCase):
+    META = {"goods_no": "195043001", "title": "클로드 역대급 활용법", "author": "진한별 저", "publisher": "영진닷컴",
+            "image_url": "https://image.yes24.com/goods/195043001/L",
+            "detail_url": "https://www.yes24.com/product/goods/195043001"}
+
+    def test_adds_new_entry(self):
+        catalog = {}
+        self.assertTrue(sh.add_tracked_book(catalog, self.META, "2026-09-29"))
+        entry = catalog["195043001"]
+        self.assertEqual(entry["title"], "클로드 역대급 활용법")
+        self.assertEqual(entry["publisher"], "영진닷컴")
+        self.assertEqual(entry["first_seen"], "2026-09-29")
+        self.assertEqual(entry["last_seen"], "2026-09-29")
+        self.assertTrue(entry["tracked"])
+        self.assertNotIn("goods_no", entry)
+
+    def test_existing_entry_is_untouched(self):
+        catalog = sh.merge_catalog({}, {"영진닷컴": [book("195043001", "원래 제목")]}, "2026-09-20")
+        self.assertFalse(sh.add_tracked_book(catalog, self.META, "2026-09-29"))
+        self.assertEqual(catalog["195043001"]["title"], "원래 제목")
+        self.assertEqual(catalog["195043001"]["first_seen"], "2026-09-20")
+
+
 class CatalogFileTest(unittest.TestCase):
     def test_round_trip_and_missing_file(self):
         with tempfile.TemporaryDirectory() as tmp:

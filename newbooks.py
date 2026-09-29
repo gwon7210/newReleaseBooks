@@ -2,6 +2,7 @@
 
 1. publishers.json의 출판사마다 YES24 모바일 검색(최신순)으로 최신 도서 목록을 받는다.
 2. 목록을 data/books.json 카탈로그에 합친다. 한 번 등장한 책은 계속 추적 대상이다.
+   tracked_books.json에 직접 적어 둔 책도 카탈로그에 등록한다.
 3. 카탈로그의 모든 책 상세 페이지에서 출간일과 판매지수를 병렬로 조회한다.
 4. books_data.json(신간 대시보드), data/history/(판매지수 이력), sales_data.json(판매 대시보드)을 쓴다.
 
@@ -25,6 +26,7 @@ import sales_history as sh
 
 BASE_URL = "https://m.yes24.com"
 PUBLISHERS_FILE = Path("publishers.json")
+TRACKED_FILE = Path("tracked_books.json")   # 출판사 목록과 무관하게 직접 추적할 책 (YES24 주소 또는 상품 번호)
 OUTPUT_FILE = Path("books_data.json")
 NO_IMAGE_URL = "https://image.yes24.com/momo/Noimg_L.jpg"
 NO_DATE_TEXT = "출간일 정보 없음"
@@ -44,7 +46,9 @@ HEADERS = {
 }
 
 _DOTTED_DATE = re.compile(r"(\d{4})\.(\d{1,2})\.(\d{1,2})\.?")
-_GOODS_IN_PATH = re.compile(r"/goods/(?:detail/)?(\d+)")
+_GOODS_IN_PATH = re.compile(r"/goods/(?:detail/)?(\d+)", re.IGNORECASE)
+_YES24_HOST = re.compile(r"^https?://([a-z0-9-]+\.)*yes24\.com/", re.IGNORECASE)
+_OG_TITLE_SUFFIX = " - 예스24"
 
 _thread_local = threading.local()
 
@@ -159,6 +163,48 @@ def parse_search(html: str, limit: int = MAX_BOOKS_PER_PUBLISHER) -> list[dict]:
     return books
 
 
+def parse_goods_no(value) -> str | None:
+    """YES24 상품 주소나 상품 번호에서 번호만 꺼낸다. 알아볼 수 없으면 None."""
+    if value is None:
+        return None
+    text = str(value).strip()
+    if text.isdigit():
+        return text
+    if not _YES24_HOST.match(text):
+        return None
+    match = _GOODS_IN_PATH.search(text)
+    return match.group(1) if match else None
+
+
+def _meta_content(soup, **attrs) -> str | None:
+    tag = soup.find("meta", attrs=attrs)
+    content = tag.get("content") if tag else None
+    return content.strip() if content else None
+
+
+def parse_book_meta(html: str, goods_no: str) -> dict | None:
+    """상세 페이지에서 카탈로그 등록에 필요한 제목·저자·출판사를 꺼낸다.
+
+    og:title은 "제목 | 저자 | 출판사 - 예스24" 형식이다. 제목에 " | "가 들어 있을 수 있어 뒤에서부터 나눈다.
+    """
+    soup = BeautifulSoup(html, "html.parser")
+    og_title = _meta_content(soup, property="og:title")
+    if not og_title:
+        return None
+    parts = og_title.removesuffix(_OG_TITLE_SUFFIX).rsplit(" | ", 2)
+    if len(parts) != 3 or not parts[0].strip():
+        return None
+    title, author, publisher = (part.strip() for part in parts)
+    return {
+        "goods_no": goods_no,
+        "title": title,
+        "author": _meta_content(soup, name="author") or author,
+        "publisher": publisher,
+        "image_url": f"https://image.yes24.com/goods/{goods_no}/L",
+        "detail_url": f"https://www.yes24.com/product/goods/{goods_no}",
+    }
+
+
 def parse_detail(html: str) -> tuple[str | None, str | None]:
     """상세 페이지에서 (출간일, 판매지수)를 꺼낸다.
 
@@ -228,6 +274,40 @@ def fetch_details(goods_nos: Iterable[str]) -> dict[str, tuple[str | None, str |
     return results
 
 
+def load_tracked(path: Path = TRACKED_FILE) -> list[str]:
+    """tracked_books.json의 상품 번호 목록. 중복은 하나로, 알아볼 수 없는 항목은 건너뛴다."""
+    if not path.exists():
+        return []
+    goods_nos: list[str] = []
+    for entry in json.loads(path.read_text(encoding="utf-8")):
+        goods_no = parse_goods_no(entry)
+        if goods_no is None:
+            print(f"  {path.name}: 알 수 없는 항목을 건너뜁니다 - {entry!r}")
+        elif goods_no not in goods_nos:
+            goods_nos.append(goods_no)
+    return goods_nos
+
+
+def register_tracked(catalog: dict[str, dict], goods_nos: list[str], today: str) -> int:
+    """직접 지정한 책 중 카탈로그에 없는 것을 등록한다. 등록한 권수를 돌려준다."""
+    added = 0
+    for goods_no in goods_nos:
+        if goods_no in catalog:
+            continue
+        try:
+            meta = parse_book_meta(fetch(thread_session(), f"{BASE_URL}/goods/detail/{goods_no}"), goods_no)
+        except Exception as exc:
+            print(f"  직접 지정 도서 {goods_no}: 조회 실패 - {exc}")
+            continue
+        if meta is None:
+            print(f"  직접 지정 도서 {goods_no}: 제목을 읽지 못해 건너뜁니다")
+            continue
+        if sh.add_tracked_book(catalog, meta, today):
+            added += 1
+            print(f"  직접 지정 도서 등록: {meta['title']} ({meta['publisher']})")
+    return added
+
+
 def apply_details(lists: dict[str, list[dict]], details: dict[str, tuple | None]) -> None:
     """목록 도서에 상세 조회 결과를 반영한다. books_data.json 형식은 예전과 같다."""
     for books in lists.values():
@@ -251,6 +331,7 @@ def main() -> int:
 
     catalog = sh.load_catalog(sh.CATALOG_FILE)
     sh.merge_catalog(catalog, lists, today)
+    register_tracked(catalog, load_tracked(), today)
 
     details = fetch_details(catalog.keys())
 
