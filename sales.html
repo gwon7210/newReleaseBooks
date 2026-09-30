@@ -47,6 +47,27 @@
     }
     .card h3 { font-size: 15px; margin: 0 0 8px; color: #555; }
     .hint { color: #888; font-size: 0.85em; margin: 0 0 10px; }
+    .tabs {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 12px;
+    }
+    .tabs button {
+      font-size: 16px;
+      font-weight: bold;
+      padding: 8px 14px;
+      border: none;
+      border-bottom: 3px solid transparent;
+      border-radius: 0;
+      background: none;
+      color: #888;
+      margin-bottom: -1px;
+    }
+    .tabs button:hover { background: none; color: #333; }
+    .tabs button.active { color: #333; border-bottom-color: #0066cc; }
+    .tabs .info { margin-left: 4px; }
     .info {
       position: relative;
       display: inline-flex;
@@ -80,11 +101,9 @@
       white-space: normal;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
       z-index: 10;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.1s;
+      display: none;   /* 숨겨진 상태에서 자리를 차지하지 않도록 */
     }
-    .info:hover::after, .info:focus::after { opacity: 1; visibility: visible; }
+    .info:hover::after, .info:focus::after { display: block; }
     .tip { position: relative; cursor: help; }
     .tip::after {
       content: attr(data-tip);
@@ -104,12 +123,10 @@
       white-space: normal;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
       z-index: 10;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.1s;
+      display: none;
       pointer-events: none;
     }
-    .tip:hover::after { opacity: 1; visibility: visible; }
+    .tip:hover::after { display: block; }
 
     .tiles {
       display: grid;
@@ -240,7 +257,17 @@
     button.selected { background: #0066cc; color: #fff; }
     button.selected:hover { background: #c0392b; border-color: #c0392b; }
 
-    .table-wrap { overflow-x: auto; }
+    .table-wrap { overflow: visible; }   /* 제목 열이 말줄임으로 줄어들어 표가 폭에 맞으므로 스크롤 불필요 */
+    .pager {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      margin-top: 12px;
+    }
+    .pager button { min-width: 32px; }
+    .pager button.active { background: #0066cc; color: #fff; }
+    .pager .page-info { color: #888; font-size: 0.85em; margin-left: 10px; }
     table {
       width: 100%;
       border-collapse: collapse;
@@ -322,6 +349,8 @@
     @media (max-width: 600px) {
       body { padding: 16px; }
       .chart-box { height: 280px; }
+      th, td { white-space: normal; padding: 6px 4px; }
+      td.title { white-space: nowrap; }
     }
   </style>
 </head>
@@ -342,7 +371,11 @@
 
 
     <section class="card" id="momentum">
-      <h2>상승세 <span class="info" tabindex="0" data-tip="*가 붙은 값은 기록이 선택한 기간보다 짧아, 있는 기록 중 가장 오래된 날과 비교한 값입니다. 숫자에 마우스를 올리면 며칠 기준인지 나옵니다.">!</span></h2>
+      <div class="tabs">
+        <button type="button" data-direction="up" class="active">상승세</button>
+        <button type="button" data-direction="down">하락세</button>
+        <span class="info" tabindex="0" data-tip="*가 붙은 값은 기록이 선택한 기간보다 짧아, 있는 기록 중 가장 오래된 날과 비교한 값입니다. 숫자에 마우스를 올리면 며칠 기준인지 나옵니다.">!</span>
+      </div>
       <div class="controls">
         <label>출판사 <select id="publisher-select"></select></label>
         <input type="search" id="query" placeholder="제목 검색">
@@ -397,6 +430,8 @@
       publisher: '',
       query: '',
       window: 7,
+      direction: 'up',
+      page: 1,
       selected: [],          // [{goods_no, color}]
       trendChart: null,
     };
@@ -557,16 +592,19 @@
     }
 
     // ------------------------------------------------------------------ momentum
-    function momentumTable(books, key, daysKey, window) {
+    const PAGE_SIZE = 10;
+    const MAX_ROWS = 100;
+
+    function momentumTable(books, key, daysKey, window, emptyText, rankOffset = 0) {
       if (books.length === 0) {
-        return el('div', { className: 'empty', text: '데이터 부족: 판매지수를 이틀 이상 기록해야 변화를 계산할 수 있습니다.' });
+        return el('div', { className: 'empty', text: emptyText });
       }
       const head = el('tr', {}, [
         el('th', { text: '순위' }), el('th', { text: '제목' }), el('th', { text: '출판사' }),
         el('th', { className: 'num', text: '판매지수' }), el('th', { className: 'num', text: `${window}일 변화` }), el('th', { text: '' }),
       ]);
       const rows = books.map((b, i) => el('tr', {}, [
-        el('td', { className: 'rank', text: String(i + 1) }),
+        el('td', { className: 'rank', text: String(rankOffset + i + 1) }),
         titleCell(b),
         el('td', { text: b.publisher }),
         el('td', { className: 'num', text: fmt(b.latest) }),
@@ -578,8 +616,32 @@
 
     function renderMomentum() {
       const key = `delta${state.window}`;
-      const top = filtered().filter(b => b[key] !== null).sort((a, b) => b[key] - a[key]).slice(0, 20);
-      document.getElementById('momentum-body').replaceChildren(momentumTable(top, key, `${key}_days`, state.window));
+      const up = state.direction === 'up';
+      const measurable = filtered().filter(b => b[key] !== null);
+      const rows = measurable
+        .filter(b => (up ? b[key] > 0 : b[key] < 0))
+        .sort((a, b) => (up ? b[key] - a[key] : a[key] - b[key]))   // 상승세는 많이 오른 순, 하락세는 많이 내린 순
+        .slice(0, MAX_ROWS);
+      const emptyText = measurable.length === 0
+        ? '데이터 부족: 판매지수를 이틀 이상 기록해야 변화를 계산할 수 있습니다.'
+        : `해당 기간에 ${up ? '오른' : '내린'} 책이 없습니다.`;
+      const pageCount = Math.max(1, Math.ceil(rows.length / PAGE_SIZE));
+      state.page = Math.min(Math.max(1, state.page), pageCount);
+      const offset = (state.page - 1) * PAGE_SIZE;
+      const body = document.getElementById('momentum-body');
+      body.replaceChildren(momentumTable(rows.slice(offset, offset + PAGE_SIZE), key, `${key}_days`, state.window, emptyText, offset));
+      if (pageCount > 1) body.appendChild(pager(pageCount));
+    }
+
+    function pager(pageCount) {
+      const go = (n) => { state.page = n; renderMomentum(); };
+      const buttons = [el('button', { type: 'button', text: '이전', disabled: state.page === 1 ? '' : null, onClick: () => go(state.page - 1) })];
+      for (let n = 1; n <= pageCount; n++) {
+        buttons.push(el('button', { type: 'button', text: String(n), className: n === state.page ? 'active' : '', onClick: () => go(n) }));
+      }
+      buttons.push(el('button', { type: 'button', text: '다음', disabled: state.page === pageCount ? '' : null, onClick: () => go(state.page + 1) }));
+      buttons.push(el('span', { className: 'page-info', text: `${state.page} / ${pageCount} 페이지` }));
+      return el('div', { className: 'pager' }, buttons);
     }
 
     // ------------------------------------------------------------------ trend
@@ -720,11 +782,18 @@
         el('option', { value: '', text: '전체' }),
         ...state.data.publishers.map(p => el('option', { value: p.name, text: p.name }))
       );
-      pubSelect.addEventListener('change', () => { state.publisher = pubSelect.value; renderMomentum(); });
-      document.getElementById('query').addEventListener('input', (e) => { state.query = e.target.value; renderMomentum(); });
+      pubSelect.addEventListener('change', () => { state.publisher = pubSelect.value; state.page = 1; renderMomentum(); });
+      document.getElementById('query').addEventListener('input', (e) => { state.query = e.target.value; state.page = 1; renderMomentum(); });
+      document.querySelectorAll('#momentum [data-direction]').forEach(btn => btn.addEventListener('click', () => {
+        document.querySelectorAll('#momentum [data-direction]').forEach(b => b.classList.toggle('active', b === btn));
+        state.direction = btn.dataset.direction;
+        state.page = 1;
+        renderMomentum();
+      }));
       document.querySelectorAll('#momentum [data-window]').forEach(btn => btn.addEventListener('click', () => {
         document.querySelectorAll('#momentum [data-window]').forEach(b => b.classList.toggle('active', b === btn));
         state.window = Number(btn.dataset.window);
+        state.page = 1;
         renderMomentum();
       }));
 
